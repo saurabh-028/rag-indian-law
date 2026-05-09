@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "title": "Criminal Law & Police Procedures — Actionable Reference Data",
+    "description": "Actionable steps for citizens dealing with police encounters, arrests, FIR filing, bail, police misconduct, and criminal proceedings in Maharashtra",
+    "sector": "criminal_law",
+    "doc_type": "actionable_reference",
+    "last_verified": "2026-04-08",
+    "verification_sources": [
+      "Bharatiya Nyaya Sanhita (BNS) 2023 — indiacode.nic.in",
+      "Bharatiya Nagarik Suraksha Sanhita (BNSS) 2023 — indiacode.nic.in",
+      "Constitution of India — Articles 14, 20, 21, 22, 39A",
+      "D.K. Basu v State of West Bengal (1997, SC)",
+      "Arnesh Kumar v State of Bihar (2014, SC)",
+      "Lalita Kumari v Government of UP (2014, SC)",
+      "https://citizen.mahapolice.gov.in",
+      "https://acbmaharashtra.gov.in",
+      "https://www.humanrightsinitiative.org (CHRI PCA User Guide)"
+    ]
+  },
+
+  "grievance_mechanisms": [
+
+    {
+      "id": "CRIM_GRV_001",
+      "title": "Your Rights When Arrested by Police",
+      "category": "arrest_rights",
+      "when_to_use": "When you or someone you know is being arrested or has been arrested — these are your fundamental constitutional and statutory rights that police MUST respect",
+      "rights": [
+        "RIGHT 1: Know WHY you are arrested — Police must inform you of the full grounds of arrest immediately (Article 22(1) Constitution; BNSS Section 47)",
+        "RIGHT 2: See the arrest warrant — If arrested under warrant, you can demand to inspect it. It must specify the offence (BNSS Section 75)",
+        "RIGHT 3: Not be handcuffed routinely — Handcuffing is NOT allowed unless there are exceptional circumstances like violence risk or escape risk. SC has prohibited routine handcuffing",
+        "RIGHT 4: Inform a family member/friend — Police MUST inform your nominated person about the arrest immediately (BNSS Section 48; D.K. Basu guidelines)",
+        "RIGHT 5: Consult a lawyer — You have the right to consult and be defended by a lawyer of your choice (Article 22(1) Constitution; BNSS Section 341)",
+        "RIGHT 6: Free legal aid — If you cannot afford a lawyer, the State must provide one (Article 39A Constitution; BNSS Section 341)",
+        "RIGHT 7: Remain silent — You cannot be compelled to make self-incriminating statements (Article 20(3) Constitution). You can refuse to answer questions",
+        "RIGHT 8: Medical examination — You have the right to be medically examined (BNSS Section 51). This documents any pre-existing injuries and protects against false custodial torture claims",
+        "RIGHT 9: Produced before Magistrate within 24 hours — Police CANNOT detain you beyond 24 hours without producing you before a Magistrate (Article 22(2) Constitution; BNSS Section 58)",
+        "RIGHT 10: Bail in bailable offences — If the offence is bailable, bail is your ABSOLUTE RIGHT. Police must inform you of this right (BNSS Section 48)",
+        "RIGHT 11: No woman arrested after sunset — Women shall not be arrested after sunset and before sunrise except in exceptional circumstances, by a female police officer, with prior Magistrate permission (BNSS Section 43(6))",
+        "RIGHT 12: Custody memo — A custody memo must be prepared with date, time of arrest, witness countersignature, and your signature (D.K. Basu guidelines)"
+      ],
+      "what_to_do_immediately": [
+        "Stay calm — do not resist arrest physically, but verbally assert your rights",
+        "Ask the officer: 'Under what section am I being arrested?' — if they cannot state the section, the arrest may be illegal",
+        "Demand that your family/lawyer be informed immediately",
+        "Do NOT sign any blank paper or any document you haven't read fully",
+        "Do NOT make any statement without your lawyer present",
+        "Note the officer's name, badge number, and police station",
+        "If you are beaten or tortured in custody — tell the Magistrate during your first production. The Magistrate is legally required to note this"
+      ],
+      "legal_basis": "Constitution Articles 20, 21, 22, 39A; BNSS Sections 35, 43, 47, 48, 51, 55, 58, 341; D.K. Basu v State of West Bengal (1997)",
+      "source": "Constitution of India, BNSS 2023, D.K. Basu guidelines"
+    },
+
+    {
+      "id": "CRIM_GRV_002",
+      "title": "How to File an FIR (First Information Report)",
+      "category": "fir_filing",
+      "when_to_use": "When you are a victim of or witness to a cognizable offence (theft, assault, robbery, cheating, fraud, sexual offence, etc.) and need to report it to police",
+      "steps": [
+        "Step 1: Go to the police station that has jurisdiction over the area where the offence occurred",
+        "Step 2: If the offence happened in a different area — file a ZERO FIR at any police station. They MUST register it and transfer it to the correct jurisdiction (BNSS Section 173(1))",
+        "Step 3: Give your complaint orally (police must write it down) or in writing. You can also file electronically via the state police portal",
+        "Step 4: The complaint must include: what happened, when, where, who was involved (if known), and any evidence you have",
+        "Step 5: Police are LEGALLY BOUND to register the FIR for any cognizable offence — they cannot refuse (Lalita Kumari v Govt of UP, 2014 SC)",
+        "Step 6: Once registered, DEMAND a free copy of the FIR immediately — this is your right under BNSS Section 173(2)",
+        "Step 7: Note the FIR number — you'll need it for all follow-ups, insurance claims, and court proceedings",
+        "Step 8: For online FIR — visit citizen.mahapolice.gov.in (Maharashtra) for e-complaints. Note: online FIR is typically for specific offences like theft and lost property"
+      ],
+      "if_police_refuse_to_register_fir": [
+        "Remedy 1: Send a written complaint by registered post to the Superintendent of Police (SP) of the district (BNSS Section 173(4)). The SP can order the FIR to be registered",
+        "Remedy 2: File an application before the Judicial Magistrate under BNSS Section 175(3) (formerly CrPC 156(3)). The Magistrate can direct the police to register the FIR",
+        "Remedy 3: File a private complaint directly before the Magistrate under BNSS Section 223",
+        "Remedy 4: Complain on Aaple Sarkar portal (grievances.maharashtra.gov.in) or PGPortal",
+        "Remedy 5: As a last resort, file a Writ of Mandamus under Article 226 in the High Court"
+      ],
+      "important_notes": [
+        "Police MUST register FIR for cognizable offences — refusal is itself a punishable offence (Lalita Kumari, SC 2014)",
+        "Zero FIR: You can file at ANY police station regardless of where the crime happened — jurisdiction is no excuse",
+        "e-FIR: Under BNSS 2023, electronic filing of FIR has formal legal backing",
+        "You do NOT need to pay any fee to file an FIR",
+        "Free copy of FIR must be given to you immediately — do not leave without it",
+        "Filing a false FIR is an offence under BNS Section 220 — be truthful in your complaint",
+        "For cyber crimes — also file at cybercrime.gov.in (National Cyber Crime Portal)"
+      ],
+      "maharashtra_specific": {
+        "online_complaint": "citizen.mahapolice.gov.in",
+        "emergency": "112 (MERS — Maharashtra Emergency Response System)",
+        "women_helpline": "181",
+        "cyber_crime": "cybercrime.gov.in",
+        "dial_112": "Police, Fire, Ambulance — single emergency number"
+      },
+      "legal_basis": "BNSS Sections 173, 175; Lalita Kumari v Govt of UP (2014, SC); BNS Section 220 (false FIR)",
+      "source": "BNSS 2023, Supreme Court judgment, Maharashtra Police citizen portal"
+    },
+
+    {
+      "id": "CRIM_GRV_003",
+      "title": "How to Get Bail (Bailable and Non-Bailable Offences)",
+      "category": "bail",
+      "when_to_use": "When you or someone you know has been arrested and needs to get out on bail — understanding the types of bail and the procedure for each",
+      "bail_types": [
+        {
+          "type": "Bail in Bailable Offences",
+          "section": "BNSS Section 478 (formerly CrPC 436)",
+          "key_point": "Bail is your ABSOLUTE RIGHT — police station itself can grant it. No court permission needed",
+          "steps": [
+            "Inform the police that the offence is bailable and demand bail as a matter of right",
+            "Provide a surety (bail bond) or personal bond",
+            "If police refuse bail in a bailable offence, immediately approach the Magistrate"
+          ]
+        },
+        {
+          "type": "Regular Bail in Non-Bailable Offences",
+          "section": "BNSS Section 480 (formerly CrPC 437)",
+          "key_point": "Bail is at the discretion of the court — you need to convince the court",
+          "steps": [
+            "File a bail application before the Magistrate Court or Sessions Court through your lawyer",
+            "Arguments for bail: no flight risk, willing to cooperate, roots in community, no prior criminal record, health conditions",
+            "If rejected by Magistrate, file before Sessions Court. If rejected there, file in High Court"
+          ]
+        },
+        {
+          "type": "Anticipatory Bail",
+          "section": "BNSS Section 482 (formerly CrPC 438)",
+          "key_point": "Apply BEFORE arrest when you apprehend being arrested — prevents arrest",
+          "steps": [
+            "File before Sessions Court or High Court through your lawyer",
+            "Must show: apprehension of arrest is genuine, you will cooperate, allegations may be false/exaggerated",
+            "If granted, carry certified copy at all times",
+            "Comply with all conditions strictly"
+          ]
+        },
+        {
+          "type": "Default Bail (Statutory Bail)",
+          "section": "BNSS Section 479 (formerly CrPC 167)",
+          "key_point": "If police fail to file chargesheet within 60 days (offence up to 7 years) or 90 days (offence above 7 years), you get bail as a RIGHT",
+          "steps": [
+            "Track the date of arrest and count 60/90 days",
+            "If chargesheet not filed within the deadline, file application for default bail",
+            "This is an INDEFEASIBLE right — the court must grant it"
+          ]
+        }
+      ],
+      "important_notes": [
+        "For offences punishable with less than 7 years imprisonment, arrest itself should be exceptional — not the rule (Arnesh Kumar guidelines)",
+        "First-time offenders get bail after serving ONE-THIRD of the maximum sentence (BNSS provision)",
+        "Liberty is the rule, detention is the exception — SC has repeated this in multiple judgments",
+        "Police officers who arrest in violation of guidelines face departmental action and contempt",
+        "Always comply with bail conditions — violation leads to cancellation and re-arrest"
+      ],
+      "legal_basis": "BNSS Sections 478-482; Constitution Article 21; Arnesh Kumar v State of Bihar (2014)",
+      "source": "BNSS 2023, Supreme Court guidelines"
+    },
+
+    {
+      "id": "CRIM_GRV_004",
+      "title": "Complain Against Police Misconduct or Abuse",
+      "category": "police_complaint",
+      "when_to_use": "When police officers have engaged in misconduct — illegal detention, custodial violence, torture, extortion, bribery, false FIR, harassment, or abuse of authority",
+      "complaint_channels": [
+        {
+          "channel": "Senior Police Officer",
+          "when": "First step for any police complaint",
+          "steps": [
+            "Write a formal complaint to the SP (Superintendent of Police) of the district",
+            "If in a Commissionerate area (Mumbai, Pune, Nagpur) — write to the DCP/ACP",
+            "Include: officer details, date/time/place, what happened, evidence, witnesses"
+          ]
+        },
+        {
+          "channel": "Police Complaints Authority (PCA)",
+          "when": "For serious misconduct — custodial death, grievous hurt, sexual assault, extortion, serious abuse of authority",
+          "steps": [
+            "Identify correct PCA: State PCA for senior officers (above Senior PI rank); Divisional PCA for officers up to Senior PI",
+            "File written complaint with full details and evidence",
+            "PCA has powers of a civil court — can conduct inquiry, summon witnesses, examine evidence"
+          ],
+          "maharashtra_pca": {
+            "state_pca": "Cooperage Telephone Exchange, 4th Floor, Nariman Point, Mumbai 400021 | Phone: 022-22820045/46/67",
+            "pune_divisional": "020-24380074"
+          }
+        },
+        {
+          "channel": "Anti-Corruption Bureau (ACB)",
+          "when": "When police demanded or accepted a bribe",
+          "contact": "Toll-free 1064 | WhatsApp +91-9930997700 | acbwebmail@mahapolice.gov.in"
+        },
+        {
+          "channel": "Maharashtra Human Rights Commission",
+          "when": "For human rights violations — custodial torture, illegal detention, discrimination"
+        },
+        {
+          "channel": "Judicial Magistrate",
+          "when": "When police refuse to act on your complaint or are themselves the perpetrators",
+          "steps": ["File a private complaint under BNSS Section 223 before the Judicial Magistrate"]
+        },
+        {
+          "channel": "High Court",
+          "when": "For serious fundamental rights violations",
+          "steps": ["File a Writ Petition under Article 226 of the Constitution for violation of Articles 14, 21"]
+        }
+      ],
+      "important_notes": [
+        "Maharashtra has a three-tier grievance mechanism: Local Station → District SP → IG of Range → DGP",
+        "Online complaint: citizen.mahapolice.gov.in (CCTNS platform)",
+        "Emergency: Dial 112 (MERS)",
+        "All complaints against police should be in writing with evidence — verbal complaints are easily ignored",
+        "If police threaten you for complaining, this is criminal intimidation (BNS Section 351) — report it to a higher authority immediately",
+        "D.K. Basu guidelines are binding on all police officers — any violation can lead to departmental and criminal action"
+      ],
+      "legal_basis": "Maharashtra Police (Amendment) Act 2014 — Section 22P (PCA); Prevention of Corruption Act 1988; Constitution Articles 14, 21, 226",
+      "source": "CHRI PCA User Guide, Maharashtra Police, ACB Maharashtra"
+    },
+
+    {
+      "id": "CRIM_GRV_005",
+      "title": "What to Do If You Are Falsely Accused in a Criminal Case",
+      "category": "false_accusation_defence",
+      "when_to_use": "When someone has filed a false FIR or criminal complaint against you — whether for personal vendetta, business rivalry, property dispute, or extortion",
+      "steps": [
+        "Step 1: DO NOT ignore the FIR or summons — non-appearance leads to non-bailable warrants",
+        "Step 2: Consult a criminal lawyer immediately — before going to the police station",
+        "Step 3: Apply for anticipatory bail if you apprehend arrest (BNSS Section 482)",
+        "Step 4: Start collecting evidence of your innocence — alibi proof (travel records, office attendance, CCTV), communication records, financial records, witnesses",
+        "Step 5: If the FIR is demonstrably false — file for quashing under BNSS Section 528 (formerly CrPC 482) in the High Court",
+        "Step 6: Grounds for quashing: allegations are vague/omnibus, no prima facie case, FIR filed with malicious intent/personal vendetta, allegations don't constitute the offence mentioned",
+        "Step 7: File a counter-complaint for filing false information (BNS Section 248) and criminal defamation (BNS Section 356)",
+        "Step 8: If the false FIR caused your arrest — seek compensation under Article 21 for violation of personal liberty",
+        "Step 9: If the false case is related to a civil dispute (property, money, business) — argue before the court that the criminal process is being misused for civil purposes"
+      ],
+      "important_notes": [
+        "Filing a false FIR is punishable under BNS Section 220 (false information) and BNS Section 248 (false information to public servant)",
+        "High Court can quash FIRs under BNSS Section 528 if they amount to abuse of process — cite Bhajan Lal guidelines",
+        "SC has held that criminal law should not be used as a tool for personal vendetta or settling civil disputes",
+        "Preserve ALL evidence — even social media posts, emails, and digital records that show the complainant's true motive",
+        "The timing of the FIR is crucial — if filed after a property dispute or business fallout, it suggests malicious intent"
+      ],
+      "legal_basis": "BNSS Sections 482, 528; BNS Sections 220, 248, 356; State of Haryana v Bhajan Lal (1992, SC)",
+      "source": "BNSS 2023, BNS 2023, Supreme Court guidelines"
+    },
+
+    {
+      "id": "CRIM_GRV_006",
+      "title": "Rights of Crime Victims — Compensation and Support",
+      "category": "victim_rights",
+      "when_to_use": "When you are a victim of a crime and want to know your rights to compensation, support, and justice",
+      "victim_rights": [
+        "Right to register FIR — police cannot refuse (Lalita Kumari, SC 2014)",
+        "Right to free copy of FIR immediately",
+        "Right to be informed about investigation progress",
+        "Right to legal representation — free legal aid via DLSA if unable to afford",
+        "Right to victim compensation — Maharashtra Victim Compensation Scheme under BNSS Section 396",
+        "Right to protection from the accused — seek protection order from the court",
+        "Right to medical treatment — immediate treatment at any hospital, especially for sexual assault, acid attack, or serious injury victims",
+        "Right to confidentiality — especially in sexual offence cases, identity of victim is protected"
+      ],
+      "compensation_avenues": [
+        "Maharashtra Victim Compensation Scheme — apply through DLSA. Covers: murder, sexual assault, acid attack, human trafficking, child abuse",
+        "MACT (Motor Accident Claims Tribunal) — for road accident victims (covered in traffic sector)",
+        "Consumer Forum — if crime involves deficiency in service",
+        "Civil suit for damages — against the accused for compensation"
+      ],
+      "helpline": {
+        "emergency": "112 (MERS — Police, Fire, Ambulance)",
+        "women_helpline": "181",
+        "child_helpline": "1098 (Childline)",
+        "cyber_crime": "1930 (National Cyber Crime Helpline)",
+        "senior_citizen": "14567 (Elder Helpline)",
+        "legal_aid": "1516 (Tele-Law free legal advice)",
+        "nalsa": "https://nalsa.gov.in/"
+      },
+      "legal_basis": "BNSS Sections 396-398 (victim compensation); Constitution Article 21; Maharashtra Victim Compensation Scheme",
+      "source": "BNSS 2023, Maharashtra Government, NALSA"
+    },
+
+    {
+      "id": "CRIM_GRV_007",
+      "title": "How to Get an FIR Quashed (Cancel False FIR)",
+      "category": "fir_quashing",
+      "when_to_use": "When a false or baseless FIR has been registered against you and you want it cancelled through the court",
+      "steps": [
+        "Step 1: Consult a criminal lawyer — quashing requires a petition in the High Court",
+        "Step 2: File a petition under BNSS Section 528 (formerly CrPC Section 482) in the High Court of Bombay (for Maharashtra cases)",
+        "Step 3: Grounds for quashing (as per Bhajan Lal guidelines): the allegations do not make out a cognizable offence, the allegations are absurd and improbable, there is legal bar to prosecution, the FIR is malicious and filed to settle personal scores, or criminal proceedings amount to abuse of court process",
+        "Step 4: Attach all supporting evidence — proof of innocence, proof of malicious intent of complainant, timeline showing the FIR was retaliatory",
+        "Step 5: The High Court will examine whether a prima facie case exists — if not, it will quash the FIR",
+        "Step 6: If the FIR is related to a compoundable offence and both parties agree — it can also be quashed through a compromise settlement",
+        "Step 7: After quashing, obtain certified copy and file counter-case for filing false information (BNS Section 248)"
+      ],
+      "important_notes": [
+        "Only the High Court can quash an FIR — not the Sessions Court or Magistrate",
+        "The High Court uses its inherent jurisdiction (BNSS Section 528) to prevent abuse of process",
+        "For matrimonial cases (498A), SC has been particularly proactive in quashing false FIRs",
+        "For compoundable offences (list in BNSS Section 359), the case can be settled between parties with court permission",
+        "Quashing of FIR wipes the slate clean — no criminal record remains",
+        "The SC has held that civil disputes dragged into criminal courts deserve quashing"
+      ],
+      "legal_basis": "BNSS Section 528; State of Haryana v Bhajan Lal (1992, SC); BNSS Section 359 (compounding of offences)",
+      "source": "BNSS 2023, Supreme Court guidelines"
+    },
+
+    {
+      "id": "CRIM_GRV_008",
+      "title": "File RTI for Criminal Justice Information",
+      "category": "information_right",
+      "when_to_use": "When you need official information about your case, police procedures, FIR status, or investigation progress",
+      "sample_questions": [
+        "Please provide a copy of FIR No. [NUMBER] registered at [POLICE STATION] on [DATE]",
+        "Please provide the status of investigation in FIR No. [NUMBER] — has chargesheet been filed?",
+        "Please provide the duty roster of officers at [POLICE STATION] on [DATE] (to verify officer identity)",
+        "Please provide the total number of complaints received against [POLICE STATION] in the last 12 months under the Police Complaints Authority",
+        "Please provide the criteria and SOP followed for arrests under BNS Section 85 (498A) at [POLICE STATION]",
+        "Please provide the CCTV footage retention policy at [POLICE STATION]"
+      ],
+      "important_notes": [
+        "RTI fee: Rs. 10 in Maharashtra",
+        "File at rtionline.maharashtra.gov.in or by post to the PIO of the relevant police station/department",
+        "PIO must respond within 30 days",
+        "Some information may be exempted under Section 8 of RTI Act (ongoing investigation, national security) — but blanket refusal is not allowed",
+        "If RTI response reveals procedural violations by police, it strengthens your case in court"
+      ],
+      "legal_basis": "Right to Information Act 2005 — Sections 6, 7, 8, 19",
+      "source": "RTI Act 2005, Maharashtra RTI Portal"
+    },
+
+    {
+      "id": "CRIM_GRV_009",
+      "title": "Emergency Helplines and Key Contacts — Maharashtra",
+      "category": "emergency_contacts",
+      "when_to_use": "Quick reference for all emergency and legal helpline numbers in Maharashtra",
+      "contacts": [
+        {"service": "Emergency (Police/Fire/Ambulance)", "number": "112", "note": "Maharashtra Emergency Response System (MERS) — available 24/7"},
+        {"service": "Women Helpline", "number": "181", "note": "For women in distress — connects to One Stop Centre"},
+        {"service": "Child Helpline (Childline)", "number": "1098", "note": "For children in distress — 24/7"},
+        {"service": "Cyber Crime Helpline", "number": "1930", "note": "National Cyber Crime Helpline + cybercrime.gov.in"},
+        {"service": "Senior Citizen Helpline", "number": "14567", "note": "For senior citizens facing abuse or neglect"},
+        {"service": "Tele-Law (Free Legal Advice)", "number": "1516", "note": "Free legal advice over phone — NALSA initiative"},
+        {"service": "Anti-Corruption Bureau (ACB)", "number": "1064", "note": "Report bribery by any government servant"},
+        {"service": "ACB Toll-Free (Alternate)", "number": "1800 22 2021", "note": "ACB Maharashtra alternate number"},
+        {"service": "ACB WhatsApp", "number": "+91-9930997700", "note": "Send evidence of corruption via WhatsApp"},
+        {"service": "Maharashtra Police Online Complaint", "number": "citizen.mahapolice.gov.in", "note": "CCTNS e-complaint portal"},
+        {"service": "Aaple Sarkar (State Grievance Portal)", "number": "1800 120 8040", "note": "Toll-free for all government grievances"},
+        {"service": "E-Challan Helpdesk Maharashtra", "number": "844 844 8960", "note": "Traffic challan queries"},
+        {"service": "Mumbai Traffic Police", "number": "845 499 9999", "note": "Mumbai-specific traffic helpdesk"},
+        {"service": "National Commission for Women", "number": "7827-170-170", "note": "WhatsApp complaints for women"},
+        {"service": "Legal Aid (DLSA)", "number": "https://nalsa.gov.in/", "note": "Free lawyer if income below Rs. 3 lakh/year"}
+      ],
+      "legal_basis": "Various statutes and government notifications",
+      "source": "Maharashtra Government, NALSA, Ministry of Home Affairs"
+    }
+  ]
+}

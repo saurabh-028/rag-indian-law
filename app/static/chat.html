@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ShastraShaw — Legal Chat</title>
+  <meta name="description" content="Chat with ShastraShaw AI — ask legal questions in Hindi or English.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Chat stylesheet -->
+  <link rel="stylesheet" href="/static/css/chat.css">
+</head>
+<body>
+<div class="chat-layout">
+
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="sidebar-brand" title="Back to Home">
+        <span class="sidebar-brand-icon">⚖</span>
+        <span class="sidebar-brand-name">ShastraShaw</span>
+      </a>
+      <button class="sidebar-new-chat" id="newChatBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        New Chat
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Filter by Domain</div>
+      <div class="sector-filters">
+        <button class="sector-btn active" data-sector="">
+          <span class="sector-dot dot-all"></span>
+          All Domains
+        </button>
+        <button class="sector-btn" data-sector="traffic">
+          <span class="sector-dot dot-traffic"></span>
+          🚦 Traffic Law
+        </button>
+        <button class="sector-btn" data-sector="criminal_law">
+          <span class="sector-dot dot-criminal"></span>
+          ⚖️ Criminal Law
+        </button>
+        <button class="sector-btn" data-sector="rental_law">
+          <span class="sector-dot dot-rental"></span>
+          🏠 Rental Law
+        </button>
+        <button class="sector-btn" data-sector="matrimonial">
+          <span class="sector-dot dot-matrimonial"></span>
+          💍 Matrimonial
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-info">
+      <p class="sidebar-info-text">Ask in Hindi or English. ShastraShaw auto-detects your language and answers from official Indian statutes.</p>
+    </div>
+
+    <div class="sidebar-footer">
+      <a href="/" class="sidebar-back">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="19" y1="12" x2="5" y2="12"/>
+          <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="chat-main">
+
+    <!-- Mobile top bar -->
+    <div class="chat-topbar">
+      <button class="topbar-toggle" id="sidebarToggle" title="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <span class="topbar-brand">ShastraShaw</span>
+      <div class="topbar-sector" id="topbarSector" style="display:none">
+        <span class="topbar-sector-label" id="topbarSectorLabel"></span>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="messages" id="messages">
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">⚖️</div>
+        <h2>Ask ShastraShaw</h2>
+        <p>
+          Get AI-powered legal guidance based on Indian law.<br>
+          <span class="devanagari-hint">हिंदी या अंग्रेजी में पूछें</span>
+        </p>
+        <div class="suggestions">
+          <button class="suggestion-chip">How do I challenge a traffic challan?</button>
+          <button class="suggestion-chip">What are my rights when arrested?</button>
+          <button class="suggestion-chip">How to file an FIR online?</button>
+          <button class="suggestion-chip">चालान को कैसे चुनौती दें?</button>
+          <button class="suggestion-chip">Tenant rights in Maharashtra</button>
+          <button class="suggestion-chip">Grounds for divorce (Hindu Marriage Act)</button>
+        </div>
+      </div>
+
+    </div><!-- .messages -->
+
+    <!-- Input area -->
+    <div class="input-area">
+      <!-- Language selector -->
+      <div class="lang-selector">
+        <span class="lang-selector-label">Answer in:</span>
+        <button class="lang-btn active" data-lang="auto" title="Auto-detect language from your question">Auto</button>
+        <button class="lang-btn" data-lang="en" title="Always answer in English">EN</button>
+        <button class="lang-btn" data-lang="hi" title="हमेशा हिंदी में जवाब दें">HI · हिंदी</button>
+        <button class="stop-speech-btn" id="stopSpeechBtn" style="display:none" title="Stop speaking">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+          </svg>
+          Stop
+        </button>
+      </div>
+      <div class="input-row" id="inputRow">
+        <textarea
+          id="questionInput"
+          placeholder="Ask any legal question… / कोई भी कानूनी सवाल पूछें…"
+          rows="1"
+          autocomplete="off"
+          spellcheck="false"
+        ></textarea>
+        <button class="icon-btn" id="micBtn" title="Voice input">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="2" width="6" height="11" rx="3"/>
+            <path d="M5 10a7 7 0 0 0 14 0"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+            <line x1="8" y1="22" x2="16" y2="22"/>
+          </svg>
+        </button>
+        <button class="icon-btn" id="sendBtn" title="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <p class="input-hint">
+        <kbd>Enter</kbd> to send &nbsp;·&nbsp; <kbd>Shift+Enter</kbd> for new line &nbsp;·&nbsp;
+        ShastraShaw provides legal information, not legal advice
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- marked.js — Markdown parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+<!-- DOMPurify — XSS sanitization -->
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+<!-- Chat JS -->
+<script src="/static/js/chat.js"></script>
+</body>
+</html>

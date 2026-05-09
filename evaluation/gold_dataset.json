@@ -1,0 +1,354 @@
+[
+  {
+    "id": "CL_001",
+    "sector": "criminal_law",
+    "question": "What is the punishment for murder under BNS 2023?",
+    "ground_truth": "Under Section 101 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine. This replaces the old IPC Section 302.",
+    "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": "101"
+  },
+  {
+    "id": "CL_002",
+    "sector": "criminal_law",
+    "question": "What are the rights of an accused person during arrest?",
+    "ground_truth": "Under the BNSS 2023 and the D.K. Basu guidelines, an arrested person has the right to be informed of the grounds of arrest, the right to legal representation, the right to inform a family member, and must be produced before a Magistrate within 24 hours. The police must maintain an arrest memo signed by a witness.",
+    "expected_sources": ["Bharatiya_Nagarik_Suraksha_Sanhita_2023"],
+    "expected_section": "47"
+  },
+  {
+    "id": "CL_003",
+    "sector": "criminal_law",
+    "question": "What is the punishment for theft under BNS 2023?",
+    "ground_truth": "Under Section 303 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both. This replaces the old IPC Section 379.",
+    "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": "303"
+  },
+  {
+    "id": "CL_004",
+    "sector": "criminal_law",
+    "question": "What is the procedure for filing an FIR?",
+    "ground_truth": "An FIR (First Information Report) can be filed at any police station for a cognizable offence. Under the Lalita Kumari Supreme Court ruling, police cannot refuse to register an FIR for cognizable offences. A Zero FIR can be filed at any station regardless of jurisdiction and must be transferred to the appropriate station. A copy of the FIR must be given to the complainant free of cost under BNSS 2023.",
+    "expected_sources": ["Bharatiya_Nagarik_Suraksha_Sanhita_2023"],
+    "expected_section": "173"
+  },
+  {
+    "id": "CL_005",
+    "sector": "criminal_law",
+    "question": "What is the difference between bailable and non-bailable offences?",
+    "ground_truth": "In bailable offences, the accused has an absolute right to bail and the police or court must grant it. In non-bailable offences, bail is at the discretion of the court. The distinction is defined under BNSS 2023. For non-bailable offences, the court considers factors like gravity of the crime, criminal antecedents, and likelihood of fleeing. Anticipatory bail under Section 482 BNSS can be sought before arrest.",
+    "expected_sources": ["Bharatiya_Nagarik_Suraksha_Sanhita_2023"],
+    "expected_section": "478"
+  },
+  {
+    "id": "CL_006",
+    "sector": "criminal_law",
+    "question": "What is the punishment for rape under BNS 2023?",
+    "ground_truth": "Under Section 63 of the Bharatiya Nyaya Sanhita (BNS) 2023, the punishment for rape is rigorous imprisonment of not less than ten years, which may extend to imprisonment for life, along with fine. In cases of gang rape or rape of a woman under 18 years, the punishment is imprisonment for life or death.",
+    "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": "63"
+  },
+  {
+    "id": "CL_007",
+    "sector": "criminal_law",
+    "question": "What constitutes kidnapping under Indian law?",
+    "ground_truth": "Under Sections 137-140 of the Bharatiya Nyaya Sanhita (BNS) 2023, kidnapping is of two types: kidnapping from India (taking any person beyond Indian borders without consent) and kidnapping from lawful guardianship (taking a minor under 16 years for males or 18 years for females out of the keeping of their lawful guardian without consent). The punishment may extend to seven years and fine.",
+    "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": "137"
+  },
+  {
+    "id": "CL_008",
+    "sector": "criminal_law",
+    "question": "What are the legal aid rights of an accused person who cannot afford a lawyer?",
+    "ground_truth": "Under Article 39A of the Constitution of India and the Legal Services Authorities Act 1987, every accused who cannot afford legal representation has the right to free legal aid. NALSA (National Legal Services Authority) provides free legal services. The police and court are obligated to inform the accused of this right at the time of arrest. Legal aid is available at District Legal Services Authorities.",
+    "expected_sources": ["Bharatiya_Nagarik_Suraksha_Sanhita_2023", "Constitution of India, BNSS 2023"],
+    "expected_section": ""
+  },
+  {
+    "id": "CL_009",
+    "sector": "criminal_law",
+    "question": "What is the punishment for causing grievous hurt under BNS 2023?",
+    "ground_truth": "Under Section 116 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever voluntarily causes grievous hurt shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine. If grievous hurt is caused by dangerous weapons or means, the punishment may extend to ten years.",
+    "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": "116"
+  },
+  {
+    "id": "CL_010",
+    "sector": "criminal_law",
+    "question": "How can a victim of police misconduct or custodial violence complain?",
+    "ground_truth": "A victim of police misconduct can file a complaint with: (1) the Superintendent of Police, (2) the State Police Complaints Authority, (3) the Anti-Corruption Bureau (ACB helpline: 1064) for bribery, (4) the State Human Rights Commission, or (5) the High Court via writ petition. FIR can also be filed against police officers under BNS provisions on wrongful confinement and assault. The D.K. Basu guidelines provide specific remedies for custodial violence.",
+    "expected_sources": ["Bharatiya_Nagarik_Suraksha_Sanhita_2023", "Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": ""
+  },
+  {
+    "id": "CL_011",
+    "sector": "criminal_law",
+    "question": "What is the punishment for cheating under BNS 2023?",
+    "ground_truth": "Under Section 318 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever cheats shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both. If the person cheated is induced to deliver property or to make, alter, or destroy a valuable security, the punishment may extend to seven years.",
+    "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
+    "expected_section": "318"
+  },
+  {
+    "id": "CL_012",
+    "sector": "criminal_law",
+    "question": "What is anticipatory bail and how can one apply for it?",
+    "ground_truth": "Anticipatory bail under Section 482 of the Bharatiya Nagarik Suraksha Sanhita (BNSS) 2023 is bail granted before an actual arrest. It is applied for in the Sessions Court or High Court when a person apprehends arrest. The court considers the nature of accusation, antecedents of the applicant, and possibility of fleeing. The Supreme Court in Sushila Aggarwal case held that anticipatory bail can be of unlimited duration. The court may impose conditions such as surrendering passport or not leaving the country.",
+    "expected_sources": ["Bharatiya_Nagarik_Suraksha_Sanhita_2023"],
+    "expected_section": "482"
+  },
+  {
+    "id": "TR_001",
+    "sector": "traffic",
+    "question": "What is the fine for not wearing a helmet in Maharashtra?",
+    "ground_truth": "Under Section 194D of the Motor Vehicles Act 1988, the penalty for not wearing a helmet is Rs. 1,000 for the first offence and disqualification from holding a driving licence for three months for subsequent offences. In Maharashtra, this is strictly enforced and applies to both the rider and pillion passenger.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988"],
+    "expected_section": "194D"
+  },
+  {
+    "id": "TR_002",
+    "sector": "traffic",
+    "question": "What is the penalty for drunk driving under the Motor Vehicles Act?",
+    "ground_truth": "Under Section 185 of the Motor Vehicles Act 1988, driving under the influence of alcohol or drugs carries a penalty of imprisonment up to six months and/or fine up to Rs. 10,000 for the first offence. For a second offence within three years, imprisonment may extend to two years and/or fine up to Rs. 15,000.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988"],
+    "expected_section": "185"
+  },
+  {
+    "id": "TR_003",
+    "sector": "traffic",
+    "question": "What is the fine for jumping a red signal?",
+    "ground_truth": "Under the Motor Vehicles Act 1988 and Maharashtra traffic rules, jumping a red signal attracts a fine of Rs. 1,000 for the first offence and Rs. 2,000 for subsequent offences. In Maharashtra, e-challans are issued based on CCTV surveillance and must be paid online at the Parivahan portal or at the nearest RTO/traffic police office.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988", "traffic violation fines.pdf"],
+    "expected_section": "194"
+  },
+  {
+    "id": "TR_004",
+    "sector": "traffic",
+    "question": "What is the penalty for driving without a valid licence?",
+    "ground_truth": "Under Section 181 of the Motor Vehicles Act 1988, driving without a valid driving licence attracts imprisonment up to three months and/or fine up to Rs. 5,000 for the first offence. Allowing an unlicensed person to drive your vehicle carries similar penalties under Section 180. The licence must be carried while driving and produced on demand by a police officer.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988"],
+    "expected_section": "181"
+  },
+  {
+    "id": "TR_005",
+    "sector": "traffic",
+    "question": "How do I challenge a wrongly issued traffic challan in Maharashtra?",
+    "ground_truth": "A wrongly issued challan can be challenged by: (1) filing an objection online at the Maharashtra traffic police portal or Parivahan.gov.in within 60 days, (2) appearing at the designated traffic court on the challan date, (3) filing a complaint with the senior police officer if the challan was issued with mala fide intent, or (4) filing an RTI to get evidence (photo/video) used for the challan. Keep all documents (RC, insurance, licence) as proof.",
+    "expected_sources": ["Maharashtra_Motor_Vehicles_Rules_1989"],
+    "expected_section": ""
+  },
+  {
+    "id": "TR_006",
+    "sector": "traffic",
+    "question": "What compensation is available for road accident victims in India?",
+    "ground_truth": "Road accident victims can claim compensation through the Motor Accident Claims Tribunal (MACT) under Section 166 of the Motor Vehicles Act 1988. Claims must be filed within six months of the accident. The Third Party insurance is mandatory and covers unlimited liability for death and bodily injury. The Solatium Fund under Section 161 provides compensation even where the vehicle is unidentified. The Golden Hour Scheme ensures cashless treatment for accident victims within the first hour.",
+    "expected_sources": ["Motor Vehicles Act 1988, MACT procedures"],
+    "expected_section": "166"
+  },
+  {
+    "id": "TR_007",
+    "sector": "traffic",
+    "question": "What are the rules for using a mobile phone while driving?",
+    "ground_truth": "Under Section 184 of the Motor Vehicles Act 1988, using a mobile phone while driving is a dangerous driving offence. The penalty is a fine of Rs. 1,000 for the first offence. Hands-free devices are permitted. In Maharashtra, mobile phone usage while driving is captured by traffic cameras and e-challans are issued. Repeat offenders can face suspension of driving licence.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988"],
+    "expected_section": "184"
+  },
+  {
+    "id": "TR_008",
+    "sector": "traffic",
+    "question": "What should I do if a traffic police officer demands a bribe?",
+    "ground_truth": "If a traffic police officer demands a bribe: (1) Refuse politely but firmly, (2) Ask for a proper challan receipt, (3) Note the officer's name, badge number, and vehicle number, (4) File a complaint with the Anti-Corruption Bureau (ACB) on helpline 1064 or online at acbmaharashtra.gov.in, (5) Call the Police Complaints Authority. Do not pay bribes as this is a punishable offence under the Prevention of Corruption Act. You may also file an RTI to get details of the challan.",
+    "expected_sources": ["ACB Maharashtra"],
+    "expected_section": ""
+  },
+  {
+    "id": "TR_009",
+    "sector": "traffic",
+    "question": "What is the fine for not carrying vehicle insurance?",
+    "ground_truth": "Under Section 196 of the Motor Vehicles Act 1988, driving without valid third-party insurance is a punishable offence with imprisonment up to three months and/or fine up to Rs. 2,000 for the first offence. Third-party insurance is mandatory under the Motor Vehicles Act. For a second or subsequent offence, imprisonment may extend to three months and/or fine up to Rs. 4,000.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988"],
+    "expected_section": "196"
+  },
+  {
+    "id": "TR_010",
+    "sector": "traffic",
+    "question": "What are the rules for vehicle fitness certificate and its renewal?",
+    "ground_truth": "Under the Motor Vehicles Act 1988 and Maharashtra Motor Vehicles Rules, all vehicles must have a valid fitness certificate. Private vehicles need a fitness test after 15 years and then every 5 years. Commercial vehicles require annual fitness tests. The certificate is obtained from the Regional Transport Office (RTO). Driving without a valid fitness certificate attracts a fine. The certificate can be renewed online at the Parivahan portal.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988", "Maharashtra_Motor_Vehicles_Rules_1989"],
+    "expected_section": "56"
+  },
+  {
+    "id": "TR_011",
+    "sector": "traffic",
+    "question": "What is the speed limit on highways in Maharashtra?",
+    "ground_truth": "Under the Motor Vehicles Act and Maharashtra Motor Vehicles Rules, speed limits vary by vehicle type. On national highways, the general limit for cars and motorcycles is 100 km/h, for buses it is 100 km/h, and for trucks it is 80 km/h. Violations are penalised under Section 183 of the Motor Vehicles Act with fines up to Rs. 1,000 for the first offence and up to Rs. 2,000 for subsequent offences.",
+    "expected_sources": ["Central_Motor_Vehicles_Act_1988", "Maharashtra_Motor_Vehicles_Rules_1989"],
+    "expected_section": "183"
+  },
+  {
+    "id": "TR_012",
+    "sector": "traffic",
+    "question": "How do I file an RTI to get CCTV footage used in a traffic challan?",
+    "ground_truth": "To file an RTI for CCTV footage used in a traffic challan: (1) File an application under the RTI Act 2005 online at rtionline.maharashtra.gov.in or offline at the Traffic Police Commissioner's office, (2) Pay RTI fee of Rs. 10, (3) Specify the challan number, date, location, and request for CCTV footage or photographic evidence, (4) The CPIO must respond within 30 days. If denied, file First Appeal within 30 days and Second Appeal to State Information Commission within 90 days.",
+    "expected_sources": ["RTI Act 2005 + Maharashtra RTI Portal"],
+    "expected_section": ""
+  },
+  {
+    "id": "RL_001",
+    "sector": "rental_law",
+    "question": "What are the rights of a tenant under the Maharashtra Rent Control Act 1999?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999, tenants have the following key rights: (1) Protection against arbitrary eviction — eviction only on valid legal grounds via court order, (2) Right to essential services like water and electricity which the landlord cannot cut off (Section 16), (3) Right to get a rent receipt, (4) Maximum rent increase of 4% per year (Section 11), (5) Right to sub-let with landlord's consent. Self-help eviction by the landlord is a criminal offence under Section 41.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999"],
+    "expected_section": "16"
+  },
+  {
+    "id": "RL_002",
+    "sector": "rental_law",
+    "question": "Can a landlord increase rent by more than 4% per year in Maharashtra?",
+    "ground_truth": "No. Under Section 11 of the Maharashtra Rent Control Act 1999, the maximum permissible annual rent increase is 4% of the standard rent or the current rent. Any rent increase beyond this is illegal and the tenant can challenge it before the Rent Authority. The tenant should file a complaint with the Rent Controller at the local District Court. The landlord cannot unilaterally increase rent beyond this statutory limit.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999"],
+    "expected_section": "11"
+  },
+  {
+    "id": "RL_003",
+    "sector": "rental_law",
+    "question": "What are the valid legal grounds for eviction of a tenant?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999, a landlord can evict a tenant only on the following grounds: (1) Non-payment of rent, (2) Subletting without consent, (3) Causing nuisance or damage to the property, (4) Landlord's bona fide personal need, (5) Reconstruction or repairs requiring vacant possession. A court order from the Rent Authority is mandatory. The process must go through Rent Court — self-help eviction is a criminal offence under Section 41.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999"],
+    "expected_section": "15"
+  },
+  {
+    "id": "RL_004",
+    "sector": "rental_law",
+    "question": "What can I do if my landlord has cut off water supply to force me to vacate?",
+    "ground_truth": "Cutting off essential services like water, electricity, or gas to force a tenant to vacate is illegal under Section 16 of the Maharashtra Rent Control Act 1999. The penalty is imprisonment up to three months or fine up to Rs. 5,000 or both. Steps: (1) File a complaint with the Rent Authority/Rent Controller, (2) File a police complaint for criminal intimidation, (3) File a complaint on Aaple Sarkar portal (grievances.maharashtra.gov.in), (4) Approach the District Consumer Forum if services are disconnected by the provider at landlord's request.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999"],
+    "expected_section": "16"
+  },
+  {
+    "id": "RL_005",
+    "sector": "rental_law",
+    "question": "How can a tenant recover security deposit from a landlord?",
+    "ground_truth": "If a landlord refuses to return the security deposit: (1) Send a legal notice demanding return within 15 days, (2) File a complaint with the Rent Authority under the Maharashtra Rent Control Act 1999, (3) File a Consumer Forum complaint under the Consumer Protection Act 2019 if the deposit amount is within the forum's pecuniary jurisdiction, (4) File a civil suit for recovery of money. Maintain all receipts of deposit payment, rent payment, and the leave & licence agreement as evidence.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999", "Consumer Protection Act 2019, Maharashtra Rent Control Act 1999"],
+    "expected_section": ""
+  },
+  {
+    "id": "RL_006",
+    "sector": "rental_law",
+    "question": "Is an unregistered rental agreement legally valid in Maharashtra?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999 and the Registration Act, leave and licence agreements for more than 11 months must be registered. An unregistered agreement of less than 12 months is valid as evidence of tenancy but may weaken the tenant's position in disputes. Under the amendment to the Registration Act, e-registration is mandatory for agreements exceeding 11 months. An unregistered agreement may still be used as secondary evidence in court but carries less weight.",
+    "expected_sources": ["Maharashtra Rent Control Act 1999, IGR Maharashtra"],
+    "expected_section": ""
+  },
+  {
+    "id": "RL_007",
+    "sector": "rental_law",
+    "question": "What is the appeal process if the Rent Authority rules against me?",
+    "ground_truth": "The appeal hierarchy under the Maharashtra Rent Control Act 1999 is: (1) First appeal to the Appellate Authority (District Court) within 30 days of the Rent Authority's order, (2) Second appeal to the High Court on questions of law only. The High Court does not re-examine facts, only legal errors. Legal representation is strongly recommended at the appellate stage. A stay on eviction can be obtained from the Appellate Authority during pendency of appeal.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999"],
+    "expected_section": "34"
+  },
+  {
+    "id": "RL_008",
+    "sector": "rental_law",
+    "question": "Can a landlord enter the rented premises without permission?",
+    "ground_truth": "A landlord cannot enter the rented premises without the tenant's prior notice and consent. Under general tenancy law and the Maharashtra Rent Control Act 1999, the tenant has the right to peaceful enjoyment of the property. Forcible or unauthorised entry by the landlord can amount to trespass and criminal intimidation under the Bharatiya Nyaya Sanhita 2023. The tenant can file a police complaint or seek an injunction from the civil court preventing entry.",
+    "expected_sources": ["Maharashtra_Rent_Control_Act_1999", "BNS 2023, Maharashtra Rent Control Act 1999"],
+    "expected_section": ""
+  },
+  {
+    "id": "HM_001",
+    "sector": "hindu_marriage_laws",
+    "question": "What are the grounds for divorce under the Hindu Marriage Act 1955?",
+    "ground_truth": "Under Section 13 of the Hindu Marriage Act 1955, the grounds for divorce include: (1) Adultery, (2) Cruelty — physical or mental, (3) Desertion for a continuous period of two years, (4) Conversion to another religion, (5) Unsoundness of mind, (6) Leprosy or venereal disease, (7) Renunciation of the world, (8) Not heard of as alive for seven years. Additionally, the wife has additional grounds including husband's bigamy before the Act, rape, sodomy, or bestiality, and non-resumption of cohabitation after maintenance decree.",
+    "expected_sources": ["Hindu_Marriage_Act_1955"],
+    "expected_section": "13"
+  },
+  {
+    "id": "HM_002",
+    "sector": "hindu_marriage_laws",
+    "question": "What is the waiting period for divorce by mutual consent under Hindu law?",
+    "ground_truth": "Under Section 13B of the Hindu Marriage Act 1955, divorce by mutual consent requires the couple to have been separated for at least one year before filing the petition. After filing, there is a statutory cooling-off period of six months (minimum) and eighteen months (maximum) during which either party can withdraw consent. The Supreme Court in Amardeep Singh v Harveen Kaur held that this six-month period can be waived by the court in appropriate cases to avoid further delay.",
+    "expected_sources": ["Hindu_Marriage_Act_1955"],
+    "expected_section": "13B"
+  },
+  {
+    "id": "HM_003",
+    "sector": "matrimonial",
+    "question": "What is the punishment for dowry harassment under BNS?",
+    "ground_truth": "Under Section 85 of the Bharatiya Nyaya Sanhita (BNS) 2023 (formerly IPC 498A), a husband or his relative who subjects a wife to cruelty — including harassment for dowry — shall be punished with imprisonment up to three years and a fine. The Dowry Prohibition Act 1961 additionally makes demanding, giving, or taking dowry punishable with imprisonment up to five years and fine up to Rs. 15,000. The Supreme Court in Arnesh Kumar v State of Bihar held that automatic arrest under 498A/BNS 85 is illegal.",
+    "expected_sources": ["BNS 2023, Supreme Court judgments"],
+    "expected_section": "85"
+  },
+  {
+    "id": "HM_004",
+    "sector": "hindu_marriage_laws",
+    "question": "What are the conditions for a valid Hindu marriage?",
+    "ground_truth": "Under Section 5 of the Hindu Marriage Act 1955, the conditions for a valid Hindu marriage are: (1) Neither party has a living spouse, (2) Neither party is incapable of giving valid consent due to unsoundness of mind, (3) The bridegroom has completed 21 years of age and the bride 18 years, (4) The parties are not within the degrees of prohibited relationship unless custom permits, (5) The parties are not sapindas of each other unless custom permits. Violation of conditions (1) and (2) render the marriage void.",
+    "expected_sources": ["Hindu_Marriage_Act_1955"],
+    "expected_section": "5"
+  },
+  {
+    "id": "HM_005",
+    "sector": "matrimonial",
+    "question": "How can a wife claim maintenance under Indian law?",
+    "ground_truth": "A wife can claim maintenance under multiple provisions: (1) Section 125 of CrPC (now BNSS) — interim maintenance from any court of competent jurisdiction, (2) Section 24 of the Hindu Marriage Act 1955 — pendente lite maintenance during divorce proceedings, (3) Section 25 HMA — permanent alimony after divorce, (4) Section 20 of the Protection of Women from Domestic Violence Act 2005 — monetary relief. The Supreme Court in Rajnesh v Neha held that maintenance orders from all forums should be taken into account to avoid multiple recoveries.",
+    "expected_sources": ["Hindu Marriage Act 1955, CrPC, Supreme Court and High Court judgments"],
+    "expected_section": "24"
+  },
+  {
+    "id": "HM_006",
+    "sector": "matrimonial",
+    "question": "What is the Protection of Women from Domestic Violence Act and who can file a complaint?",
+    "ground_truth": "The Protection of Women from Domestic Violence Act 2005 (PWDVA) protects women from domestic violence including physical, emotional, sexual, verbal, and economic abuse. Any woman who is or has been in a domestic relationship can file a complaint. This includes wives, live-in partners, mothers, sisters, and daughters. A Domestic Incident Report (DIR) is filed with a Protection Officer. The aggrieved woman can seek Protection Orders, Residence Orders, Monetary Relief, and Custody Orders from a Magistrate.",
+    "expected_sources": ["DV Act 2005, Supreme Court judgments"],
+    "expected_section": ""
+  },
+  {
+    "id": "HM_007",
+    "sector": "matrimonial",
+    "question": "How to defend against a false dowry harassment case under BNS Section 85?",
+    "ground_truth": "To defend against a false BNS Section 85 (formerly IPC 498A) case: (1) Immediately collect evidence — WhatsApp messages, emails, call records, and financial transactions showing no demands were made, (2) File for anticipatory bail in Sessions Court citing the Arnesh Kumar Supreme Court guidelines against automatic arrest, (3) Approach the Magistrate for impounding of passport for complainant if she is abroad, (4) File a counter-complaint if there is evidence of false accusation or dowry demand by the bride's family, (5) Supreme Court in Kahkashan Kausar v State of Bihar held that relatives cannot be roped in without specific allegations.",
+    "expected_sources": ["BNS 2023, Supreme Court judgments"],
+    "expected_section": "85"
+  },
+  {
+    "id": "HM_008",
+    "sector": "hindu_marriage_laws",
+    "question": "What are the child custody laws in India after divorce?",
+    "ground_truth": "Child custody in India is governed by the Hindu Minority and Guardianship Act 1956 and the Guardians and Wards Act 1890. The paramount consideration is the welfare and best interest of the child. For children under 5, the mother is generally preferred as the natural guardian. Custody types include physical custody (primary caregiver), legal custody (decision-making rights), and joint custody. Courts grant visitation rights to the non-custodial parent. The Supreme Court has consistently held that the child's wishes, especially for older children, must be considered.",
+    "expected_sources": ["Hindu Marriage Act 1955, Guardians and Wards Act 1890"],
+    "expected_section": ""
+  },
+  {
+    "id": "MAT_001",
+    "sector": "matrimonial",
+    "question": "How do I file for divorce on grounds of cruelty in India?",
+    "ground_truth": "To file for divorce on grounds of cruelty under Section 13(1)(ia) of the Hindu Marriage Act 1955: (1) Collect evidence of cruelty — messages, medical records, witness statements, police complaints, (2) File a divorce petition in the Family Court in the city where you last resided together, (3) The court issues notice to the other party, (4) Both parties record evidence, (5) Court pronounces a decree of divorce if cruelty is proved. Mental cruelty is also recognised per the Supreme Court. Consult a lawyer to document the cruelty trail properly.",
+    "expected_sources": ["Hindu Marriage Act 1955"],
+    "expected_section": "MAT_GRV_005"
+  },
+  {
+    "id": "MAT_002",
+    "sector": "hindu_marriage_laws",
+    "question": "Can I get a divorce if my spouse is mentally ill?",
+    "ground_truth": "Under Section 13(1)(iii) of the Hindu Marriage Act 1955, unsoundness of mind is a ground for divorce if: (1) The respondent has been incurably of unsound mind, or (2) Has been suffering from mental disorder of such a kind that the petitioner cannot reasonably be expected to live with the respondent. The petitioner must show that the mental illness is of a nature making cohabitation impossible. Medical evidence and psychiatric reports are required to establish this ground before the Family Court.",
+    "expected_sources": ["Hindu_Marriage_Act_1955"],
+    "expected_section": "13"
+  },
+  {
+    "id": "MAT_003",
+    "sector": "matrimonial",
+    "question": "How can I challenge excessive alimony or maintenance being demanded from me?",
+    "ground_truth": "To challenge excessive alimony: (1) File a modification application in Family Court citing change in circumstances (income loss, job change, other party's employment), (2) Cite the Supreme Court ruling in Rajnesh v Neha which mandates disclosure of assets by both parties — demand full financial disclosure from the other side, (3) Present salary slips, income tax returns, and bank statements as evidence of your actual income, (4) Courts typically limit maintenance to 25-30% of net income, (5) File for revision before the High Court if the Family Court order is disproportionate.",
+    "expected_sources": ["Hindu Marriage Act 1955, CrPC, Supreme Court and High Court judgments"],
+    "expected_section": "MAT_GRV_002"
+  },
+  {
+    "id": "MAT_004",
+    "sector": "matrimonial",
+    "question": "How do I defend myself against a false domestic violence case under the DV Act?",
+    "ground_truth": "To defend against a false DV Act case: (1) Immediately collect evidence disproving the allegations — messages, call logs, witnesses, financial records showing no economic abuse, (2) File a detailed written response to the Magistrate, (3) Apply for interim stay of any ex-parte Residence Order, (4) Cite the Supreme Court in Kahkashan Kausar — relatives cannot be implicated without specific acts alleged against each, (5) Cross-examine the complainant rigorously, (6) If the complaint is demonstrably false, file a counter-complaint for filing a false FIR under BNS. Keep all communication documented.",
+    "expected_sources": ["DV Act 2005, Supreme Court judgments"],
+    "expected_section": "MAT_GRV_003"
+  }
+]

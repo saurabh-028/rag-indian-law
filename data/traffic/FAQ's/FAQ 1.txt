@@ -1,0 +1,36 @@
+FAQ
+Where can I check if a challan is issued against my vehicle?
+You can check challan status online on the https://mahatrafficechallan.gov.in/, Maha Traffic App and for Nashik City check on mParavihan App or on the https://echallan.parivahan.gov.in using your vehicle number.
+
+How do I pay my traffic e-Challan online?
+Visit the official Portal https://mahatrafficechallan.gov.in/, Maha Traffic App and for Nashik City check on mParavihan App or on the https://echallan.parivahan.gov.in and pay using net banking, UPI, debit/credit cards.
+
+Can I pay my e-Challan offline?
+Yes, you can pay at the nearest traffic division or police station with a copy of the challan or vehicle details.
+
+What documents are required for challan payment?
+You need the challan number or vehicle number. For offline payments, carry details of the challan or received SMS.
+
+I have received a challan by mistake. What should I do?
+You can file a grievance online on the e-Challan portal and Apps.
+
+How can I know the reason for my challan?
+Details like violation type, location and date/time are mentioned on the challan view page on the portal and Apps.
+
+How do I update my mobile number linked to the vehicle?
+You can update it through the https://mahatrafficechallan.gov.in/ portal or from Maha Traffic App.
+
+How do I check the status of a challan grievance?
+You can track it on the Apps under the “Grievance” section using your reference number.
+
+Can I get a receipt after paying the challan?
+Yes, a digital payment receipt is generated instantly after online payment. You can download or print it from the portal.
+
+I didn’t receive an SMS for challan, what should I do?
+Check manually on the portal. Also, verify if your mobile number is updated on Portal.
+
+Whom should I contact for queries related to e-Challan?
+For any queries or assistance related to e-Challan, you can Call on Maharashtra eChallan Helpdesk Number +91 84484 48960 Or Email at helpdesk[at]mahatrafficechallan[dot]gov[dot]in
+
+Is it necessary to carry a physical copy of RC or DL?
+No. Digital documents stored in DigiLocker or mParivahan are valid as per law.

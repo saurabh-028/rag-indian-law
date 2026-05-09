@@ -1,0 +1,32 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secrets — never bake into the image
+.env
+
+# Dev/IDE
+.claude/
+.git/
+.gitignore
+
+# Notebooks and scratch
+Notebooks/
+New folder/
+
+# Test files
+test_*.py
+
+# Index — downloaded from S3 at runtime (not baked into the image)
+index/unified.index
+index/metadata.json
+index/index_config.json
+
+# Data PDFs — only needed by the pipeline to build the index, not by the app
+data/
+
+# Docs
+*.md
