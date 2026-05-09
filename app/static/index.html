@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShastraShaw - AI Legal Assistant for India</title>
+  <meta name="description"
+    content="ShastraShaw: AI-powered Indian Law Assistant. Get instant, accurate legal guidance in Hindi, Marathi, and English based on official Indian statutes.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">⚖</span>
+        <span class="brand-name">ShastraShaw</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="/chat" class="btn-nav">Ask Now</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <canvas id="heroCanvas"></canvas>
+    </div>
+
+    <!-- Decorative scales SVG -->
+    <div class="hero-scales-bg" aria-hidden="true">
+      <svg viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="148" y="100" width="4" height="190" fill="rgba(201,162,39,0.18)" />
+        <rect x="100" y="288" width="100" height="8" rx="4" fill="rgba(201,162,39,0.18)" />
+        <rect x="30" y="98" width="240" height="5" rx="2.5" fill="rgba(201,162,39,0.2)" />
+        <circle cx="150" cy="98" r="10" fill="rgba(201,162,39,0.3)" />
+        <line x1="50" y1="103" x2="50" y2="185" stroke="rgba(201,162,39,0.18)" stroke-width="2"
+          stroke-dasharray="5 5" />
+        <line x1="65" y1="103" x2="65" y2="185" stroke="rgba(201,162,39,0.18)" stroke-width="2"
+          stroke-dasharray="5 5" />
+        <line x1="235" y1="103" x2="235" y2="185" stroke="rgba(201,162,39,0.18)" stroke-width="2"
+          stroke-dasharray="5 5" />
+        <line x1="250" y1="103" x2="250" y2="185" stroke="rgba(201,162,39,0.18)" stroke-width="2"
+          stroke-dasharray="5 5" />
+        <path d="M18 185 Q57 202 96 185" stroke="rgba(201,162,39,0.28)" stroke-width="3" fill="none"
+          stroke-linecap="round" />
+        <path d="M204 185 Q243 202 282 185" stroke="rgba(201,162,39,0.28)" stroke-width="3" fill="none"
+          stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>⚖</span>
+        Powered by GPT-4o &nbsp;·&nbsp; FAISS Vector Search &nbsp;·&nbsp; MarianMT
+      </div>
+
+      <h1 class="hero-title">
+        <span class="brand-cinzel">ShastraShaw</span>
+        <span class="title-sub">शास्त्र-शॉ</span>
+      </h1>
+
+      <p class="hero-desc">
+        Your AI-powered Indian Law Assistant. Get accurate, actionable legal guidance
+        in Hindi, Marathi, and English grounded in official Indian statutes.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/chat" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          Ask a Legal Question
+        </a>
+        <a href="#about" class="btn-secondary">
+          Explore Project
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Legal Domains</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Legal Documents</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">1000+</span>
+          <span class="stat-label">Law Sections</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-indicator"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">About ShastraShaw</div>
+        <h2>Democratizing Access to Indian Law</h2>
+        <p>Most Indians face complex legal situations without access to affordable legal advice. ShastraShaw bridges
+          this gap using AI providing instant, accurate, and actionable legal guidance directly from official Indian
+          statutes.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-icon">🎯</div>
+          <h3>Grounded in Law</h3>
+          <p>Every answer is retrieved directly from official Indian legal documents - BNS 2023, BNSS 2023, Motor
+            Vehicle Acts, Hindu Marriage Act, Maharashtra Rent Control Act, and more. No hallucinations, only verified
+            law.</p>
+        </div>
+        <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-icon">🇮🇳</div>
+          <h3>Built for India</h3>
+          <p>Supports Hindi, Marathi, and English. Understands the Indian legal context, local procedures, police complaint
+            mechanisms, consumer courts, district tribunals, and online grievance portals.</p>
+        </div>
+        <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-icon">⚡</div>
+          <h3>Actionable Guidance</h3>
+          <p>Not just legal text - step-by-step procedures, helpline numbers, online portal URLs, required documents,
+            and exact section citations so you know exactly what to do next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COVERAGE ===== -->
+  <section class="coverage section" id="coverage">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">Legal Coverage</div>
+        <h2>What ShastraShaw Covers</h2>
+        <p>Four major areas of Indian law, with detailed provisions, procedures, and actionable guidance sourced from
+          actual legislation.</p>
+      </div>
+
+      <div class="coverage-grid">
+
+        <div class="coverage-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="coverage-icon">🚦</span>
+          <div class="coverage-sector">Traffic Law</div>
+          <h3>Motor Vehicle Laws</h3>
+          <p>Central & Maharashtra Motor Vehicle Acts, traffic fine schedules, and procedural guidance for challenging
+            challans and reporting bribery.</p>
+          <ul class="coverage-list">
+            <li>Fine schedules &amp; challan rules</li>
+            <li>How to challenge a traffic challan</li>
+            <li>Bribery complaint via ACB helpline</li>
+            <li>Accident claims &amp; procedures</li>
+          </ul>
+        </div>
+
+        <div class="coverage-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="coverage-icon">⚖️</span>
+          <div class="coverage-sector">Criminal Law</div>
+          <h3>BNS &amp; BNSS 2023</h3>
+          <p>India's new criminal codes - Bharatiya Nyaya Sanhita and Bharatiya Nagarik Suraksha Sanhita. Know your
+            rights during arrest and complaint filing.</p>
+          <ul class="coverage-list">
+            <li>FIR filing procedures &amp; online options</li>
+            <li>Bail applications &amp; your rights</li>
+            <li>Police misconduct complaints</li>
+            <li>D.K. Basu guidelines &amp; protections</li>
+          </ul>
+        </div>
+
+        <div class="coverage-card" data-aos="fade-up" data-aos-delay="300">
+          <span class="coverage-icon">🏠</span>
+          <div class="coverage-sector">Rental Law</div>
+          <h3>Maharashtra Rent Control</h3>
+          <p>Maharashtra Rent Control Act - tenant and landlord rights, eviction procedures, essential services
+            protections, and legal rent increase limits.</p>
+          <ul class="coverage-list">
+            <li>Tenant rights &amp; protections</li>
+            <li>Eviction rules &amp; legal procedures</li>
+            <li>4% annual rent increase limit</li>
+            <li>Essential services (Section 41)</li>
+          </ul>
+        </div>
+
+        <div class="coverage-card" data-aos="fade-up" data-aos-delay="400">
+          <span class="coverage-icon">💍</span>
+          <div class="coverage-sector">Matrimonial</div>
+          <h3>Hindu Marriage &amp; Family</h3>
+          <p>Hindu Marriage Act, BNS 498A/85, Dowry Prohibition Act, and Protection of Women from Domestic Violence Act
+            - know your rights.</p>
+          <ul class="coverage-list">
+            <li>Divorce procedures &amp; grounds</li>
+            <li>Domestic violence protections</li>
+            <li>Dowry harassment (BNS 85)</li>
+            <li>Maintenance &amp; alimony rights</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">Key Features</div>
+        <h2>Why ShastraShaw?</h2>
+        <p>A purpose-built RAG system combining vector search, LLM generation, and structured legal knowledge.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round">
+              <path d="M5 3l14 9-14 9V3z" />
+            </svg>
+          </div>
+          <div>
+            <h4>Bilingual Support</h4>
+            <p>Ask in Hindi, Marathi, or English. Automatic language detection and translation using HuggingFace MarianMT models.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-left" data-aos-delay="150">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round">
+              <rect x="9" y="2" width="6" height="11" rx="3" />
+              <path d="M5 10a7 7 0 0 0 14 0" />
+              <line x1="12" y1="19" x2="12" y2="22" />
+              <line x1="8" y1="22" x2="16" y2="22" />
+            </svg>
+          </div>
+          <div>
+            <h4>Voice Input &amp; Output</h4>
+            <p>Speak your legal question using the microphone. Answers are read aloud in your language when using voice
+              input.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
+          <div>
+            <h4>Semantic Vector Search</h4>
+            <p>FAISS IndexFlatIP searches 1000+ indexed legal sections using BAAI/bge-base-en embeddings for precise
+              retrieval.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-left" data-aos-delay="250">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <div>
+            <h4>GPT-4o Powered</h4>
+            <p>Sector-specific system prompts with domain expertise. Returns structured answers with section citations,
+              helplines, and portal URLs.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <div>
+            <h4>Source Attribution</h4>
+            <p>Every answer includes expandable source citations - exact section numbers from the referenced Act with
+              document name.</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-left" data-aos-delay="350">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round">
+              <path d="M9 11l3 3L22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </div>
+          <div>
+            <h4>Actionable Procedures</h4>
+            <p>Beyond legal text - dedicated knowledge base with helpline numbers, portal URLs, required documents, and
+              step-by-step filing guides.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works section" id="how-it-works">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag">Process</div>
+        <h2>How It Works</h2>
+        <p>From your question to a grounded legal answer in seconds - a four-stage RAG pipeline.</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-num">01</div>
+          <div class="step-icon">💬</div>
+          <div class="step-content">
+            <h3>Ask Your Question</h3>
+            <p>Type or speak in Hindi, Marathi or English. The system auto-detects your language and translates if needed.</p>
+          </div>
+        </div>
+
+        <div class="step-connector" data-aos="fade-up" data-aos-delay="175">
+          <div class="connector-line"></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+
+        <div class="step" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-num">02</div>
+          <div class="step-icon">🔍</div>
+          <div class="step-content">
+            <h3>Semantic Retrieval</h3>
+            <p>FAISS searches 1000+ law sections using cosine similarity to find the most relevant legal text.</p>
+          </div>
+        </div>
+
+        <div class="step-connector" data-aos="fade-up" data-aos-delay="275">
+          <div class="connector-line"></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+
+        <div class="step" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-num">03</div>
+          <div class="step-icon">🤖</div>
+          <div class="step-content">
+            <h3>GPT-4o Generation</h3>
+            <p>Sector-specific prompts guide GPT-4o to synthesize chunks into clear, actionable legal answers.</p>
+          </div>
+        </div>
+
+        <div class="step-connector" data-aos="fade-up" data-aos-delay="375">
+          <div class="connector-line"></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+
+        <div class="step" data-aos="fade-up" data-aos-delay="400">
+          <div class="step-num">04</div>
+          <div class="step-icon">✅</div>
+          <div class="step-content">
+            <h3>Cited Answer</h3>
+            <p>Receive your answer with section references, translated back to your language if needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="tech-section section" data-aos="fade-up">
+    <div class="container">
+      <div class="tech-bar">
+        <span class="tech-label">Built with</span>
+        <div class="tech-pills">
+          <span class="tech-pill">FastAPI</span>
+          <span class="tech-pill">FAISS</span>
+          <span class="tech-pill">GPT-4o</span>
+          <span class="tech-pill">SentenceTransformers</span>
+          <span class="tech-pill">MarianMT</span>
+          <span class="tech-pill">PyMuPDF</span>
+          <span class="tech-pill">Python</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box" data-aos="zoom-in">
+        <div class="cta-glow"></div>
+        <div class="cta-scales">⚖️</div>
+        <h2>Have a Legal Question?</h2>
+        <p>Ask ShastraShaw now - instant, AI-powered, grounded in Indian law.</p>
+        <a href="/chat" class="btn-primary btn-large">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          Start Chatting Now
+        </a>
+        <p class="cta-disclaimer">Supports Hindi, Marathi, &amp; English · Voice input · Sector-aware answers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <span class="brand-icon" style="font-size:20px">⚖</span>
+        <span class="brand-name" style="font-size:18px">ShastraShaw</span>
+      </div>
+      <p class="footer-devanagari">न्याय सबके लिए</p>
+      <p class="footer-disclaimer">
+        ShastraShaw provides legal information based on indexed Indian law documents.
+        This is not legal advice. For serious legal matters, consult a qualified advocate.
+      </p>
+      <p class="footer-copy">Built with FastAPI · FAISS · GPT-4o · SentenceTransformers · MarianMT</p>
+      <p class="footer-copy">All rights reserved to @ShastraShaw</p>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Landing JS -->
+  <script src="/static/js/main.js"></script>
+</body>
+
+</html>

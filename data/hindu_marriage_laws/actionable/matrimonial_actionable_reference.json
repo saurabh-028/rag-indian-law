@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "title": "Maharashtra Matrimonial Disputes — Actionable Reference Data",
+    "description": "Actionable steps for husbands and wives in matrimonial disputes — defending against false allegations, challenging excessive alimony, filing/defending 498A cases, DV Act, maintenance disputes, and divorce procedures",
+    "sector": "matrimonial",
+    "doc_type": "actionable_reference",
+    "last_verified": "2026-04-07",
+    "verification_sources": [
+      "Hindu Marriage Act, 1955 — indiacode.nic.in",
+      "BNS 2023 — Section 85 (formerly IPC 498A)",
+      "Code of Criminal Procedure — Section 125 (maintenance)",
+      "Protection of Women from Domestic Violence Act, 2005",
+      "Dowry Prohibition Act, 1961",
+      "Supreme Court judgments: Arnesh Kumar v State of Bihar (2014), Rajesh Sharma v State of UP (2017), Kahkashan Kausar v State of Bihar (2022), Dara Lakshmi Narayana v State of Telangana (2024)"
+    ]
+  },
+
+  "grievance_mechanisms": [
+
+    {
+      "id": "MAT_GRV_001",
+      "title": "Defend Against False 498A / BNS Section 85 Case (Dowry Harassment)",
+      "category": "false_allegation_defence",
+      "when_to_use": "When your wife or her family has filed or is threatening to file a false case of dowry harassment / cruelty under Section 498A IPC (now BNS Section 85) against you and your family members",
+      "steps": [
+        "Step 1: DO NOT PANIC. The Supreme Court in Arnesh Kumar v State of Bihar (2014) has ruled that automatic arrest in 498A cases is ILLEGAL — police must follow Section 41 CrPC guidelines strictly",
+        "Step 2: Immediately consult a criminal lawyer experienced in matrimonial disputes — do this BEFORE any police contact",
+        "Step 3: Apply for ANTICIPATORY BAIL under Section 438 CrPC (now BNSS Section 482) before the Sessions Court — this protects you from arrest",
+        "Step 4: Start collecting evidence immediately — save ALL messages (WhatsApp, SMS, email), call recordings, financial records, gift receipts, wedding videos, photographs",
+        "Step 5: Collect evidence that disproves the allegations — travel records showing you were elsewhere, medical records contradicting injury claims, witnesses who can testify",
+        "Step 6: If elderly parents or distant relatives are falsely named in the FIR — file for quashing of FIR under Section 482 CrPC (now BNSS Section 528) in the High Court, citing Kahkashan Kausar v State of Bihar (2022)",
+        "Step 7: If the allegations are vague and lack specific incidents — move for quashing citing Bhajan Lal guidelines and Dara Lakshmi Narayana v State of Telangana (2024)",
+        "Step 8: File a counter-complaint for defamation (BNS Section 356) and filing false criminal complaint (BNS Section 248) if you have evidence the case is fabricated",
+        "Step 9: If the 498A was filed AFTER you filed for divorce or RCR — highlight this timing to the court as evidence of retaliation, not genuine complaint",
+        "Step 10: Attend every court hearing without fail — absence can lead to non-bailable warrants"
+      ],
+      "key_supreme_court_protections": [
+        "Arnesh Kumar v State of Bihar (2014): Police CANNOT arrest automatically in 498A — must issue Notice of Appearance first. SC called misuse of 498A 'legal terrorism'",
+        "Rajesh Sharma v State of UP (2017): Family Welfare Committees should examine 498A complaints before FIR registration (though implementation varies by state)",
+        "Kahkashan Kausar v State of Bihar (2022): SC warned against 'omnibus' allegations — merely naming all family members without specific roles is abuse of process",
+        "Dara Lakshmi Narayana v State of Telangana (2024): SC quashed FIR where allegations were vague, lacking specific dates/incidents, and appeared retaliatory",
+        "Preeti Gupta v State of Jharkhand (2010): SC recognized tendency to implicate all relatives including married sisters living in different cities",
+        "Sushil Kumar Sharma v Union of India (2005): SC acknowledged 498A being used as 'weapon rather than shield' and called for measures against frivolous complaints"
+      ],
+      "important_notes": [
+        "498A is now BNS Section 85 under the new criminal code — the law is the same, just renumbered",
+        "498A is cognizable but the SC has mandated that arrest should be an EXCEPTION, not the rule",
+        "Filing false 498A is itself a criminal offence and can be used as grounds for divorce (cruelty)",
+        "Even if an FIR is registered, you can get it quashed if it's demonstrably false",
+        "Keep ALL evidence — delete nothing. Even seemingly irrelevant messages can prove your innocence",
+        "Do NOT contact your wife directly once the case is filed — communicate only through lawyers"
+      ],
+      "legal_basis": "BNS Section 85 (formerly IPC 498A); CrPC Sections 41, 438, 482; BNSS Sections 35, 482, 528",
+      "source": "BNS 2023, Supreme Court judgments"
+    },
+
+    {
+      "id": "MAT_GRV_002",
+      "title": "Challenge Excessive or Unjust Alimony / Maintenance Demand",
+      "category": "maintenance_defence",
+      "when_to_use": "When your wife is demanding excessive maintenance or alimony that is disproportionate to your income, or when she is capable of earning but deliberately staying unemployed to claim higher maintenance",
+      "steps": [
+        "Step 1: Understand the MULTIPLE maintenance provisions she can file under — Section 125 CrPC (interim), Section 24 HMA (pendente lite), Section 25 HMA (permanent alimony), Section 20 DV Act (monetary relief)",
+        "Step 2: Gather evidence of her earning capacity — educational qualifications, previous employment records, professional skills, social media showing lifestyle",
+        "Step 3: If she is working but hiding income — collect evidence like LinkedIn profile, business registrations, bank statements (request through court if needed), IT returns",
+        "Step 4: File an affidavit of your ACTUAL income with supporting documents — salary slips, IT returns, bank statements, EMI/loan obligations, dependent parents' medical expenses",
+        "Step 5: Highlight your liabilities — EMIs, rent, parents' medical expenses, other dependents. Courts consider 'net disposable income', not gross salary",
+        "Step 6: If wife is well-qualified and capable of earning but deliberately idle — cite Madhya Pradesh HC ruling that 'Section 24 HMA is not meant to create an army of idle persons' and that qualified spouses must make efforts to earn",
+        "Step 7: If she has already received permanent alimony under Section 25 HMA, she CANNOT additionally claim under Section 125 CrPC (Rakesh Malhotra v Krishna Malhotra, SC)",
+        "Step 8: Challenge any inflated lifestyle claims with evidence — show your actual standard of living during marriage, not aspirational claims",
+        "Step 9: If maintenance amount is clearly unjust, file a revision petition in the High Court",
+        "Step 10: Always pay court-ordered interim maintenance on time — non-payment can lead to arrest and weakens your case"
+      ],
+      "key_legal_points": [
+        "There is no fixed formula like '25% or 50% of salary' — this is a myth. Courts decide based on facts of each case",
+        "Wife's own earning capacity is a relevant factor — courts have denied maintenance to working wives who can support themselves",
+        "Maintenance is meant to prevent destitution, not to maintain a luxurious lifestyle at the husband's expense",
+        "If wife has left without reasonable cause and refuses to return, her maintenance claim can be weakened (Section 125(4) CrPC)",
+        "If wife is living in adultery, she loses the right to maintenance",
+        "Husband can also claim maintenance under Section 24 HMA if he has insufficient independent income",
+        "Court must consider husband's liabilities and expenses, not just his gross income"
+      ],
+      "landmark_cases_favoring_husband": [
+        "Manokaran v M. Devaki (2003, Madras HC): Working wife capable of maintaining herself not entitled to maintenance under Section 125",
+        "Smt. Manju Kamal Mehra v Kamal Puskar Mehra (2009, Bombay HC): Maintenance not payable to earning wife, only to child",
+        "Kusum Bhatia v Sagar Sethi (2019, SC): SC declined maintenance to working wife under Section 24 HMA",
+        "MP HC ruling: Well-qualified spouse sitting idle cannot claim maintenance — law does not help the indolent",
+        "Rakesh Malhotra v Krishna Malhotra (SC): Wife who received permanent alimony under Section 25 HMA cannot additionally claim under Section 125 CrPC"
+      ],
+      "legal_basis": "CrPC Section 125; Hindu Marriage Act Sections 24 (pendente lite) and 25 (permanent alimony); DV Act Section 20",
+      "source": "Hindu Marriage Act 1955, CrPC, Supreme Court and High Court judgments"
+    },
+
+    {
+      "id": "MAT_GRV_003",
+      "title": "Defend Against False Domestic Violence (DV Act) Case",
+      "category": "false_allegation_defence",
+      "when_to_use": "When your wife has filed or is threatening to file a case under the Protection of Women from Domestic Violence Act 2005, seeking residence order, protection order, and monetary relief",
+      "steps": [
+        "Step 1: Consult a family lawyer immediately — DV Act cases move fast and interim orders can be passed quickly",
+        "Step 2: Understand what she can seek — protection order, residence order (right to stay in shared household), monetary relief, custody of children, compensation",
+        "Step 3: File a detailed written reply to the DV application with all evidence within the time given by the court",
+        "Step 4: If the shared household belongs to YOUR parents — challenge the residence order. SC in S.R. Batra v Taruna Batra (2007) held that wife has no right to reside in husband's parents' house",
+        "Step 5: Collect evidence disproving domestic violence — medical records (no injuries), photographs, CCTV footage, witness testimonies of neighbours/friends",
+        "Step 6: If she has filed DV Act + 498A + Section 125 simultaneously (which is common) — point out to the court the overlapping and vexatious nature of multiple proceedings",
+        "Step 7: If the DV complaint contains vague allegations without specific incidents — argue for dismissal citing lack of prima facie case",
+        "Step 8: File a counter-claim if SHE was the one committing domestic violence against you or your elderly parents — men can file complaints under Section 498A against wife too (for cruelty against husband's parents)"
+      ],
+      "important_notes": [
+        "DV Act is a CIVIL law, not criminal — but breach of protection order is criminal (punishable with 1 year imprisonment or fine up to Rs. 20,000)",
+        "DV Act covers physical, sexual, verbal, emotional AND economic abuse",
+        "Wife filing false DV case has been held as cruelty against husband — can be used as ground for divorce",
+        "Court imposed Rs. 1 lakh cost on wife in Suman Bhasin v Neeraj Bhasin for filing false DV case",
+        "Even if DV case is filed, husband is NOT automatically removed from the shared household",
+        "Monetary relief under DV Act should account for maintenance already granted under Section 125 CrPC"
+      ],
+      "legal_basis": "Protection of Women from Domestic Violence Act, 2005; S.R. Batra v Taruna Batra (2007, SC)",
+      "source": "DV Act 2005, Supreme Court judgments"
+    },
+
+    {
+      "id": "MAT_GRV_004",
+      "title": "Get Anticipatory Bail in Matrimonial Criminal Cases",
+      "category": "bail_protection",
+      "when_to_use": "When you apprehend arrest due to an FIR or complaint under 498A/BNS 85, Dowry Prohibition Act, or any matrimonial criminal case — apply for anticipatory bail BEFORE arrest happens",
+      "steps": [
+        "Step 1: Consult a criminal lawyer IMMEDIATELY — time is critical",
+        "Step 2: File an application for Anticipatory Bail under Section 438 CrPC (now BNSS Section 482) before the Sessions Court",
+        "Step 3: In the application, argue: you are willing to cooperate with investigation, there is no flight risk, the allegations are false/vague/retaliatory",
+        "Step 4: Cite Arnesh Kumar v State of Bihar (2014) — SC mandated that police cannot arrest automatically in 498A cases",
+        "Step 5: If the FIR was filed AFTER you initiated divorce proceedings — highlight the timing as evidence of counter-blast/retaliation",
+        "Step 6: If the Sessions Court rejects anticipatory bail — immediately file in the High Court",
+        "Step 7: Once granted, carry a certified copy of the bail order at all times",
+        "Step 8: Comply with ALL bail conditions — reporting to police station, not leaving jurisdiction, etc. Any violation can lead to cancellation"
+      ],
+      "important_notes": [
+        "Anticipatory bail should be filed BEFORE arrest, not after — once arrested, you need regular bail",
+        "SC has repeatedly held that in matrimonial cases, arrest should be the exception, not the rule",
+        "Police officers who arrest in violation of Arnesh Kumar guidelines face departmental action and contempt proceedings",
+        "Even after FIR, police must first issue Notice of Appearance before considering arrest",
+        "If police are pressuring you to 'come for compromise' or 'just come to the station' — do NOT go without your lawyer and without anticipatory bail"
+      ],
+      "legal_basis": "CrPC Section 438 / BNSS Section 482; Arnesh Kumar v State of Bihar (2014, SC)",
+      "source": "CrPC, BNSS, Supreme Court guidelines"
+    },
+
+    {
+      "id": "MAT_GRV_005",
+      "title": "File for Divorce on Grounds of Cruelty by Wife",
+      "category": "divorce",
+      "when_to_use": "When you want to divorce your wife on the grounds of her cruelty — which includes filing false criminal cases, false allegations, desertion, or any conduct that makes it impossible to live together",
+      "steps": [
+        "Step 1: Consult a family lawyer to assess which ground of divorce applies to your situation",
+        "Step 2: File a petition for divorce under Section 13(1) of the Hindu Marriage Act in the Family Court of the jurisdiction where you last resided together, or where your wife currently resides, or where the marriage was solemnized",
+        "Step 3: Grounds for divorce available to husband include: cruelty (Section 13(1)(ia)), desertion for 2+ years (Section 13(1)(ib)), adultery, mental disorder, incurable disease, renunciation, presumed death",
+        "Step 4: Filing FALSE criminal cases (498A, DV Act) against husband has been held as CRUELTY by multiple courts — this is itself a ground for divorce",
+        "Step 5: Gather evidence: false FIRs filed by wife, court orders dismissing/quashing her cases, evidence of her desertion, proof of her adultery if applicable",
+        "Step 6: File for interim maintenance protection under Section 24 HMA if you have dependents",
+        "Step 7: If both parties agree — file for mutual consent divorce under Section 13B HMA (6-month cooling period, can be waived by court in exceptional circumstances)",
+        "Step 8: Court must attempt reconciliation — if unsuccessful, the case proceeds to trial"
+      ],
+      "grounds_for_divorce_by_husband": [
+        "Cruelty — physical or mental, including filing false cases (Section 13(1)(ia))",
+        "Desertion for continuous period of 2 years (Section 13(1)(ib))",
+        "Adultery (Section 13(1)(i))",
+        "Conversion to another religion (Section 13(1)(ii))",
+        "Unsoundness of mind / mental disorder (Section 13(1)(iii))",
+        "Incurable leprosy / communicable venereal disease (Section 13(1)(iv, v))",
+        "Renunciation of the world (Section 13(1)(vi))",
+        "Not heard alive for 7 years (Section 13(1)(vii))"
+      ],
+      "what_courts_have_held_as_cruelty_by_wife": [
+        "Filing false 498A case — K. Srinivas Rao v D.A. Deepa (2013, SC)",
+        "Filing false DV Act case — Suman Bhasin v Neeraj Bhasin (Delhi)",
+        "False allegations of impotency or extra-marital affair — mental cruelty",
+        "Persistent refusal of physical relations without medical reason",
+        "Throwing husband out of matrimonial home",
+        "Poisoning husband's relationship with his parents",
+        "Filing multiple false complaints to harass husband and his family",
+        "Demanding husband cut ties with his parents"
+      ],
+      "legal_basis": "Hindu Marriage Act 1955 — Sections 13, 13B; Supreme Court judgments on cruelty",
+      "source": "Hindu Marriage Act 1955"
+    },
+
+    {
+      "id": "MAT_GRV_006",
+      "title": "Protect Your Parents and Family Members from False Implication",
+      "category": "family_protection",
+      "when_to_use": "When your elderly parents, siblings, married sisters living in different cities, or other family members have been falsely named in a 498A / dowry case filed by your wife",
+      "steps": [
+        "Step 1: File for quashing of FIR under Section 482 CrPC (BNSS Section 528) in the High Court specifically for the family members who have been falsely implicated",
+        "Step 2: Argue that the allegations against them are 'omnibus' — they are named without any specific role, date, or incident attributed to them individually",
+        "Step 3: Cite Kahkashan Kausar v State of Bihar (2022, SC): 'Merely naming family members without specific allegations of their active involvement should be nipped in the bud'",
+        "Step 4: If family members live in different cities and rarely visited — highlight this, citing Preeti Gupta v State of Jharkhand (2010, SC)",
+        "Step 5: If married sisters or distant relatives are named — argue that they have their own families and had no reason or opportunity to commit the alleged acts",
+        "Step 6: Apply for anticipatory bail for all named family members simultaneously",
+        "Step 7: If parents are elderly or have medical conditions — mention this to the court for compassionate treatment",
+        "Step 8: File a counter-complaint for filing false case if the quashing is successful — to deter further abuse"
+      ],
+      "important_notes": [
+        "SC has repeatedly criticized the practice of naming entire families in 498A FIRs",
+        "Merely being named in an FIR does not mean guilt — the court examines specific allegations against each person",
+        "In 2026, the SC quashed FIR against in-laws where no specific overt act was attributed to them individually",
+        "The timing of the complaint is crucial — if filed after divorce petition, it suggests retaliation",
+        "Elderly parents can seek protection under the Maintenance and Welfare of Parents and Senior Citizens Act 2007 if they are being harassed through false litigation"
+      ],
+      "legal_basis": "CrPC Section 482 / BNSS Section 528; Kahkashan Kausar v State of Bihar (2022); Preeti Gupta v State of Jharkhand (2010)",
+      "source": "Supreme Court judgments"
+    },
+
+    {
+      "id": "MAT_GRV_007",
+      "title": "Fight for Child Custody Rights as Father",
+      "category": "child_custody",
+      "when_to_use": "When you are a father fighting for custody or visitation rights of your child during or after divorce proceedings",
+      "steps": [
+        "Step 1: File a petition for custody under Section 26 of the Hindu Marriage Act or under the Guardians and Wards Act 1890",
+        "Step 2: Understand the legal framework: for children below 5 years, courts generally give custody to the mother (tender years doctrine), but this is not absolute",
+        "Step 3: For older children, the court considers the 'welfare of the child' as the paramount consideration — not the gender of the parent",
+        "Step 4: Demonstrate your capability as a parent — stable income, safe living environment, emotional bond with child, involvement in child's education and upbringing",
+        "Step 5: If mother is denying visitation — file a contempt petition for violation of court-ordered visitation rights",
+        "Step 6: If the child is being alienated from you (parental alienation) — document it and present to the court",
+        "Step 7: Request court to consider the child's preference if the child is old enough (generally 9+ years)",
+        "Step 8: If the mother is planning to take the child abroad — file for injunction and request the court to impound passports"
+      ],
+      "important_notes": [
+        "Father has EQUAL rights to child custody — there is no law that says mother always gets custody",
+        "The welfare of the child is the ONLY paramount consideration — not the convenience of either parent",
+        "Court can grant joint custody, shared custody, or sole custody with visitation rights to the other parent",
+        "Denying court-ordered visitation is contempt of court — punishable",
+        "Father must continue paying child maintenance regardless of custody outcome",
+        "If mother is unfit (addiction, abuse, neglect, mental instability) — father has strong grounds for custody"
+      ],
+      "legal_basis": "Hindu Marriage Act 1955 — Section 26; Guardians and Wards Act 1890; Hindu Minority and Guardianship Act 1956",
+      "source": "Hindu Marriage Act 1955, Guardians and Wards Act 1890"
+    },
+
+    {
+      "id": "MAT_GRV_008",
+      "title": "Preventive Steps — Protect Yourself Before Marriage and During Marriage",
+      "category": "prevention",
+      "when_to_use": "Proactive steps every person (especially men) should take to protect themselves from potential false allegations in future matrimonial disputes",
+      "steps": [
+        "Step 1: BEFORE MARRIAGE — verify the background of your prospective spouse and their family through mutual connections, social media, and if needed, a private investigation",
+        "Step 2: Ensure all gifts, jewelry, and items given during marriage are properly documented — maintain a signed list with photographs and witnesses",
+        "Step 3: Get the marriage registered immediately after solemnization — register under the Hindu Marriage Act at the local Sub-Registrar",
+        "Step 4: Maintain a joint or separate list of all stridhan (wife's property/gifts) with photographs — this prevents false claims of items not given",
+        "Step 5: DURING MARRIAGE — keep communication records. In case of disputes, communicate via text/email so there is a written record",
+        "Step 6: If your wife threatens to file false cases — DO NOT react aggressively. Document the threats (record if possible) and consult a lawyer immediately",
+        "Step 7: Install CCTV in common areas of the house (with wife's knowledge) — this can be crucial evidence if false injury/assault claims are made",
+        "Step 8: Maintain a personal diary noting any incidents of dispute, violence, or threats — with dates and details",
+        "Step 9: Keep copies of all financial documents — salary slips, IT returns, bank statements, property papers, loan documents. Keep these at a secure location outside the matrimonial home",
+        "Step 10: If you see the marriage breaking down — consult a lawyer BEFORE filing for divorce or separation. The sequence of legal filings matters enormously",
+        "Step 11: Consider a prenuptial agreement (while not fully enforceable in India, it shows intent and can influence settlement negotiations)",
+        "Step 12: Never pay maintenance or settlement amounts in cash — always use bank transfers for proof"
+      ],
+      "important_notes": [
+        "The best defence is preparation — collect and preserve evidence from day one",
+        "If your wife threatens '498A laga dungi' — this itself is evidence of misuse that you can present in court",
+        "Do NOT destroy any evidence — even evidence that seems unfavorable. Tampering with evidence is a criminal offence",
+        "Maintain good relationships with neighbours, friends, and colleagues — they may be witnesses if needed",
+        "If your wife leaves the matrimonial home — file a 'missing person' report or 'desertion' complaint at the police station to establish a timeline",
+        "Never sign any blank papers or give access to your financial accounts to anyone without proper documentation"
+      ],
+      "legal_basis": "General principles of evidence preservation and preventive legal strategy",
+      "source": "Legal best practices, Supreme Court guidelines"
+    },
+
+    {
+      "id": "MAT_GRV_009",
+      "title": "File Counter-Case for Filing False Criminal Complaint",
+      "category": "counter_action",
+      "when_to_use": "When your wife's false 498A / DV Act / dowry case has been quashed or dismissed by the court, and you want to take legal action against her for filing a false case",
+      "steps": [
+        "Step 1: Once the false case is quashed or dismissed, obtain a certified copy of the court order clearly stating the case was false/baseless/retaliatory",
+        "Step 2: File a criminal complaint for filing false information — BNS Section 248 (giving false information to public servant to cause injury) and BNS Section 250 (false charge of offence made with intent to injure)",
+        "Step 3: File a defamation case — BNS Section 356 (criminal defamation) for damage to your reputation through false allegations",
+        "Step 4: File a civil suit for compensation and damages — for mental harassment, loss of reputation, legal expenses incurred, and loss of employment/income",
+        "Step 5: Use the quashing/dismissal order as evidence of cruelty in your divorce petition — SC has held that filing false cases amounts to cruelty",
+        "Step 6: If wife filed false DV case, cite the court's observations to seek cost from her — courts have imposed up to Rs. 1 lakh as cost for false DV cases",
+        "Step 7: If the false case caused you to be arrested or detained — file for compensation under Article 21 (Right to Liberty) and Article 14 (Right to Equality)"
+      ],
+      "important_notes": [
+        "Filing false 498A is a punishable offence — but prosecution is rare unless you actively pursue it",
+        "A quashing order that explicitly says the case was 'false', 'fabricated', or 'retaliatory' is the strongest evidence",
+        "Counter-cases serve as deterrent and also strengthen your divorce case on grounds of cruelty",
+        "You can claim compensation for: legal fees, loss of employment, mental trauma, damage to family's reputation, and medical expenses due to stress",
+        "Some courts have awarded costs to husbands after finding that wives misused legal provisions"
+      ],
+      "legal_basis": "BNS Sections 248, 250, 356; Constitution Articles 14, 21; CrPC Section 482 quashing orders",
+      "source": "BNS 2023, Constitution of India, Supreme Court judgments"
+    },
+
+    {
+      "id": "MAT_GRV_010",
+      "title": "Seek Free Legal Aid for Matrimonial Disputes",
+      "category": "legal_aid",
+      "when_to_use": "When you cannot afford a lawyer for your matrimonial case — free legal aid is available to all citizens, not just women",
+      "steps": [
+        "Step 1: Visit your District Legal Services Authority (DLSA) office",
+        "Step 2: Apply for free legal aid — eligible if annual income is below Rs. 3 lakh (check state-specific threshold)",
+        "Step 3: DLSA provides: free lawyer, free court fees, and can refer to Lok Adalat for faster settlement",
+        "Step 4: For mediation before court battle — request DLSA to arrange mediation between both parties",
+        "Step 5: Many Family Courts have in-house counsellors — request a counselling session before adversarial proceedings",
+        "Step 6: Check if your employer provides legal assistance as part of employee benefits"
+      ],
+      "important_notes": [
+        "Free legal aid is available to BOTH men and women — it is not gender-specific",
+        "DLSA also provides legal awareness camps — attend these to understand your rights",
+        "Lok Adalat settlements are binding and non-appealable — consider this for faster closure",
+        "Legal aid lawyers are assigned by DLSA — you cannot choose a specific lawyer, but you can request a change if unsatisfied",
+        "Online legal aid applications are available on nalsa.gov.in"
+      ],
+      "helpline": {
+        "nalsa": "https://nalsa.gov.in/",
+        "tele_law": "1516 — Tele-Law helpline for free legal advice by phone"
+      },
+      "legal_basis": "Legal Services Authorities Act 1987; Article 39A of Constitution (equal justice and free legal aid)",
+      "source": "NALSA, Legal Services Authorities Act 1987"
+    },
+
+    {
+      "id": "MAT_GRV_011",
+      "title": "Mutual Consent Divorce — Fastest Way Out",
+      "category": "divorce",
+      "when_to_use": "When both husband and wife agree to end the marriage and want the fastest, least painful legal process",
+      "steps": [
+        "Step 1: Both parties must agree on all terms — division of property, alimony/maintenance, child custody, return of stridhan",
+        "Step 2: Draft a comprehensive settlement agreement covering ALL disputes — ideally settle all pending criminal cases (498A, DV) as part of the package",
+        "Step 3: File a joint petition under Section 13B of the Hindu Marriage Act in the Family Court",
+        "Step 4: Court will grant a 6-month cooling-off period (from date of first motion)",
+        "Step 5: After 6 months (but before 18 months), both parties appear for the second motion to confirm they still want divorce",
+        "Step 6: Court passes the divorce decree",
+        "Step 7: If circumstances are exceptional, the 6-month cooling period can be WAIVED by the court — file an application requesting waiver citing irretrievable breakdown"
+      ],
+      "important_notes": [
+        "Mutual consent is the fastest and least expensive divorce route — typically 6-8 months",
+        "Both parties must have lived separately for at least 1 year before filing",
+        "All terms of settlement (money, property, custody) should be finalized BEFORE filing — putting it in the settlement agreement",
+        "If there are pending 498A or DV cases, they should be withdrawn/compounded as part of the settlement",
+        "Get everything in writing — verbal promises have no value after divorce",
+        "The settlement amount in mutual consent divorce is a one-time payment and is final — no future claims",
+        "SC has waived the 6-month cooling period in cases where marriage has irretrievably broken down"
+      ],
+      "legal_basis": "Hindu Marriage Act 1955 — Section 13B; Supreme Court guidelines on waiver of cooling period",
+      "source": "Hindu Marriage Act 1955"
+    },
+
+    {
+      "id": "MAT_GRV_012",
+      "title": "Defend Against False Dowry Demand Allegations",
+      "category": "false_allegation_defence",
+      "when_to_use": "When you are falsely accused under the Dowry Prohibition Act 1961 of demanding dowry — either alongside a 498A case or independently",
+      "steps": [
+        "Step 1: Understand what constitutes 'dowry' legally — any property or valuable security given at or before or after marriage in connection with the marriage. Normal gifts are NOT dowry",
+        "Step 2: Collect evidence of all gifts exchanged — wedding video, gift lists signed by both families, photographs, receipts",
+        "Step 3: If gifts were given voluntarily (not demanded) — this is NOT dowry. Prove the voluntary nature through witness statements and communication records",
+        "Step 4: If the demand allegations are vague ('they demanded dowry') without specifying WHAT was demanded, WHEN, and by WHOM — argue for dismissal on grounds of vagueness",
+        "Step 5: File for anticipatory bail immediately",
+        "Step 6: Engage witnesses from both sides of the family who were present during marriage ceremonies and can testify about gift exchanges",
+        "Step 7: If the complaint was filed long after the alleged demand — highlight the delay as evidence of fabrication",
+        "Step 8: Apply for quashing if the FIR lacks specific particulars"
+      ],
+      "important_notes": [
+        "Dowry Prohibition Act makes BOTH giving and taking dowry a criminal offence — but in practice, only the husband's side is prosecuted",
+        "Voluntary gifts customary in marriage are NOT dowry — the key question is whether there was a 'demand'",
+        "The burden of proof that dowry was NOT demanded falls on the accused (reverse burden under Section 8A of Dowry Prohibition Act) — so collecting evidence early is critical",
+        "Dowry demand allegations are often added to strengthen a 498A case — if the 498A is quashed, the dowry charges usually fall too",
+        "Courts have increasingly scrutinized vague dowry allegations — specific details of what, when, how much must be provided"
+      ],
+      "legal_basis": "Dowry Prohibition Act 1961 — Sections 2 (definition), 3 (penalty for giving/taking), 4 (penalty for demanding), 8A (burden of proof)",
+      "source": "Dowry Prohibition Act 1961"
+    }
+  ]
+}

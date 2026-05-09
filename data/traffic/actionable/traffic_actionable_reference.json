@@ -1,0 +1,512 @@
+{
+  "metadata": {
+    "title": "Maharashtra Traffic Sector — Actionable Reference Data",
+    "description": "Helplines, portals, and contact details extracted from official government websites for the traffic sector in Maharashtra",
+    "sector": "traffic",
+    "doc_type": "actionable_reference",
+    "last_verified": "2026-04-06",
+    "verification_sources": [
+      "https://highwaypolice.maharashtra.gov.in/grievance-page-new/",
+      "https://trafficpolicemumbai.maharashtra.gov.in/en/grievance-redressal/",
+      "https://grievances.maharashtra.gov.in/en/about-us",
+      "https://acbmaharashtra.gov.in/faqs",
+      "https://acbmaharashtra.net/english/how_it_works",
+      "https://mahatrafficechallan.gov.in/MH-Echallan-Grievance"
+    ]
+  },
+  "grievance_mechanisms": [
+    {
+      "id": "TRAF_GRV_001",
+      "title": "Challenge a Wrong E-Challan Online",
+      "category": "challan_dispute",
+      "when_to_use": "When you receive a traffic e-challan that is incorrect — wrong vehicle, wrong location, wrong violation, duplicate challan, or amount mismatch",
+      "portal_name": "Maharashtra E-Challan Grievance Portal",
+      "portal_url": "https://mahatrafficechallan.gov.in/MH-Echallan-Grievance",
+      "steps": [
+        "Step 1: Visit mahatrafficechallan.gov.in/MH-Echallan-Grievance",
+        "Step 2: Select 'Apply Grievance Against Challan' or 'Apply Grievance Against Receipt'",
+        "Step 3: Enter your challan number or vehicle registration number",
+        "Step 4: Fill in the grievance details explaining why the challan is wrong",
+        "Step 5: Upload supporting documents (RC copy, photos, dashcam footage, GPS data) — max 2MB per file in PDF format",
+        "Step 6: Submit and note down your grievance reference number",
+        "Step 7: Track status using the reference number on the same portal"
+      ],
+      "required_documents": [
+        "Challan number or vehicle registration number",
+        "RC (Registration Certificate) copy",
+        "Driving licence copy",
+        "Evidence proving challan is wrong (photos, GPS logs, dashcam, toll receipts, parking slips, CCTV footage)"
+      ],
+      "resolution_timeline": "30 working days (as per Maharashtra Public Grievance Redressal Act 2015)",
+      "helpline": {
+        "maharashtra_helpdesk": "844 844 8960",
+        "maharashtra_email": "helpdesk@mahatrafficechallan.gov.in",
+        "mumbai_helpdesk": "845 499 9999",
+        "mumbai_email": "multimediacell.traffic@mahapolice.gov.in",
+        "adgp_traffic": "95035 11100",
+        "adgp_email": "adg.traffic.hsp@mahapolice.gov.in"
+      },
+      "source": "Highway Traffic Police Maharashtra — highwaypolice.maharashtra.gov.in"
+    },
+    {
+      "id": "TRAF_GRV_002",
+      "title": "Challenge a Wrong Challan via Mumbai Traffic Police App",
+      "category": "challan_dispute",
+      "when_to_use": "When you receive a wrong e-challan in Mumbai specifically and want to use the mobile app",
+      "portal_name": "Mumbai Traffic Police App (MumTrafficApp)",
+      "portal_url": "https://trafficpolicemumbai.maharashtra.gov.in/en/grievance-redressal/",
+      "app_availability": "Available on Google Play Store and Apple App Store — search 'Mumbai Traffic Police'",
+      "steps": [
+        "Step 1: Download the Mumbai Traffic Police app from Play Store or Apple Store",
+        "Step 2: Register with your mobile number and verify with OTP",
+        "Step 3: Go to 'My E-challans' to check if challan shows as unpaid with image proof",
+        "Step 4: Go back to main page and tap 'Grievance'",
+        "Step 5: Tap the + sign at bottom right",
+        "Step 6: Fill in details and upload proof",
+        "Step 7: Submit — resolution typically within 48 hours for clear cases"
+      ],
+      "online_alternative": "https://mahatrafficechallan.gov.in/MH-Echallan-Grievance/applyForGrievience.htm",
+      "source": "Mumbai Traffic Police — trafficpolicemumbai.maharashtra.gov.in"
+    },
+    {
+      "id": "TRAF_GRV_003",
+      "title": "Escalate via Aaple Sarkar (State Grievance Portal)",
+      "category": "escalation",
+      "when_to_use": "When your e-challan grievance was rejected or not resolved within 30 days, or for any traffic-related complaint against a government department",
+      "portal_name": "Aaple Sarkar — Integrated Grievance Redressal System (IGRS)",
+      "portal_url": "https://aaplesarkar.mahaonline.gov.in/",
+      "about_url": "https://grievances.maharashtra.gov.in/en/about-us",
+      "steps": [
+        "Step 1: Visit aaplesarkar.mahaonline.gov.in",
+        "Step 2: Register as 'Citizen' with full name (as per Aadhaar), district, mobile number",
+        "Step 3: Verify mobile with OTP",
+        "Step 4: Complete profile with address and contact details",
+        "Step 5: Read and check all mandatory checklist items before filing",
+        "Step 6: For traffic challans — file under 'Transport Department' or 'Traffic Police' at 'District Level'",
+        "Step 7: Fill grievance form with clear description and upload documents",
+        "Step 8: Submit — you will receive a token number",
+        "Step 9: Track using token number — competent authority must resolve within 21 days",
+        "Step 10: After resolution, provide feedback via 'Satisfied' / 'Dissatisfied' option"
+      ],
+      "important_notes": [
+        "Individual challan disputes are DISTRICT-level matters",
+        "State-level grievances are for policy issues affecting multiple people",
+        "Cannot save form as draft — have all documents ready before starting",
+        "Do not file the same complaint on multiple portals",
+        "One-time registration works for all future grievances"
+      ],
+      "resolution_timeline": "21 working days",
+      "helpline": "1800 120 8040 (toll-free)",
+      "legal_basis": "Maharashtra Public Grievance Redressal Act, 2015",
+      "source": "Government of Maharashtra — grievances.maharashtra.gov.in"
+    },
+    {
+      "id": "TRAF_GRV_004",
+      "title": "File RTI to Get Challan Evidence",
+      "category": "information_right",
+      "when_to_use": "When you want to demand the evidence used to issue your challan — camera calibration certificate, officer details, surveillance logs — especially useful if your grievance was rejected without showing evidence",
+      "portal_name": "Maharashtra RTI Online Portal",
+      "portal_url": "https://rtionline.maharashtra.gov.in/request/request.php?lan=E",
+      "fee": "Rs. 10 (Court Fee Stamp for offline, online payment for digital)",
+      "steps": [
+        "Step 1: Identify the correct department — for traffic challans, address to 'Transport Department' or 'Traffic Police' of your district",
+        "Step 2: Visit rtionline.maharashtra.gov.in for online filing, or write a physical application",
+        "Step 3: Write 'Application under RTI Act 2005' at the top",
+        "Step 4: Address to 'Public Information Officer' of the relevant department",
+        "Step 5: Ask specific, direct questions (see sample questions below)",
+        "Step 6: Pay Rs. 10 fee",
+        "Step 7: Submit online or send via Speed Post / Registered Post",
+        "Step 8: PIO must respond within 30 days",
+        "Step 9: If no response or unsatisfactory response — file First Appeal (no fee) within 30 days"
+      ],
+      "sample_questions_for_traffic_challan": [
+        "Please provide the photographic/video evidence used to issue challan number [XXXXX] dated [DATE] against vehicle [REG NUMBER]",
+        "Please provide the calibration certificate and last maintenance date of the speed camera/CCTV at location [LOCATION] that captured the alleged violation",
+        "Please provide the name, badge number, and duty roster of the officer who issued challan number [XXXXX]",
+        "How many challans issued by the same camera/officer at the same location have been cancelled in the last 12 months?",
+        "Please provide the Standard Operating Procedure (SOP) followed for issuing e-challans in this jurisdiction"
+      ],
+      "language": "Can be filed in English or Marathi",
+      "word_limit": "150 words (Maharashtra state guideline, not mandatory)",
+      "legal_basis": "Right to Information Act, 2005 — Sections 6, 7, 19",
+      "source": "Government of Maharashtra RTI Portal — rtionline.maharashtra.gov.in"
+    },
+    {
+      "id": "TRAF_GRV_005",
+      "title": "Report Traffic Police Bribery to ACB",
+      "category": "corruption_complaint",
+      "when_to_use": "When a traffic police officer demands a bribe — whether for not issuing a challan, for reducing fine amount, for not impounding vehicle, or for any other reason",
+      "authority": "Anti-Corruption Bureau (ACB), Maharashtra",
+      "portal_url": "https://acbmaharashtra.gov.in/bribe-complaint",
+      "complaint_types": [
+        "Bribe Demand Complaint",
+        "Disproportionate Assets Complaint",
+        "Misuse of Power Complaint"
+      ],
+      "complaint_channels": [
+        {
+          "method": "Toll-free phone",
+          "detail": "1064 (from anywhere)"
+        },
+        {
+          "method": "Toll-free phone (alternate)",
+          "detail": "1800 22 2021"
+        },
+        {
+          "method": "WhatsApp",
+          "detail": "+91-9930997700"
+        },
+        {
+          "method": "Email",
+          "detail": "acbwebmail@mahapolice.gov.in"
+        },
+        {
+          "method": "Online portal",
+          "detail": "https://acbmaharashtra.gov.in/bribe-complaint"
+        },
+        {
+          "method": "Facebook",
+          "detail": "www.facebook.com/MaharashtraACB"
+        },
+        {
+          "method": "Mobile app",
+          "detail": "ACB Maharashtra app on Play Store"
+        },
+        {
+          "method": "In person",
+          "detail": "Visit nearest ACB office"
+        }
+      ],
+      "steps": [
+        "Step 1: DO NOT pay the bribe. Stay calm.",
+        "Step 2: If safe, discreetly record audio/video of the bribe demand using your phone",
+        "Step 3: Note the officer's badge number, name (if visible), location, date, and time",
+        "Step 4: Call ACB toll-free 1064 immediately, or WhatsApp +91-9930997700",
+        "Step 5: Alternatively, go to acbmaharashtra.gov.in → 'Bribe Demand Complaint'",
+        "Step 6: Fill the form with all details (only mobile number is compulsory)",
+        "Step 7: Attach evidence — images, audio clips, or videos",
+        "Step 8: ACB may arrange a 'trap' — you will need to be directly involved",
+        "Step 9: Trap money is returned to complainant after 30 days",
+        "Step 10: Your identity is kept secret except in trap complaints"
+      ],
+      "important_notes": [
+        "Trap complaint can only be made against the public servant with whom your legal work is pending",
+        "You must attend the ACB office in person for a trap operation",
+        "If accused threatens you after complaint, ACB collects evidence and applies for cancellation of accused's bail",
+        "ACB investigates three types of crimes: Trap, DPA (Disproportionate Assets), and Criminal Misconduct",
+        "For on-the-spot bribery (like traffic constable demanding money), collect video/audio evidence and upload to ACB portal"
+      ],
+      "legal_basis": "Prevention of Corruption Act, 1988 — Section 7 (bribery by public servant)",
+      "source": "ACB Maharashtra — acbmaharashtra.gov.in"
+    },
+    {
+      "id": "TRAF_GRV_006",
+      "title": "Complain Against Police Misconduct to PCA",
+      "category": "police_misconduct",
+      "when_to_use": "When a traffic police officer engages in serious misconduct — use of excessive force, illegal detention, extortion, harassment, abuse of authority, or causing grievous hurt",
+      "authority": "Police Complaints Authority (PCA), Maharashtra",
+      "legal_basis": "Section 22P, Maharashtra Police (Amendment and Continuance) Act, 2014",
+      "pca_levels": {
+        "state_pca": {
+          "jurisdiction": "Complaints against SENIOR police officers (above rank of Senior PI)",
+          "address": "Cooperage Telephone Exchange, 4th Floor, Maharshi Karve Road, Nariman Point, Mumbai 400021",
+          "phone": [
+            "022-22820045",
+            "022-22820046",
+            "022-22820067"
+          ],
+          "email": "mhspca2015@gmail.com"
+        },
+        "divisional_pcas": {
+          "jurisdiction": "Complaints against police officers up to rank of Senior Police Inspector",
+          "divisions": [
+            {
+              "name": "Pune",
+              "phone": "020-24380074",
+              "email": "dpca.pune@gmail.com"
+            },
+            {
+              "name": "Nashik",
+              "phone": "Contact via State PCA"
+            },
+            {
+              "name": "Aurangabad (Chhatrapati Sambhaji Nagar)",
+              "phone": "Contact via State PCA"
+            },
+            {
+              "name": "Nagpur",
+              "phone": "Contact via State PCA"
+            },
+            {
+              "name": "Amravati",
+              "phone": "Contact via State PCA"
+            },
+            {
+              "name": "Konkan",
+              "phone": "Contact via State PCA"
+            }
+          ]
+        }
+      },
+      "who_can_file": [
+        "Victim of police misconduct/abuse",
+        "Victim's family member",
+        "Anyone on behalf of the victim (with victim's consent affidavit)",
+        "National Human Rights Commission",
+        "State Human Rights Commission",
+        "Police itself (suo moto)"
+      ],
+      "what_you_can_complain_about": [
+        "Death in police custody/action",
+        "Grievous hurt caused by police",
+        "Rape or sexual assault by police personnel",
+        "Illegal detention or arrest",
+        "Extortion or corruption",
+        "Illegal seizure of property",
+        "Any serious violation of law or abuse of authority"
+      ],
+      "steps": [
+        "Step 1: Determine officer rank to choose State PCA or Divisional PCA",
+        "Step 2: Write complaint with full details — date, time, location, officer identity, what happened",
+        "Step 3: Attach all evidence — medical reports, photos, videos, witness statements",
+        "Step 4: Submit to appropriate PCA office (in person or by post)",
+        "Step 5: PCA will issue written order acknowledging the complaint (free of cost)",
+        "Step 6: PCA issues notice to the accused officer and provides them a copy of your complaint",
+        "Step 7: PCA conducts inquiry — may use its own investigating officer or external agency",
+        "Step 8: You will be informed of the outcome"
+      ],
+      "source": "CHRI Maharashtra PCA User Guide 2019 — humanrightsinitiative.org",
+      "reference_document": "CHRI_Maharashtra_PCA_User_Guide_2019.pdf"
+    },
+    {
+      "id": "TRAF_GRV_007",
+      "title": "Verify if a Challan is Genuine (Anti-Scam Check)",
+      "category": "verification",
+      "when_to_use": "When you receive an SMS or email about a traffic challan and want to verify if it is genuine before paying — fake challan scams are increasing",
+      "portal_name": "Parivahan Sewa (Ministry of Road Transport & Highways)",
+      "portal_url": "https://parivahan.gov.in/parivahan/",
+      "steps": [
+        "Step 1: Visit parivahan.gov.in",
+        "Step 2: Click 'Check Online Services'",
+        "Step 3: Select 'Check Challan Status'",
+        "Step 4: Enter your vehicle registration number",
+        "Step 5: Enter chassis number (last 5 digits)",
+        "Step 6: View all challans against your vehicle",
+        "Step 7: Cross-verify challan number, date, and amount with what you received via SMS/email",
+        "Step 8: If the challan does NOT appear on Parivahan, it is likely FAKE — report to cybercrime.gov.in"
+      ],
+      "alternate_verification": "Maharashtra E-Challan Portal — https://mahatrafficechallan.gov.in/ (enter vehicle number + last 4 digits of engine/chassis number)",
+      "source": "Ministry of Road Transport & Highways — parivahan.gov.in"
+    },
+    {
+      "id": "TRAF_GRV_008",
+      "title": "Challenge Challan in Court or Lok Adalat",
+      "category": "legal_challenge",
+      "when_to_use": "When online grievance is rejected, RTI reveals procedural errors, or for non-compoundable offences that require court appearance",
+      "options": [
+        {
+          "method": "Traffic Magistrate Court",
+          "when": "For manual challans or when online grievance was unjustly rejected",
+          "steps": [
+            "Step 1: Collect all evidence — dashcam footage, GPS logs, parking slips, RTI responses",
+            "Step 2: File a written appeal to the relevant traffic court within 15-30 days of challan",
+            "Step 3: Present your case before the traffic magistrate",
+            "Step 4: Magistrate examines evidence and gives ruling"
+          ]
+        },
+        {
+          "method": "Virtual Court",
+          "when": "For e-challans above Rs. 5000 where you have strong evidence",
+          "note": "Cost-benefit favours this route for challans above Rs. 5000"
+        },
+        {
+          "method": "Lok Adalat",
+          "when": "For settling challans with reduced fines — no court fees, no lawyers needed",
+          "steps": [
+            "Step 1: Check NALSA website (nalsa.gov.in) for next Lok Adalat dates",
+            "Step 2: Attend with all challan documents",
+            "Step 3: Cases are settled with mutual agreement, often with reduced fines"
+          ]
+        },
+        {
+          "method": "Writ Petition (Article 226)",
+          "when": "When there is abuse of power, mala fide intention, or fundamental rights violation by traffic authorities",
+          "steps": [
+            "Step 1: Consult a lawyer — writ petitions require legal expertise",
+            "Step 2: File before the High Court under Article 226 of the Constitution",
+            "Step 3: Seek quashing of the challan"
+          ],
+          "note": "This is a last resort for arbitrary or mass challans where fundamental rights are violated"
+        }
+      ],
+      "important_citizen_rights": [
+        "You cannot be forced to pay a challan without being shown evidence",
+        "You cannot be denied the right to challenge the evidence",
+        "You cannot be ignored when you file a legitimate grievance",
+        "Always ask for a receipt for any fine paid",
+        "Never sign a challan or admit guilt unless you are sure",
+        "Preserve all communication, photos, videos, and vehicle logs"
+      ],
+      "legal_basis": [
+        "Motor Vehicles Act, 1988 — Section 207 (power of court to make orders)",
+        "Constitution of India — Article 226 (writ jurisdiction of High Courts)",
+        "Legal Services Authorities Act, 1987 (Lok Adalat provisions)"
+      ],
+      "source": "Motor Vehicles Act 1988, Constitution of India, NALSA guidelines"
+    },
+    {
+      "id": "TRAF_GRV_009",
+      "title": "Vehicle Towed Without Valid Reason",
+      "category": "towing_dispute",
+      "when_to_use": "When your vehicle has been towed by traffic police without valid reason, or towed from a location where parking was not clearly prohibited, or towed without following proper procedure",
+      "steps": [
+        "Step 1: Note the exact location, time, and any signage (or lack of no-parking signs) — take photos if possible",
+        "Step 2: Go to the nearest traffic police station or the towing yard to locate your vehicle",
+        "Step 3: Demand a towing receipt — police are required to issue one with details of the offence, vehicle number, towing charges, and the officer's details",
+        "Step 4: Pay the towing charges to retrieve your vehicle (you can challenge later — retrieve first)",
+        "Step 5: If you believe the towing was unjust — check whether no-parking signs were clearly visible at the location",
+        "Step 6: File a grievance on the Maharashtra E-Challan Grievance Portal (mahatrafficechallan.gov.in/MH-Echallan-Grievance) with photos showing no signage",
+        "Step 7: File an RTI asking for the no-parking notification/order for that specific location — if none exists, the towing was unauthorized",
+        "Step 8: If towing caused damage to your vehicle, document it with photos and file a compensation claim",
+        "Step 9: For persistent issues, approach the traffic court or file on Aaple Sarkar portal"
+      ],
+      "important_notes": [
+        "Under Section 127 MV Act, towing is only authorized if the vehicle is left unattended for 10+ hours, parked in a legally prohibited zone, or creating a traffic hazard",
+        "Only a police officer IN UNIFORM with jurisdiction can authorize towing",
+        "The owner is responsible for towing costs ONLY if the towing was legally authorized",
+        "If no-parking signs were not clearly displayed, the towing may be challengeable",
+        "Always get a receipt — towing without a receipt is an irregularity you can report",
+        "Towing fine in Maharashtra: Rs. 500 (first offence), Rs. 1,500 (repeat)"
+      ],
+      "legal_basis": "Motor Vehicles Act 1988 — Section 122, 127; Maharashtra MV Rules 1989",
+      "source": "Motor Vehicles Act 1988, Maharashtra Traffic Police"
+    },
+    {
+      "id": "TRAF_GRV_010",
+      "title": "What to Do Immediately After a Road Accident",
+      "category": "accident_response",
+      "when_to_use": "When you are involved in or witness a road accident — these are the first steps to take before anything else",
+      "steps": [
+        "Step 1: STOP the vehicle immediately — do not flee the scene (leaving is a criminal offence under BNS Section 106(2) with up to 10 years imprisonment)",
+        "Step 2: Call 112 (Maharashtra Emergency Response System — MERS) for police, ambulance, and fire",
+        "Step 3: Help the injured — take them to the nearest hospital. Under the Good Samaritan Law (MV Act Section 134A), you are legally protected from harassment when helping accident victims",
+        "Step 4: Do NOT move vehicles from the accident position unless they are blocking emergency access — the accident scene is evidence",
+        "Step 5: Take photos/videos of the accident scene, vehicle positions, damage, injuries, skid marks, road conditions, and any traffic signals",
+        "Step 6: Collect contact details and vehicle numbers of all parties involved and witnesses",
+        "Step 7: Go to the nearest police station and file an FIR — or call 112 and the police will come to the scene",
+        "Step 8: Get a MLC (Medico-Legal Certificate) from the hospital — this is crucial evidence",
+        "Step 9: Inform your insurance company within 24 hours",
+        "Step 10: Keep all medical bills, treatment records, FIR copy, and photographs safely — you will need these for insurance or MACT claims"
+      ],
+      "important_notes": [
+        "Good Samaritans who help accident victims are protected by law — no police harassment, no unnecessary questioning, no mandatory court appearance",
+        "Golden Hour Scheme: Cashless treatment up to Rs. 1.5 lakh is available for accident victims at designated hospitals during the first hour",
+        "Police must submit Accident Information Report to MACT within 30 days of FIR",
+        "There is NO time limitation for filing accident compensation claims before MACT",
+        "Even if you were partially at fault, you can still claim compensation — amount is reduced proportionally"
+      ],
+      "legal_basis": "Motor Vehicles Act 1988 — Sections 134, 134A (Good Samaritan), 161-163A (compensation), 166 (MACT claims); BNS Section 106(2) (hit and run)",
+      "source": "Motor Vehicles Act 1988, Maharashtra Emergency Response System"
+    },
+    {
+      "id": "TRAF_GRV_011",
+      "title": "Claim Compensation as Road Accident Victim (MACT)",
+      "category": "accident_compensation",
+      "when_to_use": "When you or a family member has been injured or killed in a road accident and you want to claim compensation from the at-fault driver's insurance company",
+      "steps": [
+        "Step 1: Ensure an FIR has been filed at the police station where the accident occurred",
+        "Step 2: Collect all documents — FIR copy, MLC/post-mortem report, medical bills, treatment records, disability certificate (if applicable), income proof, age proof, vehicle insurance details",
+        "Step 3: File a claim petition before the Motor Accident Claims Tribunal (MACT) — you can file at the place of accident, your residence, or where the vehicle is registered",
+        "Step 4: No court fee is required for filing MACT claims",
+        "Step 5: MACT sends notices to all parties — driver, vehicle owner, and insurance company",
+        "Step 6: Both sides present evidence and witnesses during hearings",
+        "Step 7: MACT determines compensation based on — severity of injury, medical expenses, loss of income, disability, pain and suffering, age of victim",
+        "Step 8: Insurance company must pay the awarded compensation within 30 days",
+        "Step 9: If unsatisfied with the award, appeal to the High Court within 90 days"
+      ],
+      "who_can_file": [
+        "The injured person themselves",
+        "Legal representatives of the deceased (spouse, children, parents)",
+        "Owner of damaged property",
+        "An authorized agent on behalf of the victim"
+      ],
+      "required_documents": [
+        "Copy of FIR",
+        "MLC / Post-mortem report / Death certificate",
+        "All medical bills and treatment records",
+        "Disability certificate (if applicable)",
+        "Proof of income (salary slips, IT returns, business records)",
+        "Age proof of victim",
+        "Vehicle insurance policy cover note",
+        "Photographs of accident scene and injuries",
+        "Affidavit detailing relationship with deceased (in death cases)"
+      ],
+      "important_notes": [
+        "No time limitation for filing MACT claims — but file as early as possible for best evidence",
+        "No court fee required",
+        "You do not need a lawyer, but legal help is recommended",
+        "In hit-and-run cases where vehicle is unidentified, claim from the Solatium Fund under Section 161 MV Act — Rs. 50,000 minimum for death, Rs. 25,000 for disablement",
+        "Even pedestrians and passengers can file MACT claims",
+        "If vehicle was uninsured, the owner pays directly — insurance company is not involved",
+        "MACT can also award interest on compensation from the date of filing"
+      ],
+      "legal_basis": "Motor Vehicles Act 1988 — Sections 140 (no-fault liability), 161-163A (hit and run / Solatium Fund), 165-167 (MACT constitution), 166 (claims), 168 (just compensation)",
+      "source": "Motor Vehicles Act 1988, MACT procedures"
+    },
+    {
+      "id": "TRAF_GRV_012",
+      "title": "Challenge False Drunk Driving Accusation",
+      "category": "false_accusation",
+      "when_to_use": "When you have been falsely accused of drunk driving or believe the breathalyzer test was inaccurate or the procedure was not followed correctly",
+      "steps": [
+        "Step 1: Stay calm and cooperate — do not refuse the test (refusal is itself an offence under Section 185 MV Act)",
+        "Step 2: Ask for a second breathalyzer test — you have the right to demand a re-test",
+        "Step 3: If you dispute the breathalyzer result, demand a blood test at a government hospital — blood test is more accurate and admissible in court",
+        "Step 4: Note the officer's name, badge number, location, and time of the test",
+        "Step 5: Ask to see the calibration certificate of the breathalyzer device — uncalibrated devices give inaccurate results",
+        "Step 6: Do NOT sign any document admitting guilt",
+        "Step 7: If a challan is issued, collect all evidence — medical prescriptions (some medicines cause false positives), restaurant bills showing you didn't consume alcohol, witness statements",
+        "Step 8: File a grievance on the E-Challan portal with your evidence",
+        "Step 9: If challan is not cancelled, challenge it before the traffic magistrate court",
+        "Step 10: File an RTI for the breathalyzer's calibration certificate and the officer's duty log"
+      ],
+      "important_notes": [
+        "Blood alcohol limit in India: 30 mg per 100 ml of blood (Section 185 MV Act)",
+        "Penalty for drunk driving: Rs. 10,000 fine and/or 6 months imprisonment (first offence); Rs. 15,000 and/or 2 years (repeat)",
+        "Breathalyzer devices must be calibrated regularly — uncalibrated results are challengeable in court",
+        "Certain medications, mouthwashes, and medical conditions can cause false positives on breathalyzer",
+        "You have the right to demand a blood test as an alternative to breathalyzer",
+        "If police are demanding money to 'settle' instead of issuing a proper challan, report to ACB (1064)"
+      ],
+      "legal_basis": "Motor Vehicles Act 1988 — Section 185 (drunk driving), Section 203 (breathalyzer procedure); BNS Section 281 (rash driving)",
+      "source": "Motor Vehicles Act 1988"
+    },
+    {
+      "id": "TRAF_GRV_013",
+      "title": "Hit and Run — Victim's Rights and Compensation",
+      "category": "hit_and_run",
+      "when_to_use": "When you or a family member is the victim of a hit-and-run accident where the driver fled the scene and the vehicle may or may not be identified",
+      "steps": [
+        "Step 1: Call 112 immediately for emergency medical help",
+        "Step 2: If possible, note the vehicle number, colour, type, and direction it fled — ask bystanders and check for CCTV cameras nearby",
+        "Step 3: File an FIR at the nearest police station — mention it is a hit-and-run case",
+        "Step 4: Get a MLC (Medico-Legal Certificate) from the treating hospital",
+        "Step 5: If the vehicle is IDENTIFIED — file a MACT claim against the driver, owner, and insurance company (same as regular accident claim)",
+        "Step 6: If the vehicle is UNIDENTIFIED — apply for compensation from the Solatium Fund through the Claims Enquiry Officer of your district",
+        "Step 7: Solatium Fund compensation: minimum Rs. 50,000 for death, Rs. 25,000 for grievous hurt",
+        "Step 8: Police must investigate and try to identify the vehicle using CCTV, toll records, and witness statements",
+        "Step 9: Keep all medical bills and treatment records for compensation claim"
+      ],
+      "important_notes": [
+        "Hit and run is a serious criminal offence — BNS Section 106(2) provides up to 10 years imprisonment and Rs. 7 lakh fine",
+        "The driver who flees is criminally liable even if the accident was not their fault",
+        "Good Samaritans who help are protected by law — Section 134A MV Act",
+        "If vehicle is unidentified, the government pays from the Solatium Fund (Section 161 MV Act)",
+        "There is no time limitation for filing compensation claims",
+        "Police are required to submit Accident Information Report to MACT within 30 days"
+      ],
+      "legal_basis": "Motor Vehicles Act 1988 — Sections 134A, 161 (Solatium Fund), 163A (structured formula compensation), 166; BNS Section 106(2) (hit and run penalty)",
+      "source": "Motor Vehicles Act 1988, BNS 2023"
+    }
+  ]
+}

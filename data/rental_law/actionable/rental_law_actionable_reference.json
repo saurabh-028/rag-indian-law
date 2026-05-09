@@ -1,0 +1,389 @@
+{
+  "metadata": {
+    "title": "Maharashtra Rent Control Sector — Actionable Reference Data",
+    "description": "Actionable steps for tenants and landlords extracted from official legislation, government portals, and institutional sources for the rent control sector in Maharashtra",
+    "sector": "rental_law",
+    "doc_type": "actionable_reference",
+    "last_verified": "2026-04-06",
+    "verification_sources": [
+      "Maharashtra Rent Control Act, 1999 (Maharashtra Act No. XVIII of 2000) — indiacode.nic.in",
+      "https://grievances.maharashtra.gov.in/en/about-us",
+      "https://housing.maharashtra.gov.in/grievance-portals/",
+      "https://merc.gov.in/consumer-advocacy-tab-details/consumer-grievance-redressal-mechanism/",
+      "Consumer Protection Act, 2019 — indiacode.nic.in",
+      "https://districts.ecourts.gov.in/"
+    ]
+  },
+  "grievance_mechanisms": [
+    {
+      "id": "RENT_GRV_001",
+      "title": "Challenge Illegal Eviction by Landlord",
+      "category": "tenant_protection",
+      "when_to_use": "When your landlord is trying to evict you without a court order — through threats, changing locks, entering without permission, or pressuring you to leave without following legal procedure",
+      "steps": [
+        "Step 1: DO NOT vacate. Under Section 15 of the Maharashtra Rent Control Act 1999, no tenant can be evicted without a valid court order",
+        "Step 2: Document everything — save threatening messages, take photos/videos of any illegal entry or lock changes, note dates and witnesses",
+        "Step 3: Send a written legal notice to the landlord (via registered post) stating that the eviction attempt is illegal under the MRCA 1999",
+        "Step 4: File an FIR at your local police station for criminal trespass (BNS Section 329) and criminal intimidation (BNS Section 351) if threats are made",
+        "Step 5: File a suit for injunction in the Court of Small Causes (in Mumbai/Pune metro areas) or Civil Court (in other areas) to restrain the landlord from interfering with your possession",
+        "Step 6: If urgent, apply for an interim/temporary injunction — the court can issue this within days",
+        "Step 7: If landlord has already locked you out, file an urgent application for restoration of possession"
+      ],
+      "important_notes": [
+        "Self-help eviction by a landlord is a criminal offence under Section 41 of the MRCA 1999",
+        "Even if your lease has expired, the landlord MUST go through the court/Rent Authority to evict you",
+        "A landlord can only seek eviction on specific grounds listed in Section 16 of the MRCA — non-payment of rent, subletting, nuisance, bona fide personal need, etc.",
+        "Keep paying your rent regularly — if the landlord refuses to accept rent, deposit it in court under Section 15(2)"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Sections 15, 16, 19, 41; BNS Sections 329, 351",
+      "court_forum": {
+        "metro_areas": "Court of Small Causes (Mumbai, Pune, Nagpur and other metro areas)",
+        "other_areas": "Civil Court with local jurisdiction",
+        "competent_authority": "For leave-and-licence disputes — Competent Authority under Section 24 MRCA"
+      },
+      "source": "Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_002",
+      "title": "Complaint Against Landlord Cutting Essential Services (Water, Electricity)",
+      "category": "essential_services",
+      "when_to_use": "When your landlord has cut off or is threatening to cut off water supply, electricity, lift service, sanitation, or lights in passages and staircases to force you to vacate",
+      "steps": [
+        "Step 1: Document the disconnection — photographs of cut meters, turned-off valves, timestamps, and any communication from the landlord",
+        "Step 2: Send an immediate written complaint to the landlord (WhatsApp/email + registered post) demanding restoration within 24 hours, citing Section 29 of MRCA 1999",
+        "Step 3: File an FIR at the local police station — cutting essential services is a criminal offence punishable by imprisonment up to 3 months or fine up to Rs. 5,000 or both (Section 41-42 MRCA)",
+        "Step 4: File an application before the Rent Authority (Sections 34-37 MRCA) for immediate restoration of essential services",
+        "Step 5: Alternatively, file a complaint with the Consumer Dispute Redressal Forum under the Consumer Protection Act 2019 for deficiency in service",
+        "Step 6: If urgent, file a civil suit for mandatory injunction requiring the landlord to restore services immediately",
+        "Step 7: For electricity specifically — contact MERC (Maharashtra Electricity Regulatory Commission) Consumer Grievance Redressal Forum"
+      ],
+      "important_notes": [
+        "Essential services under MRCA include: water supply, electricity, lights in passages/staircases, lifts, conservancy/sanitary services",
+        "Cutting essential services is illegal EVEN IF the tenant has defaulted on rent — the landlord must follow legal eviction process",
+        "Cutting essential services is illegal EVEN against illegal occupants — the landlord must get a court order first",
+        "Penalty for landlord: imprisonment up to 3 months, fine up to Rs. 5,000, or both (Sections 41-42 MRCA)",
+        "The tenant can also claim compensation for damages and mental harassment"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Section 29 (essential services), Sections 41-42 (penalties); Consumer Protection Act 2019; Essential Services Act",
+      "helpline": {
+        "merc_mumbai": "MERC Consumer Grievance Redressal Forum — Mumbai jurisdiction",
+        "merc_nagpur": "MERC Consumer Grievance Redressal Forum — Nagpur jurisdiction",
+        "electricity_ombudsman": "If CGRF does not resolve within 60 days, escalate to Electricity Ombudsman"
+      },
+      "source": "Maharashtra Rent Control Act 1999, MERC Regulations 2020"
+    },
+    {
+      "id": "RENT_GRV_003",
+      "title": "File Case with Rent Authority for Rent Fixation or Eviction Dispute",
+      "category": "rent_authority",
+      "when_to_use": "When you have a dispute about standard rent fixation, unfair rent increases, eviction proceedings, or need to formally challenge any landlord action through the official Rent Authority",
+      "steps": [
+        "Step 1: Identify the correct forum — Rent Authority exercises original jurisdiction over rent fixation, eviction, and essential services complaints (Sections 34-37 MRCA)",
+        "Step 2: Prepare your application with: rent agreement copy, rent receipts, evidence of dispute, identity proof, property details",
+        "Step 3: File the application before the Rent Authority of your jurisdiction",
+        "Step 4: Pay the court fees (same as interlocutory application fees)",
+        "Step 5: Attend hearings — the Rent Authority has powers of a civil court",
+        "Step 6: If unsatisfied with the Rent Authority's order, file an appeal before the Appellate Authority (District Court) within 30 days (Section 38)",
+        "Step 7: For questions of law only, further revision can be filed in the High Court (Section 40)"
+      ],
+      "appeal_hierarchy": [
+        "Level 1: Rent Authority (original jurisdiction — Sections 34-37)",
+        "Level 2: Appellate Authority / District Court — appeal within 30 days (Section 38)",
+        "Level 3: High Court — revision on questions of law only (Section 40)"
+      ],
+      "important_notes": [
+        "Maximum permitted annual rent increase is 4% plus statutory adjustments for taxes/repairs (Section 11)",
+        "Cases should be concluded within approximately 12 months from service of summons",
+        "For leave-and-licence disputes, a separate summary procedure is available under Chapter VIII with the Competent Authority",
+        "Rent Authority orders are considered judicial proceedings",
+        "An ex-parte order can be set aside if the aggrieved party shows notice was not duly served or sufficient cause prevented attendance"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Sections 11, 34-40",
+      "source": "Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_004",
+      "title": "Tenant's Right to Repair and Deduct from Rent",
+      "category": "maintenance_repair",
+      "when_to_use": "When your landlord is not maintaining the property or not carrying out essential repairs despite being notified — structural damage, leaking roof, broken plumbing, electrical issues",
+      "steps": [
+        "Step 1: Send a written notice to the landlord specifying the repairs needed — use registered post and keep a copy",
+        "Step 2: Give the landlord 15 days to carry out the repairs",
+        "Step 3: If landlord fails to act within 15 days, you can carry out the repairs yourself",
+        "Step 4: Deduct the repair cost from your rent — subject to a maximum of 25% of annual rent",
+        "Step 5: Keep all bills, receipts, and photos (before and after) as proof",
+        "Step 6: If landlord disputes the deduction, you can approach the Rent Authority for resolution"
+      ],
+      "important_notes": [
+        "The landlord has a continuing duty to keep premises in good repair",
+        "Structural repairs are always the landlord's responsibility",
+        "Essential services (water, electricity, sanitation) maintenance is the landlord's duty",
+        "The 25% annual rent cap is on deductions — if repairs exceed this, approach the Rent Authority",
+        "Document everything — the notice, the 15-day wait period, the repair work, and the bills"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — provisions on landlord's duty of maintenance and tenant's right to repair",
+      "source": "Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_005",
+      "title": "Recover Security Deposit from Landlord",
+      "category": "deposit_recovery",
+      "when_to_use": "When your landlord is refusing to return your security deposit after you have vacated the premises, or is making unreasonable deductions",
+      "steps": [
+        "Step 1: Send a written demand notice to the landlord via registered post requesting return of deposit within 15 days",
+        "Step 2: If landlord ignores the notice, send a formal legal notice through a lawyer citing breach of agreement",
+        "Step 3: If still unresolved, file a complaint in the Consumer Dispute Redressal Forum (District Forum) under the Consumer Protection Act 2019 for deficiency in service",
+        "Step 4: Alternatively, file a civil suit for recovery of money in the appropriate civil court",
+        "Step 5: You can also file on Aaple Sarkar grievance portal under Housing Department if dealing with government/institutional landlord",
+        "Step 6: Consider Lok Adalat — faster resolution, no court fees, and the settlement is binding"
+      ],
+      "required_documents": [
+        "Rent agreement (registered copy)",
+        "Deposit payment receipt or bank transfer proof",
+        "Communication records with landlord (messages, emails, notices)",
+        "Photos of premises at the time of vacating (to prove good condition)",
+        "Copy of demand notice sent to landlord"
+      ],
+      "important_notes": [
+        "Under the Model Tenancy Act 2021, security deposit is capped at 2 months' rent for residential — but Maharashtra hasn't formally adopted this yet",
+        "Always pay deposit via bank transfer (never cash) for proof",
+        "Get a written receipt for deposit paid",
+        "Take photos/video of premises at move-in AND move-out to prevent false damage claims",
+        "Consumer Forum can award compensation for mental harassment in addition to deposit refund"
+      ],
+      "legal_basis": "Consumer Protection Act 2019; Maharashtra Rent Control Act 1999; Transfer of Property Act 1882 — Section 108",
+      "source": "Consumer Protection Act 2019, Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_006",
+      "title": "Landlord's Right to Evict for Non-Payment of Rent",
+      "category": "landlord_rights",
+      "when_to_use": "When you are a landlord and your tenant has defaulted on rent payments — this is the legal procedure to follow for eviction",
+      "steps": [
+        "Step 1: Send a written legal notice to the tenant demanding payment of arrears — give at least 90 days notice for non-payment",
+        "Step 2: If tenant does not pay within the notice period, file an eviction suit before the Court of Small Causes (metro) or Civil Court (other areas)",
+        "Step 3: In the suit, provide evidence of: rent agreement, default period, notices sent, and proof that rent was not received",
+        "Step 4: The court will issue summons to the tenant",
+        "Step 5: Under Section 15, if the tenant pays ALL arrears within the time stipulated by the court AND continues paying rent regularly during proceedings, the court may refuse to pass eviction decree (relief against forfeiture)",
+        "Step 6: If the tenant is a 'willful defaulter' (persistent non-payment, irregular payments only under threat), the court may pass eviction decree",
+        "Step 7: If decree is passed, execute it through court process — NEVER attempt self-help eviction"
+      ],
+      "grounds_for_eviction": [
+        "Non-payment of rent for over 90 days after notice (Section 16(1)(a))",
+        "Illegal subletting without landlord's consent",
+        "Using premises for unauthorised or illegal activities",
+        "Causing nuisance or structural damage",
+        "Bona fide personal occupation by landlord or landlord's family",
+        "Premises required for repairs/demolition that cannot proceed with tenant in occupation"
+      ],
+      "important_notes": [
+        "Self-help eviction (changing locks, forceful entry, threats) is a criminal offence — Sections 41-42 MRCA",
+        "You CANNOT cut essential services to force tenant out — this is punishable with imprisonment",
+        "Court order is MANDATORY for any eviction — notice alone is not sufficient",
+        "Courts examine 'greater hardship' — if refusing eviction causes less hardship than granting it, the court may refuse",
+        "Keep all rent receipts, bank records, and communication as evidence"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Sections 15, 16, 19, 41-42",
+      "source": "Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_007",
+      "title": "Register Rent Agreement (Mandatory Under MRCA)",
+      "category": "compliance",
+      "when_to_use": "When entering into any rental arrangement in Maharashtra — registration is mandatory and protects both landlord and tenant",
+      "steps": [
+        "Step 1: Draft a comprehensive rent agreement with all terms — rent amount, deposit, duration, maintenance responsibilities, notice period",
+        "Step 2: Both landlord and tenant must sign the agreement",
+        "Step 3: Get the agreement registered at the Sub-Registrar office under the Registration Act 1908",
+        "Step 4: Pay stamp duty and registration fees as applicable in Maharashtra",
+        "Step 5: Alternatively, use the online e-registration facility at igrmaharashtra.gov.in",
+        "Step 6: Collect the registered copy — both parties should keep a copy"
+      ],
+      "important_notes": [
+        "Registration is mandatory under Section 55 of MRCA 1999",
+        "Unregistered agreements are NOT admissible as evidence in court (Section 49, Registration Act 1908)",
+        "The landlord holds primary responsibility for registration",
+        "Oral agreements have very limited enforceability — always get a written, registered agreement",
+        "Include essential clauses: rent, deposit, duration, notice period, maintenance, subletting rules, escalation clause"
+      ],
+      "portal": {
+        "name": "IGR Maharashtra — e-Registration",
+        "url": "https://igrmaharashtra.gov.in"
+      },
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Section 55; Registration Act 1908",
+      "source": "Maharashtra Rent Control Act 1999, IGR Maharashtra"
+    },
+    {
+      "id": "RENT_GRV_008",
+      "title": "Escalate Rent Dispute via Aaple Sarkar or Consumer Forum",
+      "category": "escalation",
+      "when_to_use": "When direct negotiation and legal notices have failed, and you need to escalate through government grievance portals or consumer courts",
+      "options": [
+        {
+          "method": "Aaple Sarkar Grievance Portal",
+          "when": "For complaints against government departments, housing authorities, or institutional landlords",
+          "portal_url": "https://aaplesarkar.mahaonline.gov.in/",
+          "steps": [
+            "Register on the portal → file grievance under Housing Department at District Level",
+            "Resolution timeline: 21 working days",
+            "Helpline: 1800 120 8040"
+          ]
+        },
+        {
+          "method": "Consumer Dispute Redressal Forum (District Forum)",
+          "when": "When landlord's failure amounts to deficiency in service — not returning deposit, not maintaining premises, cutting services",
+          "steps": [
+            "File complaint at the District Consumer Forum where the property is located or where you reside",
+            "Attach: rent agreement, receipts, notices sent, evidence of deficiency",
+            "Forum can order: restoration of services, return of deposit, compensation for harassment"
+          ]
+        },
+        {
+          "method": "District Legal Services Authority (DLSA)",
+          "when": "When you cannot afford a lawyer — free legal aid is available",
+          "steps": [
+            "Visit your district's DLSA office",
+            "Apply for free legal aid if your annual income is below Rs. 3 lakh (or as per state norms)",
+            "DLSA provides free lawyer, free court fees, and can also refer to Lok Adalat for faster settlement"
+          ],
+          "url": "https://nalsa.gov.in/"
+        },
+        {
+          "method": "Lok Adalat",
+          "when": "For faster, no-cost resolution of rent disputes — settlement is binding and non-appealable",
+          "steps": [
+            "Check NALSA website for next Lok Adalat dates in your district",
+            "Both parties must agree to participate",
+            "No court fees",
+            "Settlement reached is binding — equivalent to a court decree"
+          ]
+        }
+      ],
+      "legal_basis": "Consumer Protection Act 2019; Legal Services Authorities Act 1987; Maharashtra Rent Control Act 1999",
+      "source": "Consumer Protection Act 2019, NALSA, Aaple Sarkar Portal"
+    },
+    {
+      "id": "RENT_GRV_009",
+      "title": "File RTI for Rent/Housing Related Information",
+      "category": "information_right",
+      "when_to_use": "When you need official information about rent control policies, building permissions, property ownership records, or government housing schemes in Maharashtra",
+      "portal_url": "https://rtionline.maharashtra.gov.in/request/request.php?lan=E",
+      "fee": "Rs. 10",
+      "sample_questions": [
+        "Please provide a copy of the standard rent fixation order for premises at [ADDRESS] if any exists",
+        "Please provide details of complaints filed under Section 29 (essential services) of MRCA 1999 in [DISTRICT] in the last 12 months",
+        "Please provide the list of designated Rent Authorities and their jurisdictions in [DISTRICT]",
+        "Please provide details of the building's approved plan and occupancy certificate for property at [ADDRESS]",
+        "Please provide the status of any pending cases regarding the property at [ADDRESS] before the Rent Authority"
+      ],
+      "legal_basis": "Right to Information Act 2005 — Sections 6, 7, 19",
+      "source": "RTI Act 2005, Maharashtra RTI Portal"
+    },
+    {
+      "id": "RENT_GRV_010",
+      "title": "Challenge Unfair Rent Increase by Landlord",
+      "category": "rent_dispute",
+      "when_to_use": "When your landlord is demanding a rent increase higher than the legally permitted limit, or imposing an arbitrary hike without following proper procedure",
+      "steps": [
+        "Step 1: Check your rent agreement — the agreement may specify the escalation clause (common: 5-10% annually)",
+        "Step 2: Under Section 11 of MRCA 1999, the maximum permitted annual increase is 4% of standard rent plus statutory adjustments for taxes and repairs",
+        "Step 3: If the landlord demands more than the permitted increase, send a written objection via registered post citing Section 11",
+        "Step 4: Continue paying the legal rent amount (standard rent + permitted increase) — do NOT stop paying rent entirely",
+        "Step 5: If landlord refuses to accept the legal rent, deposit it in court under Section 15(2) of MRCA — this protects you from eviction for non-payment",
+        "Step 6: File an application before the Rent Authority for fixation of standard rent (Sections 34-37)",
+        "Step 7: The Rent Authority will examine the premises, location, amenities, and comparable rents to fix the standard rent",
+        "Step 8: If the landlord retaliates with eviction threats, file for an injunction"
+      ],
+      "important_notes": [
+        "Maximum annual rent increase: 4% of standard rent (Section 11 MRCA 1999)",
+        "Additional increases are permitted only for: municipal taxes passed on to tenant, structural improvements with tenant's consent, or special/heavy repairs",
+        "The landlord cannot unilaterally increase rent beyond the statutory limit — even if the market rate is higher",
+        "If you have an older (pre-1999) tenancy under the Bombay Rents Act, even lower increases may apply",
+        "Always pay rent via bank transfer (NEFT/UPI) for proof — never pay in cash without a receipt",
+        "If landlord refuses to accept rent, deposit it in court immediately — this is your strongest protection"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Sections 11 (rent increase limits), 15(2) (deposit of rent in court), 34-37 (Rent Authority jurisdiction)",
+      "source": "Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_011",
+      "title": "Deal with Landlord Harassment or Threats",
+      "category": "harassment",
+      "when_to_use": "When your landlord is harassing you through threats, verbal abuse, entering your premises without permission, sending goons, threatening messages, or any intimidation to force you to vacate",
+      "steps": [
+        "Step 1: Document EVERYTHING — save all threatening messages (WhatsApp, SMS, email), record phone calls (inform them you are recording), take photos/videos of any physical intimidation or unauthorized entry",
+        "Step 2: Send a written warning to the landlord via registered post — state that the harassment is illegal and you will take legal action if it continues",
+        "Step 3: File an FIR at your local police station under applicable sections — Criminal intimidation (BNS Section 351), Criminal trespass (BNS Section 329), Wrongful restraint (BNS Section 126)",
+        "Step 4: If police refuse to register FIR, file a written complaint to the SP/DCP or use the Maharashtra Police citizen portal (citizen.mahapolice.gov.in)",
+        "Step 5: File a civil suit for permanent injunction restraining the landlord from harassment, interference, or illegal entry",
+        "Step 6: Apply for an interim injunction — the court can grant temporary protection within days",
+        "Step 7: If the harassment involves physical violence or sexual harassment, this is a cognizable offence — police MUST register an FIR immediately",
+        "Step 8: Contact the District Legal Services Authority (DLSA) for free legal aid if you cannot afford a lawyer"
+      ],
+      "important_notes": [
+        "Landlord entering your rented premises without prior notice or consent is criminal trespass (BNS Section 329)",
+        "Threatening to cut water/electricity or lock you out is criminal intimidation (BNS Section 351)",
+        "Self-help eviction (changing locks, removing doors/windows, throwing out belongings) is a criminal offence under MRCA Section 41",
+        "Even verbal threats or intimidation are punishable — document them carefully",
+        "If landlord sends anyone to threaten you, those persons are also criminally liable",
+        "Women facing harassment can additionally call Women's Helpline 181 or file complaint with Women's Commission"
+      ],
+      "legal_basis": "BNS Sections 126 (wrongful restraint), 329 (criminal trespass), 351 (criminal intimidation); Maharashtra Rent Control Act 1999 — Section 41; Consumer Protection Act 2019",
+      "helpline": {
+        "police_emergency": "112 (MERS)",
+        "women_helpline": "181",
+        "police_citizen_portal": "citizen.mahapolice.gov.in"
+      },
+      "source": "BNS 2023, Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_012",
+      "title": "Subletting Rules — Can I Sublet My Rented Premises?",
+      "category": "subletting",
+      "when_to_use": "When you want to know if you can sublet your rented premises, or when your landlord is accusing you of illegal subletting, or when you are a landlord dealing with unauthorized subletting",
+      "steps": [
+        "Step 1: Check your rent agreement — subletting is generally prohibited unless the agreement specifically permits it",
+        "Step 2: Under the MRCA 1999, subletting without landlord's written consent is grounds for eviction (Section 16)",
+        "Step 3: If you need to sublet — send a written request to your landlord seeking permission. Get written consent before proceeding",
+        "Step 4: If you are a LANDLORD and suspect illegal subletting — send a legal notice to the tenant demanding explanation",
+        "Step 5: Collect evidence of subletting — photographs, witness statements, utility bills in sub-tenant's name",
+        "Step 6: File an eviction application before the Rent Authority or Court of Small Causes citing unauthorized subletting as the ground",
+        "Step 7: If you are a TENANT accused of subletting wrongly — respond to the legal notice with evidence that no subletting has occurred (e.g., the person staying is a family member, not a sub-tenant)"
+      ],
+      "important_notes": [
+        "Subletting without written consent of the landlord is a valid ground for eviction under Section 16 MRCA",
+        "Having a family member or guest stay is NOT subletting — subletting requires transfer of possession and payment of rent by the sub-tenant",
+        "If subletting is discovered, the sub-tenant may become a 'deemed tenant' under certain circumstances (Section 15A of old Bombay Rents Act provisions)",
+        "In the Pagdi system, tenancy transfer rules are different — consult a lawyer for Pagdi-specific situations",
+        "Landlords must prove subletting in court — mere suspicion is not enough for eviction"
+      ],
+      "legal_basis": "Maharashtra Rent Control Act 1999 — Sections 16 (grounds for eviction), 28 (subletting restrictions); Transfer of Property Act 1882",
+      "source": "Maharashtra Rent Control Act 1999"
+    },
+    {
+      "id": "RENT_GRV_013",
+      "title": "Housing Society Charging Illegal Fees or Denying Services",
+      "category": "society_dispute",
+      "when_to_use": "When your housing society is charging unauthorized fees (excessive non-occupancy charges, illegal move-in/move-out fees, discriminatory charges for tenants) or denying essential services to force payment",
+      "steps": [
+        "Step 1: Check the society's registered bye-laws — any fee or charge must be mentioned in the bye-laws or approved in the AGM (Annual General Meeting)",
+        "Step 2: Non-occupancy charges cannot exceed 10% of service/maintenance charges (as per Maharashtra Government rules)",
+        "Step 3: If the society is charging more, send a written complaint to the society's managing committee citing the applicable rule",
+        "Step 4: If ignored, file a complaint with the Deputy/Assistant Registrar of Cooperative Societies in your jurisdiction",
+        "Step 5: Alternatively, file a complaint at the District Consumer Forum under the Consumer Protection Act 2019",
+        "Step 6: If the society has cut water, electricity, or lift access to force payment — this is illegal. File an FIR and approach the civil court for injunction",
+        "Step 7: For discrimination based on religion, caste, or marital status — file a complaint with the National Commission for Minorities or the Human Rights Commission"
+      ],
+      "important_notes": [
+        "Societies CANNOT cut essential services (water, electricity, lift) to recover unpaid dues — they must use legal recovery suits instead",
+        "Non-occupancy charges capped at 10% of maintenance (Maharashtra Government Notification)",
+        "Move-in/move-out charges are NOT valid unless specifically approved in the bye-laws",
+        "Societies cannot charge tenants more maintenance than owners unless approved in AGM and reflected in bye-laws",
+        "Discrimination against tenants based on religion, caste, gender, or diet is unconstitutional and illegal",
+        "Arbitrary fines not mentioned in bye-laws are unenforceable"
+      ],
+      "legal_basis": "Maharashtra Cooperative Societies Act 1960; Consumer Protection Act 2019; Maharashtra Maintenance of Social Order Act; Constitution of India — Articles 14, 15",
+      "source": "Maharashtra Cooperative Societies Act 1960, Maharashtra Government Notifications"
+    }
+  ]
+}

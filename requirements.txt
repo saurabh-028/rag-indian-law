@@ -1,0 +1,25 @@
+fastapi
+uvicorn[standard]
+pdfplumber
+pymupdf
+sentence-transformers
+faiss-cpu
+openai>=1.0.0
+numpy
+tqdm
+python-dotenv
+# --- multilingual support ---
+langdetect
+sentencepiece
+torch
+aiofiles
+boto3
+# --- evaluation ---
+nltk
+rouge-score
+bert-score
+matplotlib
+pandas
+datasets
+ragas
+langchain-openai
