@@ -11,9 +11,9 @@ Usage:
 Steps:
     1. Walks data_dir recursively for *.pdf and *.json files.
     2. Looks up each file in REGISTRY (warns + skips unknown files).
-    3. For table-based PDFs  → calls cleaner.parse(pdf_path)
-       For text-based PDFs   → extracts text via pymupdf, then clean() + parse()
-       For JSON files        → calls cleaner.parse_from_json(path)
+    3. For table-based PDFs  -> calls cleaner.parse(pdf_path)
+       For text-based PDFs   -> extracts text via pymupdf, then clean() + parse()
+       For JSON files        -> calls cleaner.parse_from_json(path)
     4. Embeds the 'content' field of every chunk with sentence-transformers.
     5. Builds a single FAISS IndexFlatIP (cosine similarity via L2-normalised vectors).
     6. Saves unified.index, metadata.json, and index_config.json to output_dir.
@@ -157,7 +157,7 @@ def build_index(
 
     index_path = output_dir / "unified.index"
     faiss.write_index(index, str(index_path))
-    print(f"[build_index] Saved FAISS index → {index_path}")
+    print(f"[build_index] Saved FAISS index -> {index_path}")
 
     metadata: list[dict] = []
     for faiss_id, chunk in enumerate(all_chunks):
@@ -168,7 +168,7 @@ def build_index(
     metadata_path = output_dir / "metadata.json"
     with open(metadata_path, "w", encoding="utf-8") as f:
         json.dump(metadata, f, ensure_ascii=False, indent=2)
-    print(f"[build_index] Saved metadata   → {metadata_path}")
+    print(f"[build_index] Saved metadata   -> {metadata_path}")
 
     # Save config so the retriever can validate it's loading the right model
     config = {
@@ -180,7 +180,7 @@ def build_index(
     config_path = output_dir / "index_config.json"
     with open(config_path, "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2)
-    print(f"[build_index] Saved index config → {config_path}")
+    print(f"[build_index] Saved index config -> {config_path}")
     print("[build_index] Done.")
 
 

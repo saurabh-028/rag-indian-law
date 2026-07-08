@@ -73,6 +73,11 @@ ssh -i ${EC2_SSH_KEY} -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << EOF
         -e S3_INDEX_PREFIX=index \
         -e AWS_DEFAULT_REGION=${AWS_REGION} \
         -e EMBED_MODEL=${EMBED_MODEL} \
+        --log-driver awslogs \
+        --log-opt awslogs-region=${AWS_REGION} \
+        --log-opt awslogs-group=/rag-indian-law \
+        --log-opt awslogs-stream=ec2-container \
+        --log-opt awslogs-create-group=true \
         ${ECR_URI}
 
     # Clean up old images to free disk space

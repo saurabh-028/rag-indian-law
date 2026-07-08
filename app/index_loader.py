@@ -12,8 +12,11 @@ Required env vars:
 AWS credentials are read from env vars or IAM role automatically.
 """
 
+import logging
 import os
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 def download_index_from_s3(local_index_dir: str) -> None:
@@ -43,7 +46,7 @@ def download_index_from_s3(local_index_dir: str) -> None:
         "index_config.json",
     ]
 
-    print(f"[index_loader] Downloading index from s3://{bucket}/{prefix}/ ...")
+    logger.info("Downloading index from s3://%s/%s/ ...", bucket, prefix)
 
     for filename in files_to_download:
         s3_key = f"{prefix}/{filename}"
@@ -51,18 +54,17 @@ def download_index_from_s3(local_index_dir: str) -> None:
 
         try:
             s3.download_file(bucket, s3_key, str(local_path))
-            print(f"[index_loader]   ✓ {s3_key} → {local_path}")
+            logger.info("Downloaded s3://%s/%s -> %s", bucket, s3_key, local_path)
         except ClientError as exc:
             error_code = exc.response["Error"]["Code"]
             if error_code == "404" and filename == "index_config.json":
-                # index_config.json is optional for older indexes
-                print(f"[index_loader]   - {s3_key} not found (optional, skipping)")
+                logger.warning("s3://%s/%s not found (optional, skipping)", bucket, s3_key)
             else:
                 raise RuntimeError(
                     f"Failed to download s3://{bucket}/{s3_key}: {exc}"
                 ) from exc
 
-    print("[index_loader] Index download complete.")
+    logger.info("Index download complete from s3://%s/%s/", bucket, prefix)
 
 
 def upload_index_to_s3(local_index_dir: str) -> None:
@@ -84,16 +86,16 @@ def upload_index_to_s3(local_index_dir: str) -> None:
         "index_config.json",
     ]
 
-    print(f"[index_loader] Uploading index to s3://{bucket}/{prefix}/ ...")
+    logger.info("Uploading index to s3://%s/%s/ ...", bucket, prefix)
 
     for filename in files_to_upload:
         local_path = local_dir / filename
         if not local_path.exists():
-            print(f"[index_loader]   - {filename} not found locally, skipping")
+            logger.warning("%s not found locally, skipping upload", filename)
             continue
 
         s3_key = f"{prefix}/{filename}"
         s3.upload_file(str(local_path), bucket, s3_key)
-        print(f"[index_loader]   ✓ {local_path} → s3://{bucket}/{s3_key}")
+        logger.info("Uploaded %s -> s3://%s/%s", local_path, bucket, s3_key)
 
-    print("[index_loader] Index upload complete.")
+    logger.info("Index upload complete to s3://%s/%s/", bucket, prefix)
