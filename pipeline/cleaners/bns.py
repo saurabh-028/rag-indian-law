@@ -7,6 +7,12 @@ Structure:
   - Page 16+:   Content
   - Chapters:   "CHAPTER I", "CHAPTER XIV" etc (all caps, title on next line)
   - Sections:   "123. Section Title.--Body text..."
+
+Notes on PDF quirks:
+  - Some section titles wrap to a second line (e.g. Section 62, 102, 119).
+  - Some separators are ". —" (period + space + em-dash) rather than ".—".
+  - Both are normalised after clean() runs (em-dashes → hyphens).
+  - SECTION_RE handles these via an optional continuation line and r"\.[ ]?-" separator.
 """
 
 import re
@@ -19,18 +25,45 @@ CHAPTER_RE = re.compile(
     r"(?m)^(CHAPTER\s+[IVXLC]+)\s*\n([A-Z][A-Z\s,'-]{3,80})"
 )
 
+# Matches BNS section headers after clean() has run (em-dashes → hyphens).
+#
+# Two quirks handled:
+#   1. Multi-line titles: some long titles wrap to a second line before the separator.
+#      The optional  (?:\n[^\n]{1,100}?)?  captures that continuation line (lazy).
+#   2. Space before separator: ". —" becomes ". -" after clean(), so the separator
+#      pattern allows an optional space: \.[ ]?-{1,2}
+#
+# Both title parts are LAZY so the regex always finds the SHORTEST valid title
+# before the separator, preventing one section's title from bleeding into the next.
 SECTION_RE = re.compile(
-    r"(?m)^(\d{1,3}[A-Z]?)\.\s+([^\n]{3,120}?)(?:\.-{1,2}|\u2014|\u2013|\u2012|-{2})",
+    r"(?m)"
+    r"^(\d{1,3}[A-Z]?)\.\s+"                  # section number  e.g. "63. "
+    r"([^\n]{1,120}?(?:\n[^\n]{1,100}?)?)"     # title: lazy first line + optional lazy continuation
+    r"(?:\.[ ]?-{1,2}|\u2014|\u2013|\u2012|-{2})",  # separator
+)
+
+# Detects punishment provisions inside a sub-chunk so we can annotate the title.
+_PUNISHMENT_RE = re.compile(
+    r"(?:shall|liable)\s+be\s+punished\b|punishable\s+with\b",
+    re.IGNORECASE,
 )
 
 
 def clean(raw: str) -> str:
-    # Fix common OCR ligature issues
+    # Normalise smart quotes
     raw = raw.replace("\u2019", "'").replace("\u2018", "'")
-    raw = raw.replace("\u2013", "-").replace("\u2014", "-")
-    raw = raw.replace("\u2012", "-").replace("\ufb01", "fi").replace("\ufb02", "fl")
+    raw = raw.replace("\u201c", '"').replace("\u201d", '"')  # curly double-quotes
 
-    # Remove footnote markers (superscript digits after words)
+    # Convert em-dash / en-dash / figure-dash to a plain hyphen so the
+    # post-clean separator pattern (\.[ ]?-{1,2}) can match them.
+    raw = raw.replace("\u2013", "-").replace("\u2014", "-")
+    raw = raw.replace("\u2012", "-")
+
+    # Fix common OCR ligatures
+    raw = raw.replace("\ufb01", "fi").replace("\ufb02", "fl")
+
+    # Remove footnote markers (superscript digits directly after a word character,
+    # followed by whitespace).
     raw = re.sub(r"(?<=\w)(\d)(?=\s)", "", raw)
 
     raw = re.sub(r"[ \t]+", " ", raw)
@@ -82,8 +115,9 @@ def parse(text: str) -> list:
     sections = []
 
     for i, m in enumerate(matches):
-        sec_num   = m.group(1).strip()
-        sec_title = m.group(2).strip()
+        sec_num = m.group(1).strip()
+        # Normalise multi-line titles: collapse internal whitespace/newlines.
+        sec_title = re.sub(r"\s+", " ", m.group(2).strip())
 
         body_start = m.end()
         body_end   = matches[i + 1].start() if i + 1 < len(matches) else len(text)
@@ -93,7 +127,14 @@ def parse(text: str) -> list:
         chunks  = _sub_chunk(body, max_chars=2000)
 
         for chunk_idx, chunk_text in enumerate(chunks):
-            full_text = f"{sec_num}. {sec_title}.\n{chunk_text}"
+            # For multi-part sections, annotate sub-chunks that contain penalty
+            # provisions so that punishment-related queries retrieve them reliably.
+            if len(chunks) > 1 and _PUNISHMENT_RE.search(chunk_text):
+                display_title = f"{sec_title} — Penalty"
+            else:
+                display_title = sec_title
+
+            full_text = f"{sec_num}. {display_title}.\n{chunk_text}"
 
             record = {
                 "doc_id"        : f"BNS_{sec_num}" + (f"_part{chunk_idx+1}" if len(chunks) > 1 else ""),

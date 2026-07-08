@@ -24,9 +24,22 @@ index/
 # Evaluation outputs
 evaluation/results/
 
-# Jupyter notebooks checkpoints
+# Jupyter notebooks and associated build artefacts
 .ipynb_checkpoints/
 *.ipynb
+Notebooks/
+
+# Claude Code session data
+.claude/
+
+# Private keys / certificates — never commit
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Temporary / scratch folders
+New folder/
 
 # OS
 .DS_Store

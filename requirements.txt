@@ -4,6 +4,7 @@ pdfplumber
 pymupdf
 sentence-transformers
 faiss-cpu
+rank_bm25
 openai>=1.0.0
 numpy
 tqdm
