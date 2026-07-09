@@ -156,6 +156,13 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
         session_id, detected_lang, req.sector_filter or "auto", req.question[:120],
     )
 
+    # Fetch conversation history before retrieval (not just before generation) —
+    # a vague follow-up like "what can I challenge this?" has almost nothing
+    # for retrieval to match on its own, so the previous turn's retrieval
+    # query gets prepended below to carry the topic forward.
+    recent_turns = await memory.get_recent_turns(session_id)
+    history = [{"question": t.question, "answer": t.answer} for t in recent_turns]
+
     # Translate to English for retrieval — the index is English-only.
     # GPT-4o reads the original question directly, so no back-translation is needed.
     retrieval_question = req.question
@@ -165,8 +172,17 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
         except Exception as exc:
             logger.warning("Translation failed (%s->en): %s — using original question.", detected_lang, exc)
 
+    # search_query is what actually gets searched — augmented with the previous
+    # turn's retrieval query when there's history. retrieval_question itself
+    # stays a clean single-turn value, since that's what gets persisted and
+    # reused as *next* turn's prefix — augmenting it here would compound
+    # unboundedly over a long conversation.
+    search_query = retrieval_question
+    if recent_turns and recent_turns[-1].retrieval_question:
+        search_query = f"{recent_turns[-1].retrieval_question} {retrieval_question}"
+
     chunks = retriever.retrieve(
-        question=retrieval_question,
+        question=search_query,
         top_k=req.top_k,
         sector_filter=req.sector_filter,
     )
@@ -218,10 +234,6 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
             if s:
                 sector_votes[s] = sector_votes.get(s, 0) + 1
         sector = max(sector_votes, key=sector_votes.get) if sector_votes else chunks[0].get("sector")
-
-    # Pull prior turns for this session so follow-up questions resolve with context
-    recent_turns = await memory.get_recent_turns(session_id)
-    history = [{"question": t.question, "answer": t.answer} for t in recent_turns]
 
     # Pass the original question so GPT responds in the user's language
     try:
@@ -296,6 +308,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
     await memory.save_turn(
         session_id=session_id,
         question=req.question,
+        retrieval_question=retrieval_question,
         answer=answer,
         sector=sector,
         detected_lang=detected_lang,
