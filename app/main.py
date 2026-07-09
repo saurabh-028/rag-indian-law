@@ -38,7 +38,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-from app import memory, retriever  # noqa: E402
+from app import memory, retriever, verifier  # noqa: E402
 from app.generator import Generator  # noqa: E402
 from app.index_loader import download_index_from_s3  # noqa: E402
 from app.language import detect_language, translator, SUPPORTED_LANGS  # noqa: E402
@@ -234,6 +234,41 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
         )
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=502, detail=f"OpenAI API error: {exc}") from exc
+
+    # Citation verification: catch section numbers the model cited but that
+    # weren't actually in the retrieved context, and give it one chance to
+    # fix itself before shipping the answer.
+    check = verifier.verify_citations(result["answer"], chunks)
+    if not check["verified"]:
+        logger.warning(
+            "session=%s unverified citations %s — retrying with correction",
+            session_id, check["unverified_sections"],
+        )
+        correction = (
+            f"Your previous answer cited Section(s) {', '.join(check['unverified_sections'])}, "
+            "which do not appear anywhere in the context provided above. Remove or correct these — "
+            "only cite section numbers that are explicitly present in the context."
+        )
+        try:
+            retry_result = _generator.generate(
+                question=req.question,
+                context_chunks=chunks,
+                sector=sector,
+                response_lang=detected_lang,
+                history=history,
+                correction=correction,
+            )
+            retry_check = verifier.verify_citations(retry_result["answer"], chunks)
+            if retry_check["verified"]:
+                logger.info("session=%s citation retry fixed the answer", session_id)
+            else:
+                logger.warning(
+                    "session=%s citation retry still unverified %s — shipping anyway",
+                    session_id, retry_check["unverified_sections"],
+                )
+            result = retry_result
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("session=%s citation retry call failed: %s — shipping original answer", session_id, exc)
 
     answer = result["answer"]
     logger.info("answer | session=%s sector=%s chunks=%d tokens=%d", session_id, sector, len(chunks), result["usage"].get("total_tokens", 0))
