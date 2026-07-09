@@ -21,6 +21,11 @@ env/
 # FAISS index (large binary files — rebuild with build_index.py)
 index/
 
+# Chat memory SQLite DB (local dev / EC2 volume-mounted — real user data)
+data/
+*.db
+*.db-journal
+
 # Evaluation outputs
 evaluation/results/
 

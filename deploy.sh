@@ -63,11 +63,16 @@ ssh -i ${EC2_SSH_KEY} -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << EOF
     docker stop ${CONTAINER_NAME} 2>/dev/null || true
     docker rm ${CONTAINER_NAME} 2>/dev/null || true
 
+    # Host-side dir for the chat-memory SQLite file — bind-mounted so
+    # conversation history survives container restarts/redeploys.
+    mkdir -p /home/ubuntu/data
+
     # Run new container
     docker run -d \
         -p 8000:8000 \
         --name ${CONTAINER_NAME} \
         --restart unless-stopped \
+        -v /home/ubuntu/data:/app/data \
         -e OPENAI_API_KEY=${OPENAI_API_KEY} \
         -e S3_INDEX_BUCKET=${S3_BUCKET} \
         -e S3_INDEX_PREFIX=index \
