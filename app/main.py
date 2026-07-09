@@ -38,7 +38,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-from app import memory, retriever, verifier  # noqa: E402
+from app import memory, retriever, router, verifier  # noqa: E402
 from app.generator import Generator  # noqa: E402
 from app.index_loader import download_index_from_s3  # noqa: E402
 from app.language import detect_language, translator, SUPPORTED_LANGS  # noqa: E402
@@ -224,16 +224,36 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
             session_id=session_id,
         )
 
-    # Auto-detect sector via majority vote across retrieved chunks
+    # Route to a sector, or catch a genuine cross-domain split before generating
     if req.sector_filter:
         sector = req.sector_filter
     else:
-        sector_votes: dict = {}
-        for c in chunks:
-            s = c.get("sector", "")
-            if s:
-                sector_votes[s] = sector_votes.get(s, 0) + 1
-        sector = max(sector_votes, key=sector_votes.get) if sector_votes else chunks[0].get("sector")
+        routing = router.route(chunks)
+        sector = routing["sector"] or chunks[0].get("sector")
+
+        if routing["ambiguous"]:
+            logger.info(
+                "session=%s ambiguous routing across %s — asking for clarification",
+                session_id, routing["candidates"],
+            )
+            clarification = router.clarifying_question(routing["candidates"], detected_lang)
+            await memory.save_turn(
+                session_id=session_id,
+                question=req.question,
+                retrieval_question=retrieval_question,
+                answer=clarification,
+                sector=None,
+                detected_lang=detected_lang,
+            )
+            return QueryResponse(
+                answer=clarification,
+                sources=[],
+                chunks_used=len(chunks),
+                sector_used=None,
+                detected_lang=detected_lang,
+                usage={},
+                session_id=session_id,
+            )
 
     # Pass the original question so GPT responds in the user's language
     try:
