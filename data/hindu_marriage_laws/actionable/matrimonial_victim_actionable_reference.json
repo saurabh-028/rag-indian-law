@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "title": "Maharashtra Matrimonial Disputes — Victim-Side Actionable Reference Data",
+    "description": "Actionable steps for a person facing domestic violence, dowry harassment, or abuse — filing a complaint, getting a protection order, claiming monetary relief, and immediate safety steps. Complements matrimonial_actionable_reference.json, which covers the accused's side of matrimonial disputes.",
+    "sector": "matrimonial",
+    "doc_type": "actionable_reference",
+    "last_verified": "2026-07-09",
+    "verification_sources": [
+      "Protection of Women from Domestic Violence Act, 2005 — indiacode.nic.in (verified against extracted bare-act text)",
+      "Dowry Prohibition Act, 1961 (modified 2018) — indiacode.nic.in (verified against extracted bare-act text)",
+      "BNS 2023 — Section 85 (formerly IPC 498A)"
+    ]
+  },
+  "grievance_mechanisms": [
+    {
+      "id": "MAT_VIC_001",
+      "title": "File a Domestic Violence Complaint and Get a Protection Order",
+      "category": "victim_protection",
+      "when_to_use": "When you are facing physical, sexual, verbal, emotional, or economic abuse from your husband or his relatives and want legal protection under the Protection of Women from Domestic Violence Act 2005 (PWDVA)",
+      "steps": [
+        "Step 1: You do not need to go to a lawyer first — you can approach a Protection Officer (appointed under Section 8 PWDVA) at your local Women and Child Development office, or go directly to a Magistrate, or contact a registered service provider/NGO under Section 10",
+        "Step 2: The Protection Officer records your complaint as a Domestic Incident Report (DIR) under Section 9, documenting the incidents of abuse — this DIR is placed before the Magistrate along with your application",
+        "Step 3: File (or have the Protection Officer file on your behalf) an application under Section 12 before the Magistrate having jurisdiction — this can be where you live (even temporarily), where the respondent lives or works, or where the abuse occurred (Section 27)",
+        "Step 4: Under Section 3, domestic violence covers physical abuse, sexual abuse, verbal and emotional abuse, and economic abuse (denying money, stopping you from working, controlling household funds) — you do not need a physical injury to file",
+        "Step 5: If you are in immediate danger, ask the Magistrate for an interim or ex-parte order under Section 23 — this can be granted without waiting for the respondent to be heard first",
+        "Step 6: By law, the Magistrate must fix the first hearing within three days of the application being received by the court (Section 12(4)), and must endeavour to dispose of the case within sixty days of that first hearing (Section 12(5))",
+        "Step 7: Keep any evidence you have — medical records, photographs of injuries, messages, witness statements from neighbours or family — but the absence of medical evidence does not disqualify your complaint",
+        "Step 8: If the respondent violates any order the Magistrate passes, that breach is itself a criminal offence under Section 31 — punishable with imprisonment up to 1 year and/or a fine up to Rs. 20,000"
+      ],
+      "required_documents": [
+        "Proof of relationship with the respondent (marriage certificate, if available — not mandatory to file)",
+        "Any evidence of abuse — medical records, photos, messages, witness names",
+        "Proof of address / shared household",
+        "Domestic Incident Report (DIR) from the Protection Officer, if already filed"
+      ],
+      "important_notes": [
+        "PWDVA is a civil law — filing under it does not itself put your husband in jail, but breaching an order it grants is a criminal offence under Section 31",
+        "You can file under PWDVA even if you are not filing for divorce, and even while continuing to live in the same house",
+        "There is no court fee for filing a PWDVA application",
+        "A 'domestic relationship' under PWDVA covers not just wives, but also women in live-in relationships and other female relatives in the household",
+        "A single act of physical, sexual, verbal, emotional, or economic abuse is enough to seek relief — you do not have to show it was severe or ongoing for years"
+      ],
+      "legal_basis": "Protection of Women from Domestic Violence Act, 2005 — Sections 3 (definition of domestic violence), 8-10 (Protection Officers and service providers), 9 (Domestic Incident Report), 12 (application to Magistrate), 23 (interim/ex-parte orders), 27 (jurisdiction), 31 (penalty for breach)",
+      "source": "PWDVA 2005",
+      "court_forum": {
+        "authority": "Judicial Magistrate of the First Class or Metropolitan Magistrate",
+        "jurisdiction": "Where you reside (even temporarily), where the respondent resides or works, or where the alleged act of domestic violence occurred",
+        "first_step": "Protection Officer at your district's Women and Child Development office, or file directly with the Magistrate"
+      },
+      "helpline": {
+        "women_helpline": "181 (24x7, all-India Women Helpline)",
+        "emergency": "112 (police emergency)",
+        "national_commission_for_women": "7827170170",
+        "tele_law": "1516 — free legal advice by phone (NALSA)"
+      }
+    },
+    {
+      "id": "MAT_VIC_002",
+      "title": "Get a Residence Order and the Right to Stay in Your Home",
+      "category": "victim_protection",
+      "when_to_use": "When your husband or his relatives are trying to throw you out of the house, have locked you out, or you fear being evicted from the home you live in",
+      "steps": [
+        "Step 1: Under Section 17 PWDVA, you have a right to reside in the 'shared household' regardless of whether you have any legal title or ownership interest in it — this applies whether the house is rented, owned by your husband, or owned jointly",
+        "Step 2: File an application under Section 12 asking the Magistrate for a residence order under Section 19",
+        "Step 3: A residence order can restrain the respondent from dispossessing you or disturbing your possession of the shared household, restrain him from entering the portion of the house you occupy, or direct him to provide you alternate accommodation of the same level as the shared household (or pay rent for it) if he removes you from it",
+        "Step 4: If you are in danger of being thrown out immediately, ask for an interim/ex-parte residence order under Section 23 without waiting for the full hearing",
+        "Step 5: Note a real limit on this right: courts have held that the right to reside in a shared household under Section 17 does not extend to a house that is solely owned by your in-laws and where you have never actually lived — the protection is strongest for the house you currently live or have lived in with your husband"
+      ],
+      "important_notes": [
+        "A residence order is different from ownership — it protects your right to live in the house, it does not transfer ownership to you",
+        "You can seek a residence order even if the house is in your husband's or his parents' name",
+        "The police can be directed to assist in enforcing a residence order if the respondent tries to violate it"
+      ],
+      "legal_basis": "Protection of Women from Domestic Violence Act, 2005 — Sections 17 (right to reside in a shared household), 19 (residence orders), 23 (interim and ex-parte orders)",
+      "source": "PWDVA 2005",
+      "court_forum": {
+        "authority": "Judicial Magistrate of the First Class or Metropolitan Magistrate",
+        "jurisdiction": "Same Magistrate handling your Section 12 application"
+      },
+      "helpline": {
+        "women_helpline": "181",
+        "emergency": "112"
+      }
+    },
+    {
+      "id": "MAT_VIC_003",
+      "title": "Claim Monetary Relief, Compensation, and Custody Under the DV Act",
+      "category": "victim_protection",
+      "when_to_use": "When you need financial support, compensation for injury, or custody of your children because of domestic violence, in addition to or instead of a regular maintenance case",
+      "steps": [
+        "Step 1: Under Section 20, you can ask the Magistrate for monetary relief covering loss of earnings, medical expenses, loss caused by destruction or damage to property, and maintenance for yourself and your children",
+        "Step 2: This relief can be ordered as a lump sum payment or as monthly payments, whichever suits your situation — the Magistrate decides based on what is fair given your standard of living",
+        "Step 3: Under Section 21, you can seek temporary custody of your children — the Magistrate can also grant the respondent visitation rights if satisfied that visits would not harm the children",
+        "Step 4: Under Section 22, you can separately claim compensation for injuries, including mental torture and emotional distress caused by the domestic violence — this is different from the monetary relief in Section 20",
+        "Step 5: This DV Act relief is separate from and additional to other maintenance rights you may have — Section 125 BNSS (fast, applies to all religions), Section 24 HMA (pendente lite maintenance during a pending case) and Section 25 HMA (permanent alimony after divorce) can all be pursued alongside or instead of Section 20 PWDVA relief"
+      ],
+      "important_notes": [
+        "If the respondent fails to pay monetary relief ordered by the Magistrate, the court can direct his employer or any person who owes him money to pay your share directly to you or to the court",
+        "You do not have to choose only one maintenance route — a lawyer can advise which combination gives you the fastest or largest relief for your situation"
+      ],
+      "legal_basis": "Protection of Women from Domestic Violence Act, 2005 — Sections 20 (monetary reliefs), 21 (custody orders), 22 (compensation orders); cross-reference Section 125 BNSS and Sections 24-25 Hindu Marriage Act 1955 for other maintenance routes",
+      "source": "PWDVA 2005",
+      "court_forum": {
+        "authority": "Judicial Magistrate of the First Class or Metropolitan Magistrate (for Section 20-22 relief under PWDVA)",
+        "jurisdiction": "Same Magistrate handling your Section 12 application"
+      },
+      "helpline": {
+        "women_helpline": "181",
+        "tele_law": "1516 — free legal advice by phone (NALSA)"
+      }
+    },
+    {
+      "id": "MAT_VIC_004",
+      "title": "Report Dowry Demands and Dowry Harassment",
+      "category": "victim_protection",
+      "when_to_use": "When your husband or his family are demanding money, gold, or property as dowry, either before or after your marriage",
+      "steps": [
+        "Step 1: Giving or taking dowry is itself a criminal offence under Section 3 of the Dowry Prohibition Act 1961 — punishable with imprisonment of not less than 5 years and a fine of not less than Rs. 15,000 or the value of the dowry, whichever is higher",
+        "Step 2: Demanding dowry (even without receiving it) is a separate offence under Section 4 — punishable with imprisonment of 6 months to 2 years and a fine of up to Rs. 10,000",
+        "Step 3: If harassment for dowry amounts to cruelty, you can also file a complaint under BNS Section 85 (formerly IPC 498A) — cruelty by husband or his relatives",
+        "Step 4: An important protection: under Section 8A of the Dowry Prohibition Act, once you allege that a person gave, took, or demanded dowry, the burden of proof shifts to the accused to prove they did not — you do not have to prove it beyond doubt yourself",
+        "Step 5: Advertisements offering or seeking dowry are also banned under Section 4A, punishable with imprisonment of 6 months to 5 years and a fine up to Rs. 15,000",
+        "Step 6: File a complaint with your local police station, or approach a Dowry Prohibition Officer (appointed under Section 8B) in your district, or file both a Dowry Prohibition Act complaint and a BNS Section 85 cruelty complaint together if the harassment is ongoing"
+      ],
+      "important_notes": [
+        "Presents given at marriage are not automatically 'dowry' — customary gifts of reasonable value given without being demanded are excluded, but the law looks closely at whether a gift was actually a disguised dowry demand",
+        "Dowry Prohibition Act offences are cognizable for certain purposes, meaning police can register and investigate without needing prior court permission for some parts of the process, but they are also bailable and non-compoundable in law"
+      ],
+      "legal_basis": "Dowry Prohibition Act, 1961 — Sections 3 (penalty for giving/taking dowry), 4 (penalty for demanding dowry), 4A (ban on advertisement), 8A (burden of proof), 8B (Dowry Prohibition Officers); BNS 2023 Section 85 (formerly IPC 498A)",
+      "source": "Dowry Prohibition Act 1961",
+      "court_forum": {
+        "authority": "Local police station (for FIR) or Judicial Magistrate; Dowry Prohibition Officer for administrative complaints",
+        "jurisdiction": "Where the dowry demand or harassment took place, or where you currently reside"
+      },
+      "helpline": {
+        "women_helpline": "181",
+        "emergency": "112",
+        "national_commission_for_women": "7827170170"
+      }
+    },
+    {
+      "id": "MAT_VIC_005",
+      "title": "Emergency Safety Steps — What To Do If You're in Danger Right Now",
+      "category": "emergency_safety",
+      "when_to_use": "When you are being hit, threatened, or are otherwise in immediate physical danger from your husband or his relatives and need to act right now, not just understand your legal rights",
+      "steps": [
+        "Step 1: If you are in immediate danger, call 112 (police emergency) or 181 (Women Helpline, available 24x7) right away",
+        "Step 2: You can go to any police station, not just the one near your home — you can file a Zero FIR from anywhere in India, and it will be transferred to the right police station later",
+        "Step 3: Ask the police to connect you with the local Protection Officer under the Domestic Violence Act — they can help you get emergency protection and shelter, not just file a complaint",
+        "Step 4: If you need somewhere safe to stay, ask 181 or the police to connect you to a One Stop Centre (also called Sakhi Centres in some states) or a short-stay home — these provide temporary shelter, medical aid, and counselling",
+        "Step 5: If it's safe to do so in advance, keep a small bag ready with your ID documents (Aadhaar, marriage certificate if available), some cash, and any essential medicines, in case you need to leave quickly",
+        "Step 6: Tell a trusted neighbour, friend, or family member what is happening if you can — having someone who knows your situation can help in an emergency",
+        "Step 7: Once you are safe, you can start the formal process of filing a Domestic Incident Report and applying for a protection order (see 'File a Domestic Violence Complaint and Get a Protection Order') — but your safety comes first"
+      ],
+      "important_notes": [
+        "You do not need to have already filed any legal case to call the police or the Women Helpline in an emergency",
+        "112 and 181 are free to call and available 24 hours a day"
+      ],
+      "source": "Emergency contact information",
+      "helpline": {
+        "emergency_police": "112",
+        "women_helpline": "181 (24x7, all-India Women Helpline)",
+        "national_commission_for_women": "7827170170"
+      }
+    }
+  ]
+}

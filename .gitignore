@@ -22,7 +22,10 @@ env/
 index/
 
 # Chat memory SQLite DB (local dev / EC2 volume-mounted — real user data)
-data/
+# NOTE: scoped to the specific runtime file, not a blanket "data/" rule —
+# this repo's data/ directory at the root also holds the pipeline's real
+# source documents (PDFs/JSONs), which must stay tracked in git.
+/data/chat_history.db
 *.db
 *.db-journal
 
