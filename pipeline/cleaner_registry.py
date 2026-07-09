@@ -16,6 +16,8 @@ from pipeline.cleaners import (
     rent_control_maharashtra,
     hindu_marriage_act,
     matrimonial_actionable,
+    pwdva,
+    dowry_prohibition_act,
     criminal_law_actionable,
     rental_law_actionable,
 )
@@ -57,10 +59,20 @@ REGISTRY = {
         "table_based": False,
     },
 
-    # Hindu Marriage Laws
+    # Matrimonial Law
     "Hindu_Marriage_Act.pdf": {
         "cleaner"    : hindu_marriage_act,
         "sector"     : "hindu_marriage_laws",
+        "table_based": False,
+    },
+    "PWDVA_2005.pdf": {
+        "cleaner"    : pwdva,
+        "sector"     : "matrimonial",
+        "table_based": False,
+    },
+    "Dowry_Prohibition_Act_1961.pdf": {
+        "cleaner"    : dowry_prohibition_act,
+        "sector"     : "matrimonial",
         "table_based": False,
     },
 
@@ -72,6 +84,12 @@ REGISTRY = {
         "json_based" : True,
     },
     "matrimonial_actionable_reference.json": {
+        "cleaner"    : matrimonial_actionable,
+        "sector"     : "matrimonial",
+        "table_based": False,
+        "json_based" : True,
+    },
+    "matrimonial_victim_actionable_reference.json": {
         "cleaner"    : matrimonial_actionable,
         "sector"     : "matrimonial",
         "table_based": False,
