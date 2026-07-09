@@ -41,6 +41,7 @@ let isSpeaking        = false;
 let lastInputWasVoice = false;
 let currentSector     = null;
 let selectedLang      = 'auto';   // 'auto' | 'en' | 'hi'
+let currentSessionId  = null;     // set from the server's response; reused so follow-ups get memory context
 
 // ── Elements ───────────────────────────────────────────────
 const messagesEl      = document.getElementById('messages');
@@ -101,6 +102,7 @@ document.getElementById('newChatBtn')?.addEventListener('click', () => {
   showEmpty();
   questionInput.value = '';
   questionInput.style.height = 'auto';
+  currentSessionId = null;   // start a fresh conversation — don't carry over prior context
   questionInput.focus();
 });
 
@@ -366,6 +368,7 @@ async function sendMessage() {
     const body = { question, top_k: 5 };
     if (currentSector) body.sector_filter = currentSector;
     if (selectedLang !== 'auto') body.lang = selectedLang;
+    if (currentSessionId) body.session_id = currentSessionId;
 
     const res = await fetch('/query', {
       method:  'POST',
@@ -379,6 +382,7 @@ async function sendMessage() {
     }
 
     const data = await res.json();
+    currentSessionId = data.session_id || currentSessionId;
     addBotMessage(data, wasVoice);
 
   } catch (err) {

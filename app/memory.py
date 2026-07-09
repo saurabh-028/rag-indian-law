@@ -25,6 +25,11 @@ class ChatTurn(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     session_id: str = Field(index=True)
     question: str
+    # The English-translated form actually used for retrieval on this turn.
+    # Reused (prepended) when retrieving for the *next* turn, so a vague
+    # follow-up like "what can I challenge this?" inherits the previous
+    # turn's topic instead of retrieving cold against just those few words.
+    retrieval_question: str = ""
     answer: str
     sector: str | None = None
     detected_lang: str = "en"
@@ -38,16 +43,27 @@ _engine = create_async_engine(f"sqlite+aiosqlite:///{_DB_PATH}")
 
 
 async def init_db() -> None:
-    """Create the chat_turn table if it doesn't exist. Call once at startup."""
+    """Create the chat_turn table if it doesn't exist, and patch in any
+    columns added since. create_all() only creates missing tables — it won't
+    alter an existing one — so new columns need a manual ALTER here. No real
+    migration tool is set up yet; worth adding Alembic once the schema settles."""
     os.makedirs(os.path.dirname(_DB_PATH) or ".", exist_ok=True)
     async with _engine.begin() as conn:
         await conn.run_sync(SQLModel.metadata.create_all)
+        result = await conn.exec_driver_sql("PRAGMA table_info(chatturn)")
+        existing_columns = {row[1] for row in result.fetchall()}
+        if "retrieval_question" not in existing_columns:
+            await conn.exec_driver_sql(
+                "ALTER TABLE chatturn ADD COLUMN retrieval_question VARCHAR DEFAULT ''"
+            )
+            logger.info("Migrated chat_history.db: added retrieval_question column")
     logger.info("Chat memory DB ready at %s", _DB_PATH)
 
 
 async def save_turn(
     session_id: str,
     question: str,
+    retrieval_question: str,
     answer: str,
     sector: str | None,
     detected_lang: str,
@@ -58,6 +74,7 @@ async def save_turn(
             ChatTurn(
                 session_id=session_id,
                 question=question,
+                retrieval_question=retrieval_question,
                 answer=answer,
                 sector=sector,
                 detected_lang=detected_lang,
