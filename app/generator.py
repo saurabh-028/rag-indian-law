@@ -17,14 +17,20 @@ Format your answer clearly: start with a direct answer, then cite the legal basi
 
 LANGUAGE_INSTRUCTIONS: dict[str, str] = {
     "hi": (
-        "IMPORTANT: The user's question is in Hindi. "
-        "You MUST respond entirely in Hindi using Devanagari script. "
-        "Do not respond in English. Keep all section numbers and legal Act names in their original form."
+        "IMPORTANT: The user's question is in Hindi. Respond entirely in Hindi using Devanagari script — "
+        "but write the way people actually talk day to day, not formal court/government-notice Hindi. "
+        "Use everyday words (जुर्माना, चालान, पुलिस, कोर्ट, वकील) instead of heavy Sanskritized legal vocabulary. "
+        "It's fine to keep common English words the way people naturally say them in speech (जैसे 'फाइन', 'कंप्लेंट', "
+        "'चालान') rather than forcing a stiff pure-Hindi translation. Explain it like you're talking to a friend "
+        "or family member, not reading out a legal notice. Keep section numbers and Act names in their original form."
     ),
     "mr": (
-        "IMPORTANT: The user's question is in Marathi. "
-        "You MUST respond entirely in Marathi using Devanagari script. "
-        "Do not respond in English. Keep all section numbers and legal Act names in their original form."
+        "IMPORTANT: The user's question is in Marathi. Respond entirely in Marathi using Devanagari script — "
+        "but write the way people actually talk day to day, not formal court/government-notice Marathi. "
+        "Use everyday words instead of heavy Sanskritized legal vocabulary. It's fine to keep common English "
+        "words the way people naturally say them in speech (उदा. 'फाइन', 'कंप्लेंट', 'चलान') rather than forcing "
+        "a stiff pure-Marathi translation. Explain it like you're talking to a friend or family member, not "
+        "reading out a legal notice. Keep section numbers and Act names in their original form."
     ),
 }
 
@@ -169,7 +175,15 @@ def build_user_prompt(question: str, context_chunks: list) -> str:
 
 User question: {question}
 
-Provide a clear, helpful answer. If actionable steps are available in the context, present them in a numbered step-by-step format the user can follow immediately. Include portal URLs, helpline numbers, and required documents when available. Cite section numbers for legal references."""
+Answer directly and specifically. Only walk through step-by-step actionable procedures, portal URLs, or helpline numbers if the question itself asks what to do or how to proceed — not simply because that information happens to be present in the context above. Cite section numbers for legal references."""
+
+
+CONCISENESS_RULE = """
+
+ANSWER LENGTH:
+- Default to a direct, specific answer in 2-4 sentences.
+- Only add step-by-step actionable procedures, portal links, or helpline numbers if the user is explicitly asking what to do / how to file / how to complain — not just because that information exists in the context.
+- If earlier turns in this conversation already covered a procedure or explanation, do not repeat it — answer only what's new in this question."""
 
 
 def get_system_prompt(sector: str = None, response_lang: str = "en") -> str:
@@ -184,8 +198,11 @@ def get_system_prompt(sector: str = None, response_lang: str = "en") -> str:
         base = SECTOR_PROMPTS.get(resolved, GENERIC_SYSTEM_PROMPT) or GENERIC_SYSTEM_PROMPT
     else:
         base = GENERIC_SYSTEM_PROMPT
+    parts = [base, CONCISENESS_RULE]
     lang_note = LANGUAGE_INSTRUCTIONS.get(response_lang, "")
-    return f"{base}\n\n{lang_note}" if lang_note else base
+    if lang_note:
+        parts.append(lang_note)
+    return "\n\n".join(parts)
 
 
 class Generator:
@@ -199,19 +216,24 @@ class Generator:
         context_chunks: list,
         sector: str = None,
         response_lang: str = "en",
+        history: list = None,
         max_tokens: int = 1500,
         temperature: float = 0.1,
     ) -> dict:
-        """Generate an answer from the LLM given a question and retrieved context chunks."""
+        """Generate an answer from the LLM given a question, retrieved context chunks,
+        and optional prior turns (list of {"question": str, "answer": str}, oldest first)."""
         system_prompt = get_system_prompt(sector, response_lang)
         user_prompt   = build_user_prompt(question, context_chunks)
 
+        messages = [{"role": "system", "content": system_prompt}]
+        for turn in history or []:
+            messages.append({"role": "user", "content": turn["question"]})
+            messages.append({"role": "assistant", "content": turn["answer"]})
+        messages.append({"role": "user", "content": user_prompt})
+
         response = self.client.chat.completions.create(
             model=self.model,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user",   "content": user_prompt},
-            ],
+            messages=messages,
             temperature=temperature,
             max_tokens=max_tokens,
         )

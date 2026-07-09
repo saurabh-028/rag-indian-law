@@ -40,6 +40,11 @@ print('Embedding model downloaded.')"
 # (populated at runtime from S3, or bind-mounted for local testing)
 RUN mkdir -p ./index
 
+# Create the data directory for the chat-memory SQLite file.
+# Bind-mount this at runtime (-v host_dir:/app/data) so history survives
+# container restarts/redeploys — the container filesystem itself is ephemeral.
+RUN mkdir -p ./data
+
 # ── Runtime config ────────────────────────────────────────────────────────────
 EXPOSE 8000
 
@@ -50,7 +55,9 @@ EXPOSE 8000
 #   EMBED_MODEL       — must match the model used to build the index
 #   S3_INDEX_BUCKET   — if set, index is downloaded from S3 on startup
 #   S3_INDEX_PREFIX   — S3 key prefix (default: index)
+#   CHAT_DB_PATH      — path to the chat-memory SQLite file (default: ./data/chat_history.db)
 ENV INDEX_DIR=./index
 ENV EMBED_MODEL=law-ai/InLegalBERT
+ENV CHAT_DB_PATH=./data/chat_history.db
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -16,6 +16,7 @@ Environment variables:
 import logging
 import os
 import time
+import uuid
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
@@ -37,7 +38,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-from app import retriever  # noqa: E402
+from app import memory, retriever  # noqa: E402
 from app.generator import Generator  # noqa: E402
 from app.index_loader import download_index_from_s3  # noqa: E402
 from app.language import detect_language, translator, SUPPORTED_LANGS  # noqa: E402
@@ -60,6 +61,7 @@ async def lifespan(app: FastAPI):
     except (FileNotFoundError, ValueError) as exc:
         # Allow the server to start without an index so /health can respond
         logger.warning("Index not loaded at startup: %s", exc)
+    await memory.init_db()
     yield
 
 
@@ -87,6 +89,11 @@ class QueryRequest(BaseModel):
         None,
         description="Override detected language (e.g. 'hi', 'en'). Auto-detected if not provided.",
     )
+    session_id: Optional[str] = Field(
+        None,
+        description="Conversation session ID. Omit on the first message; reuse the ID "
+        "returned in the response for follow-up questions so prior turns are used as context.",
+    )
 
 
 class QueryResponse(BaseModel):
@@ -96,6 +103,7 @@ class QueryResponse(BaseModel):
     sector_used: Optional[str]
     detected_lang: str = Field("en", description="Detected or overridden language of the query.")
     usage: dict
+    session_id: str = Field(..., description="Pass this back on the next request to continue the conversation.")
 
 
 class RetrieveRequest(BaseModel):
@@ -141,8 +149,12 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
             detail="Index not loaded. Run pipeline/build_index.py and restart the server.",
         )
 
+    session_id = req.session_id or str(uuid.uuid4())
     detected_lang = req.lang or detect_language(req.question)
-    logger.info("query | lang=%s sector=%s q=%r", detected_lang, req.sector_filter or "auto", req.question[:120])
+    logger.info(
+        "query | session=%s lang=%s sector=%s q=%r",
+        session_id, detected_lang, req.sector_filter or "auto", req.question[:120],
+    )
 
     # Translate to English for retrieval — the index is English-only.
     # GPT-4o reads the original question directly, so no back-translation is needed.
@@ -172,6 +184,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
             sector_used=None,
             detected_lang=detected_lang,
             usage={},
+            session_id=session_id,
         )
 
     # Low-confidence guard: if even the top chunk has a very low RRF score,
@@ -192,6 +205,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
             sector_used=None,
             detected_lang=detected_lang,
             usage={},
+            session_id=session_id,
         )
 
     # Auto-detect sector via majority vote across retrieved chunks
@@ -205,6 +219,10 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
                 sector_votes[s] = sector_votes.get(s, 0) + 1
         sector = max(sector_votes, key=sector_votes.get) if sector_votes else chunks[0].get("sector")
 
+    # Pull prior turns for this session so follow-up questions resolve with context
+    recent_turns = await memory.get_recent_turns(session_id)
+    history = [{"question": t.question, "answer": t.answer} for t in recent_turns]
+
     # Pass the original question so GPT responds in the user's language
     try:
         result = _generator.generate(
@@ -212,18 +230,27 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
             context_chunks=chunks,
             sector=sector,
             response_lang=detected_lang,
+            history=history,
         )
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=502, detail=f"OpenAI API error: {exc}") from exc
 
     answer = result["answer"]
-    logger.info("answer | sector=%s chunks=%d tokens=%d", sector, len(chunks), result["usage"].get("total_tokens", 0))
+    logger.info("answer | session=%s sector=%s chunks=%d tokens=%d", session_id, sector, len(chunks), result["usage"].get("total_tokens", 0))
 
     sources = list(
         dict.fromkeys(
             f"{c.get('source', 'unknown')} § {c.get('section_number', '?')}"
             for c in chunks
         )
+    )
+
+    await memory.save_turn(
+        session_id=session_id,
+        question=req.question,
+        answer=answer,
+        sector=sector,
+        detected_lang=detected_lang,
     )
 
     return QueryResponse(
@@ -233,6 +260,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
         sector_used=sector,
         detected_lang=detected_lang,
         usage=result["usage"],
+        session_id=session_id,
     )
 
 

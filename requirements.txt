@@ -9,6 +9,9 @@ openai>=1.0.0
 numpy
 tqdm
 python-dotenv
+# --- session memory ---
+sqlmodel
+aiosqlite
 # --- multilingual support ---
 langdetect
 sentencepiece
