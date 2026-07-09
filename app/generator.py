@@ -217,13 +217,18 @@ class Generator:
         sector: str = None,
         response_lang: str = "en",
         history: list = None,
+        correction: str = None,
         max_tokens: int = 1500,
         temperature: float = 0.1,
     ) -> dict:
         """Generate an answer from the LLM given a question, retrieved context chunks,
-        and optional prior turns (list of {"question": str, "answer": str}, oldest first)."""
+        and optional prior turns (list of {"question": str, "answer": str}, oldest first).
+        `correction`, if set, is appended as a note asking the model to fix a specific
+        problem in its previous attempt (used by the citation-verification retry)."""
         system_prompt = get_system_prompt(sector, response_lang)
         user_prompt   = build_user_prompt(question, context_chunks)
+        if correction:
+            user_prompt += f"\n\n---\n\nCORRECTION NEEDED: {correction}"
 
         messages = [{"role": "system", "content": system_prompt}]
         for turn in history or []:
