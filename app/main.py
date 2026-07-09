@@ -237,18 +237,29 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
 
     # Citation verification: catch section numbers the model cited but that
     # weren't actually in the retrieved context, and give it one chance to
-    # fix itself before shipping the answer.
+    # fix itself before shipping the answer. Track usage across both calls —
+    # the retry is a real second API call and its cost shouldn't disappear
+    # from what gets logged/returned just because the first draft is discarded.
+    total_usage = dict(result["usage"])
     check = verifier.verify_citations(result["answer"], chunks)
     if not check["verified"]:
         logger.warning(
             "session=%s unverified citations %s — retrying with correction",
             session_id, check["unverified_sections"],
         )
-        correction = (
-            f"Your previous answer cited Section(s) {', '.join(check['unverified_sections'])}, "
-            "which do not appear anywhere in the context provided above. Remove or correct these — "
-            "only cite section numbers that are explicitly present in the context."
-        )
+        if check["available_sections"]:
+            correction = (
+                f"Your previous answer cited Section(s) {', '.join(check['unverified_sections'])}, "
+                "which do not appear anywhere in the context provided above. The section numbers "
+                f"actually present in the context are: {', '.join(check['available_sections'])}. "
+                "Use only these when citing a specific section — do not repeat the incorrect one(s) or guess another."
+            )
+        else:
+            correction = (
+                f"Your previous answer cited Section(s) {', '.join(check['unverified_sections'])}, "
+                "which do not appear anywhere in the context provided above, and the context contains no "
+                "numbered sections at all. Rely only on what's stated in the context without citing a section number."
+            )
         try:
             retry_result = _generator.generate(
                 question=req.question,
@@ -266,12 +277,14 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
                     "session=%s citation retry still unverified %s — shipping anyway",
                     session_id, retry_check["unverified_sections"],
                 )
+            for key in total_usage:
+                total_usage[key] += retry_result["usage"].get(key, 0)
             result = retry_result
         except Exception as exc:  # noqa: BLE001
             logger.warning("session=%s citation retry call failed: %s — shipping original answer", session_id, exc)
 
     answer = result["answer"]
-    logger.info("answer | session=%s sector=%s chunks=%d tokens=%d", session_id, sector, len(chunks), result["usage"].get("total_tokens", 0))
+    logger.info("answer | session=%s sector=%s chunks=%d tokens=%d", session_id, sector, len(chunks), total_usage.get("total_tokens", 0))
 
     sources = list(
         dict.fromkeys(
@@ -294,7 +307,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
         chunks_used=len(chunks),
         sector_used=sector,
         detected_lang=detected_lang,
-        usage=result["usage"],
+        usage=total_usage,
         session_id=session_id,
     )
 
