@@ -257,7 +257,7 @@
   },
   {
     "id": "HM_001",
-    "sector": "hindu_marriage_laws",
+    "sector": "matrimonial",
     "question": "What are the grounds for divorce under the Hindu Marriage Act 1955?",
     "ground_truth": "Under Section 13 of the Hindu Marriage Act 1955, the grounds for divorce include: (1) Adultery, (2) Cruelty — physical or mental, (3) Desertion for a continuous period of two years, (4) Conversion to another religion, (5) Unsoundness of mind, (6) Leprosy or venereal disease, (7) Renunciation of the world, (8) Not heard of as alive for seven years. Additionally, the wife has additional grounds including husband's bigamy before the Act, rape, sodomy, or bestiality, and non-resumption of cohabitation after maintenance decree.",
     "expected_sources": ["Hindu_Marriage_Act_1955"],
@@ -265,7 +265,7 @@
   },
   {
     "id": "HM_002",
-    "sector": "hindu_marriage_laws",
+    "sector": "matrimonial",
     "question": "What is the waiting period for divorce by mutual consent under Hindu law?",
     "ground_truth": "Under Section 13B of the Hindu Marriage Act 1955, divorce by mutual consent requires the couple to have been separated for at least one year before filing the petition. After filing, there is a statutory cooling-off period of six months (minimum) and eighteen months (maximum) during which either party can withdraw consent. The Supreme Court in Amardeep Singh v Harveen Kaur held that this six-month period can be waived by the court in appropriate cases to avoid further delay.",
     "expected_sources": ["Hindu_Marriage_Act_1955"],
@@ -281,7 +281,7 @@
   },
   {
     "id": "HM_004",
-    "sector": "hindu_marriage_laws",
+    "sector": "matrimonial",
     "question": "What are the conditions for a valid Hindu marriage?",
     "ground_truth": "Under Section 5 of the Hindu Marriage Act 1955, the conditions for a valid Hindu marriage are: (1) Neither party has a living spouse, (2) Neither party is incapable of giving valid consent due to unsoundness of mind, (3) The bridegroom has completed 21 years of age and the bride 18 years, (4) The parties are not within the degrees of prohibited relationship unless custom permits, (5) The parties are not sapindas of each other unless custom permits. Violation of conditions (1) and (2) render the marriage void.",
     "expected_sources": ["Hindu_Marriage_Act_1955"],
@@ -313,7 +313,7 @@
   },
   {
     "id": "HM_008",
-    "sector": "hindu_marriage_laws",
+    "sector": "matrimonial",
     "question": "What are the child custody laws in India after divorce?",
     "ground_truth": "Child custody in India is governed by the Hindu Minority and Guardianship Act 1956 and the Guardians and Wards Act 1890. The paramount consideration is the welfare and best interest of the child. For children under 5, the mother is generally preferred as the natural guardian. Custody types include physical custody (primary caregiver), legal custody (decision-making rights), and joint custody. Courts grant visitation rights to the non-custodial parent. The Supreme Court has consistently held that the child's wishes, especially for older children, must be considered.",
     "expected_sources": ["Hindu Marriage Act 1955, Guardians and Wards Act 1890"],
@@ -329,7 +329,7 @@
   },
   {
     "id": "MAT_002",
-    "sector": "hindu_marriage_laws",
+    "sector": "matrimonial",
     "question": "Can I get a divorce if my spouse is mentally ill?",
     "ground_truth": "Under Section 13(1)(iii) of the Hindu Marriage Act 1955, unsoundness of mind is a ground for divorce if: (1) The respondent has been incurably of unsound mind, or (2) Has been suffering from mental disorder of such a kind that the petitioner cannot reasonably be expected to live with the respondent. The petitioner must show that the mental illness is of a nature making cohabitation impossible. Medical evidence and psychiatric reports are required to establish this ground before the Family Court.",
     "expected_sources": ["Hindu_Marriage_Act_1955"],
