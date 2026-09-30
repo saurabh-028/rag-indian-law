@@ -3,9 +3,9 @@
     "id": "CL_001",
     "sector": "criminal_law",
     "question": "What is the punishment for murder under BNS 2023?",
-    "ground_truth": "Under Section 101 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine. This replaces the old IPC Section 302.",
+    "ground_truth": "Under Section 103 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine. (Section 101 defines what constitutes murder; Section 103 prescribes the punishment.) This replaces the old IPC Section 302.",
     "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
-    "expected_section": "101"
+    "expected_section": "103"
   },
   {
     "id": "CL_002",
@@ -43,9 +43,9 @@
     "id": "CL_006",
     "sector": "criminal_law",
     "question": "What is the punishment for rape under BNS 2023?",
-    "ground_truth": "Under Section 63 of the Bharatiya Nyaya Sanhita (BNS) 2023, the punishment for rape is rigorous imprisonment of not less than ten years, which may extend to imprisonment for life, along with fine. In cases of gang rape or rape of a woman under 18 years, the punishment is imprisonment for life or death.",
+    "ground_truth": "Under Section 64 of the Bharatiya Nyaya Sanhita (BNS) 2023, the punishment for rape is rigorous imprisonment of not less than ten years, which may extend to imprisonment for life, along with fine. (Section 63 defines rape; Section 64 prescribes the punishment.) In cases of gang rape or rape of a woman under 18 years, the punishment is imprisonment for life or death.",
     "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
-    "expected_section": "63"
+    "expected_section": "64"
   },
   {
     "id": "CL_007",
@@ -67,9 +67,9 @@
     "id": "CL_009",
     "sector": "criminal_law",
     "question": "What is the punishment for causing grievous hurt under BNS 2023?",
-    "ground_truth": "Under Section 116 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever voluntarily causes grievous hurt shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine. If grievous hurt is caused by dangerous weapons or means, the punishment may extend to ten years.",
+    "ground_truth": "Under Section 117 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever voluntarily causes grievous hurt shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine. (Section 116 defines what injuries qualify as 'grievous'; Section 117 prescribes the punishment.) If grievous hurt is caused by dangerous weapons or means, the punishment may extend to ten years.",
     "expected_sources": ["Bharatiya_Nyaya_Sanhita_2023"],
-    "expected_section": "116"
+    "expected_section": "117"
   },
   {
     "id": "CL_010",

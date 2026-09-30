@@ -30,7 +30,7 @@ if [ -z "$OPENAI_API_KEY" ]; then
     exit 1
 fi
 
-# ── Step 1: Build ─────────────────────────────────────────────────────────────
+# ── Step 1: Build ───────────────────────────────────── ────────────────────────
 echo ""
 echo ">>> [1/4] Building Docker image..."
 docker build --no-cache -t ${ECR_REPO} .
