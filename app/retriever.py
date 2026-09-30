@@ -75,6 +75,81 @@ def index_info() -> dict:
 # Normalization map: British→American spellings + key stem collapses.
 # This ensures "licence"=="license", "driving"=="drive" etc. across
 # query and corpus so BM25 keyword matching works correctly.
+
+# Query-intent signal distinguishing "what does the law say" lookups (where
+# doc_type='legislation'/'fine_schedule' chunks are the authoritative answer)
+# from "what do I do" procedural questions (where doc_type='actionable_procedure'
+# chunks are the right answer). Without this, actionable-reference chunks —
+# short, keyword-dense JSON entries that cross-reference many sections and
+# common legal terms — routinely outrank the actual legislation section in
+# raw BM25 scoring purely on term-frequency-per-length, even when the query
+# is asking for the section itself (e.g. "What is the punishment for X").
+_LEGISLATION_LOOKUP_RE = re.compile(
+    r"\b(punishment|penalty|fine|sentence|"
+    r"what (?:is|does|are) (?:the )?(?:punishment|penalty|fine|section|definition|law)|"
+    r"defines?|definition of|constitutes|"
+    r"under the [a-z ]+(?:act|sanhita|code))\b",
+    re.IGNORECASE,
+)
+_LEGISLATION_DOC_TYPE_BOOST = 1.6  # RRF multiplier for legislation/fine_schedule chunks
+                                    # when the query is a legislation lookup.
+
+# When a query names a specific Act ("under BNS 2023"), that's an exact,
+# high-precision signal of which `source` should win — stronger than the
+# generic legislation-vs-actionable boost above, which treats all Acts
+# equally and lets a large, vocabulary-generic code like BNSS (criminal
+# procedure) crowd out a smaller, more specific one like BNS (substantive
+# offences) on raw keyword overlap ("charge", "trial", "judgment" appear
+# throughout BNSS regardless of which offence is being asked about).
+_ACT_ALIASES: dict[str, str] = {
+    r"\bbnss\b|\bbharatiya nagarik suraksha sanhita\b": "Bharatiya_Nagarik_Suraksha_Sanhita_2023",
+    r"\bbns\b|\bbharatiya nyaya sanhita\b":             "Bharatiya_Nyaya_Sanhita_2023",
+    r"\bmv act\b|\bmotor vehicles act\b":                "Central_Motor_Vehicles_Act_1988",
+    r"\bmaharashtra motor vehicles rules\b":             "Maharashtra_Motor_Vehicles_Rules_1989",
+    r"\brent control act\b":                             "Maharashtra_Rent_Control_Act_1999",
+    r"\bpwdva\b|\bdomestic violence act\b":               "Protection_of_Women_from_Domestic_Violence_Act_2005",
+    r"\bhindu marriage act\b":                           "Hindu_Marriage_Act_1955",
+    r"\bdowry prohibition act\b":                        "Dowry_Prohibition_Act_1961",
+}
+_ACT_SOURCE_BOOST = 1.5  # additional RRF multiplier for the specifically named Act's source.
+
+_NARROW_VARIANT_PENALTY = 0.7  # RRF multiplier for sections that are a narrower
+                                # variant of a shorter sibling (see below).
+
+
+def _find_narrow_variants(metadata: list) -> set:
+    """Flag legislation chunks whose section_title is a literal extension of a
+    shorter sibling title within the same source Act — e.g. "Punishment for
+    murder" -> "Punishment for murder by life-convict", or "Theft" -> "Theft
+    after preparation made for causing death...". These narrow special-case
+    provisions systematically outscore the general rule they extend on BM25,
+    because they repeat the same core keywords in a much shorter, more
+    keyword-dense chunk (short docs win BM25's length normalization even
+    though the general rule is almost always the legally correct citation
+    for a plain "what is the punishment for X" question).
+    """
+    by_source: dict[str, list] = {}
+    for i, chunk in enumerate(metadata):
+        if chunk.get("doc_type") != "legislation":
+            continue
+        title = (chunk.get("section_title") or "").strip()
+        if not title:
+            continue
+        by_source.setdefault(chunk.get("source", ""), []).append((i, title))
+
+    narrow_variants = set()
+    for items in by_source.values():
+        titles_seen = {t for _, t in items}
+        for i, title in items:
+            title_lower = title.lower()
+            for other_title in titles_seen:
+                if other_title != title and len(other_title) < len(title) \
+                        and title_lower.startswith(other_title.lower() + " "):
+                    narrow_variants.add(i)
+                    break
+    return narrow_variants
+
+
 _NORM: dict[str, str] = {
     # British → American
     "licence": "license", "licences": "licenses", "licenced": "licensed",
@@ -166,6 +241,9 @@ class Retriever:
             corpus_tokens.append(_tokenize(combined))
         self.bm25 = BM25Okapi(corpus_tokens)
 
+        self._narrow_variants = _find_narrow_variants(self.metadata)
+        logger.info("Flagged %d narrow-variant sections for downranking", len(self._narrow_variants))
+
         logger.info("Retriever ready -- %d vectors, %d chunks, sectors: %s", self.index.ntotal, len(self.metadata), list(self.chunks_by_sector.keys()))
 
     def search(self, query: str, top_k: int = 5, sector_filter: str = None, doc_type_filter: str = None) -> list:
@@ -209,6 +287,33 @@ class Retriever:
             if idx < 0 or idx >= len(self.metadata):
                 continue
             rrf[idx] = rrf.get(idx, 0.0) + _BM25_W / (_RRF_K + rank + 1)
+
+        # Boost legislation/fine_schedule chunks for lookup-style queries, so
+        # actionable-reference documents don't outrank the actual statute text
+        # on raw keyword density alone.
+        if _LEGISLATION_LOOKUP_RE.search(query):
+            for idx in rrf:
+                if self.metadata[idx].get("doc_type") in ("legislation", "fine_schedule"):
+                    rrf[idx] *= _LEGISLATION_DOC_TYPE_BOOST
+
+        # If the query names a specific Act, give that Act's own source an
+        # additional boost so it doesn't lose to a larger, vocabulary-generic
+        # Act (e.g. BNSS crowding out BNS) that also qualified for the boost above.
+        for pattern, named_source in _ACT_ALIASES.items():
+            if re.search(pattern, query, re.IGNORECASE):
+                for idx in rrf:
+                    if self.metadata[idx].get("source") == named_source:
+                        rrf[idx] *= _ACT_SOURCE_BOOST
+                break
+
+        # Downrank narrow special-case sections relative to the general rule
+        # they extend (e.g. "murder by a life-convict" vs. plain "murder"),
+        # for lookup-style queries where the general rule is almost always
+        # the legally correct citation.
+        if _LEGISLATION_LOOKUP_RE.search(query):
+            for idx in rrf:
+                if idx in self._narrow_variants:
+                    rrf[idx] *= _NARROW_VARIANT_PENALTY
 
         # Sort by descending RRF score
         ranked = sorted(rrf.items(), key=lambda x: x[1], reverse=True)

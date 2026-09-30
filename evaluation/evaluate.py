@@ -527,6 +527,7 @@ def main():
             args.skip_generation = True
         else:
             from app.generator import Generator
+            from app import verifier
             generator = Generator(api_key=api_key, model=args.openai_model)
             print(f"[Generator] Using {args.openai_model}")
 
@@ -580,7 +581,8 @@ def main():
         print(f"[2/3] GENERATION EVALUATION  ({args.openai_model})")
         print(f"{'─'*65}")
 
-        print("\n  Generating answers...")
+        print("\n  Generating answers (with citation verification, same as /query)...")
+        citation_retried = {}
         for item in dataset:
             results = retrieved_per_item[item["id"]]
             try:
@@ -590,10 +592,42 @@ def main():
                     sector=item["sector"],
                 )
                 answer = gen_result["answer"]
+
+                # Same citation-verification + one-shot retry as app/main.py's
+                # /query endpoint — without it, this eval silently bypasses one
+                # of the system's main anti-hallucination safeguards.
+                check = verifier.verify_citations(answer, results)
+                citation_retried[item["id"]] = False
+                if not check["verified"]:
+                    if check["available_sections"]:
+                        correction = (
+                            f"Your previous answer cited Section(s) {', '.join(check['unverified_sections'])}, "
+                            "which do not appear anywhere in the context provided above. The section numbers "
+                            f"actually present in the context are: {', '.join(check['available_sections'])}. "
+                            "Use only these when citing a specific section — do not repeat the incorrect one(s) or guess another."
+                        )
+                    else:
+                        correction = (
+                            f"Your previous answer cited Section(s) {', '.join(check['unverified_sections'])}, "
+                            "which do not appear anywhere in the context provided above, and the context contains no "
+                            "numbered sections at all. Rely only on what's stated in the context without citing a section number."
+                        )
+                    retry_result = generator.generate(
+                        question=item["question"],
+                        context_chunks=results,
+                        sector=item["sector"],
+                        correction=correction,
+                    )
+                    answer = retry_result["answer"]
+                    citation_retried[item["id"]] = True
+                    print(f"  [{item['id']}] citation retry triggered ({check['unverified_sections']})")
             except Exception as e:
                 print(f"  Generation failed for {item['id']}: {e}")
                 answer = ""
             generated_answers[item["id"]] = answer
+
+        n_retried = sum(citation_retried.values())
+        print(f"\n  Citation retries triggered: {n_retried}/{len(dataset)}")
 
         print("\n  Computing BLEU and ROUGE...")
         for item in dataset:
@@ -697,11 +731,12 @@ def main():
 
         answers_out = [
             {
-                "id"           : item["id"],
-                "sector"       : item["sector"],
-                "question"     : item["question"],
-                "ground_truth" : item["ground_truth"],
-                "generated"    : generated_answers.get(item["id"], ""),
+                "id"              : item["id"],
+                "sector"          : item["sector"],
+                "question"        : item["question"],
+                "ground_truth"    : item["ground_truth"],
+                "generated"       : generated_answers.get(item["id"], ""),
+                "citation_retried": citation_retried.get(item["id"], False),
             }
             for item in dataset
         ]
