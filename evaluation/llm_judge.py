@@ -31,6 +31,9 @@ load_dotenv()
 import numpy as np
 from openai import OpenAI
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from app.retry_utils import call_with_retry
+
 CRITERIA = ["legal_correctness", "completeness", "actionability", "clarity", "safety"]
 
 SECTOR_LABELS = {
@@ -76,7 +79,7 @@ def build_user_prompt(item: dict, generated: str) -> str:
 
 
 def judge_one(client: OpenAI, model: str, item: dict, generated: str) -> dict:
-    response = client.chat.completions.create(
+    response = call_with_retry(lambda: client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": JUDGE_SYSTEM_PROMPT},
@@ -85,7 +88,7 @@ def judge_one(client: OpenAI, model: str, item: dict, generated: str) -> dict:
         temperature=0.0,
         max_tokens=400,
         response_format={"type": "json_object"},
-    )
+    ))
     raw = response.choices[0].message.content.strip()
     try:
         parsed = json.loads(raw)

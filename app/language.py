@@ -50,7 +50,8 @@ class Translator:
         src_name = LANG_NAMES.get(src_lang, src_lang)
         tgt_name = LANG_NAMES.get(tgt_lang, tgt_lang)
         client = self._get_client()
-        response = client.chat.completions.create(
+        from app.retry_utils import call_with_retry
+        response = call_with_retry(lambda: client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {
@@ -66,7 +67,7 @@ class Translator:
             ],
             temperature=0,
             max_tokens=512,
-        )
+        ))
         return response.choices[0].message.content.strip()
 
     def to_english(self, text: str, src_lang: str) -> str:
