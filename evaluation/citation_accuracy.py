@@ -28,7 +28,10 @@ import json
 import re
 from collections import defaultdict
 
-_SECTION_RE = re.compile(r"\bSection\s+(\d{1,3}[A-Z]{0,2})\b", re.IGNORECASE)
+# Matches "Section 103" (English), "धारा 103" (Hindi), "कलम 103" (Marathi) —
+# see app/verifier.py for why: the production language instructions keep
+# section numbers in Western numerals but localise the word in front of them.
+_SECTION_RE = re.compile(r"\b(?:Section|धारा|कलम)\s+(\d{1,3}[A-Z]{0,2})\b", re.IGNORECASE)
 # Same shape verifier.py uses to distinguish a real statute section number from
 # an internal actionable-procedure doc ID (e.g. "MAT_GRV_005") — those aren't
 # something a model would ever literally cite as "Section MAT_GRV_005", so

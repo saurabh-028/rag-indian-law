@@ -46,23 +46,40 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+# Devanagari law names are included alongside the Latin/English ones because
+# the Hindi/Marathi condition of this study has the model answering entirely
+# in Devanagari prose (per app/generator.py's language instructions) — an
+# English-only regex would misread every Hindi/Marathi answer as "neither"
+# law named, when in fact (as the raw outputs showed) models reliably write
+# out "भारतीय दंड संहिता (आईपीसी)" ["Indian Penal Code (IPC)"] in full.
+# No \b anchoring on the Devanagari alternatives: Python's \b is defined by
+# \w/\W transitions and behaves inconsistently around Devanagari conjuncts,
+# but these multi-character phrases are specific enough that a plain
+# substring search doesn't risk false positives.
 NEW_LAW_RE = re.compile(
     r"\b(?:BNSS|BNS|BSA)\b"
     r"|\bBharatiya\s+Nyaya\s+Sanhita\b"
     r"|\bBharatiya\s+Nagarik\s+Suraksha\s+Sanhita\b"
-    r"|\bBharatiya\s+Sakshya\s+Adhiniyam\b",
+    r"|\bBharatiya\s+Sakshya\s+Adhiniyam\b"
+    r"|भारतीय\s*न्याय\s*संहिता"
+    r"|भारतीय\s*नागरिक\s*सुरक्षा\s*संहिता"
+    r"|बीएनएसएस|बीएनएस",
     re.IGNORECASE,
 )
 OLD_LAW_RE = re.compile(
     r"\bIPC\b|\bCrPC\b|\bCr\.P\.C\b"
     r"|\bIndian\s+Penal\s+Code\b"
     r"|\bCode\s+of\s+Criminal\s+Procedure\b"
-    r"|\bIndian\s+Evidence\s+Act\b",
+    r"|\bIndian\s+Evidence\s+Act\b"
+    r"|भारतीय\s*दंड\s*संहिता"
+    r"|दंड\s*प्रक्रिया\s*संहिता"
+    r"|आईपीसी|सीआरपीसी",
     re.IGNORECASE,
 )
 
-# Reuse the same "Section N" shape as app/verifier.py / citation_accuracy.py.
-_SECTION_RE = re.compile(r"\bSection\s+(\d{1,3}[A-Z]{0,2})\b", re.IGNORECASE)
+# Matches "Section 103" (English), "धारा 103" (Hindi), "कलम 103" (Marathi) —
+# same reasoning as app/verifier.py / citation_accuracy.py.
+_SECTION_RE = re.compile(r"\b(?:Section|धारा|कलम)\s+(\d{1,3}[A-Z]{0,2})\b", re.IGNORECASE)
 
 # Well-established, unambiguous BNS/BNSS <-> IPC/CrPC correspondences for
 # offences this gold dataset asks about, per the Ministry of Home Affairs'
@@ -164,11 +181,18 @@ def main():
           f"{old_defaults}/{n_relevant} ({old_default_pct:.0f}%)")
 
     # ---- Metric 2: repealed section number cited for a clean 1:1 mapped offence ----
-    mapped_items = [it for it in dataset if it["id"] in LEGACY_SECTION_MAP]
+    # Multilingual sub-study rows are id'd like "CL_001_hi" with the English
+    # row's id carried separately as original_id — fall back to the row's own
+    # id (a no-op for the English gold set) so this map still applies there.
+    def _map_key(it):
+        oid = it.get("original_id", it["id"])
+        return oid if oid in LEGACY_SECTION_MAP else it["id"]
+
+    mapped_items = [it for it in dataset if _map_key(it) in LEGACY_SECTION_MAP]
     section_counts = defaultdict(int)
     section_rows = []
     for item in mapped_items:
-        mapping = LEGACY_SECTION_MAP[item["id"]]
+        mapping = LEGACY_SECTION_MAP[_map_key(item)]
         gen = generated_by_id.get(item["id"], {})
         answer = gen.get("generated", "")
         verdict = section_verdict(answer, mapping) if answer else "no_answer"
