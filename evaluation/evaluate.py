@@ -37,6 +37,18 @@ from datetime import datetime
 
 import numpy as np
 
+# Windows' default console/redirect encoding (cp1252) can't encode the box-
+# drawing characters used in the section headers below, which crashes the
+# whole run with a UnicodeEncodeError the moment output is piped to a file
+# (e.g. `python evaluate.py > log.txt`) rather than a UTF-8-aware terminal.
+# Reconfigure if available (Python 3.7+); harmless no-op elsewhere.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 warnings.filterwarnings("ignore")
