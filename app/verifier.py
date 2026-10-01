@@ -22,7 +22,15 @@ intentional. Accepted for v1 — worst case is one extra retry.
 
 import re
 
-_SECTION_RE = re.compile(r"\bSection\s+(\d{1,3}[A-Z]{0,2})\b", re.IGNORECASE)
+# Matches "Section 103" (English) as well as "धारा 103" (Hindi) / "कलम 103"
+# (Marathi) — the Hindi/Marathi response-language instructions in
+# app/generator.py explicitly tell the model to keep section *numbers* in
+# their original Western-numeral form but answer in Hindi/Marathi prose, so
+# the word in front of the number is the localised one, not "Section". An
+# English-only regex here makes this whole safety net silently inert for
+# every Hindi/Marathi answer — it would never find anything to flag, not
+# because the citation was right, but because it was never being read.
+_SECTION_RE = re.compile(r"\b(?:Section|धारा|कलम)\s+(\d{1,3}[A-Z]{0,2})\b", re.IGNORECASE)
 # Matches the same shape _SECTION_RE captures — used to filter chunk section_number
 # values down to real legislation citations, excluding actionable-procedure IDs
 # like "traffic_challan_COURTS" which also live in the section_number field.
