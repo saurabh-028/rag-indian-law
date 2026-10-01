@@ -1,0 +1,420 @@
+[
+  {
+    "id": "CL_001_hi",
+    "original_id": "CL_001",
+    "sector": "criminal_law",
+    "language": "hi",
+    "question": "BNS 2023 के तहत हत्या की सज़ा क्या है?",
+    "question_en": "What is the punishment for murder under BNS 2023?",
+    "ground_truth": "Under Section 103 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine. (Section 101 defines what constitutes murder; Section 103 prescribes the punishment.) This replaces the old IPC Section 302.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "103"
+  },
+  {
+    "id": "CL_001_mr",
+    "original_id": "CL_001",
+    "sector": "criminal_law",
+    "language": "mr",
+    "question": "BNS 2023 अंतर्गत खुनाची शिक्षा काय आहे?",
+    "question_en": "What is the punishment for murder under BNS 2023?",
+    "ground_truth": "Under Section 103 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine. (Section 101 defines what constitutes murder; Section 103 prescribes the punishment.) This replaces the old IPC Section 302.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "103"
+  },
+  {
+    "id": "CL_003_hi",
+    "original_id": "CL_003",
+    "sector": "criminal_law",
+    "language": "hi",
+    "question": "BNS 2023 के तहत चोरी की सज़ा क्या है?",
+    "question_en": "What is the punishment for theft under BNS 2023?",
+    "ground_truth": "Under Section 303 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both. This replaces the old IPC Section 379.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "303"
+  },
+  {
+    "id": "CL_003_mr",
+    "original_id": "CL_003",
+    "sector": "criminal_law",
+    "language": "mr",
+    "question": "BNS 2023 अंतर्गत चोरीची शिक्षा काय आहे?",
+    "question_en": "What is the punishment for theft under BNS 2023?",
+    "ground_truth": "Under Section 303 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both. This replaces the old IPC Section 379.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "303"
+  },
+  {
+    "id": "CL_006_hi",
+    "original_id": "CL_006",
+    "sector": "criminal_law",
+    "language": "hi",
+    "question": "BNS 2023 के तहत बलात्कार की सज़ा क्या है?",
+    "question_en": "What is the punishment for rape under BNS 2023?",
+    "ground_truth": "Under Section 64 of the Bharatiya Nyaya Sanhita (BNS) 2023, the punishment for rape is rigorous imprisonment of not less than ten years, which may extend to imprisonment for life, along with fine. (Section 63 defines rape; Section 64 prescribes the punishment.) In cases of gang rape or rape of a woman under 18 years, the punishment is imprisonment for life or death.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "64"
+  },
+  {
+    "id": "CL_006_mr",
+    "original_id": "CL_006",
+    "sector": "criminal_law",
+    "language": "mr",
+    "question": "BNS 2023 अंतर्गत बलात्काराची शिक्षा काय आहे?",
+    "question_en": "What is the punishment for rape under BNS 2023?",
+    "ground_truth": "Under Section 64 of the Bharatiya Nyaya Sanhita (BNS) 2023, the punishment for rape is rigorous imprisonment of not less than ten years, which may extend to imprisonment for life, along with fine. (Section 63 defines rape; Section 64 prescribes the punishment.) In cases of gang rape or rape of a woman under 18 years, the punishment is imprisonment for life or death.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "64"
+  },
+  {
+    "id": "CL_011_hi",
+    "original_id": "CL_011",
+    "sector": "criminal_law",
+    "language": "hi",
+    "question": "BNS 2023 के तहत धोखाधड़ी (cheating) की सज़ा क्या है?",
+    "question_en": "What is the punishment for cheating under BNS 2023?",
+    "ground_truth": "Under Section 318 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever cheats shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both. If the person cheated is induced to deliver property or to make, alter, or destroy a valuable security, the punishment may extend to seven years.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "318"
+  },
+  {
+    "id": "CL_011_mr",
+    "original_id": "CL_011",
+    "sector": "criminal_law",
+    "language": "mr",
+    "question": "BNS 2023 अंतर्गत फसवणुकीची (cheating) शिक्षा काय आहे?",
+    "question_en": "What is the punishment for cheating under BNS 2023?",
+    "ground_truth": "Under Section 318 of the Bharatiya Nyaya Sanhita (BNS) 2023, whoever cheats shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both. If the person cheated is induced to deliver property or to make, alter, or destroy a valuable security, the punishment may extend to seven years.",
+    "expected_sources": [
+      "Bharatiya_Nyaya_Sanhita_2023"
+    ],
+    "expected_section": "318"
+  },
+  {
+    "id": "TR_001_hi",
+    "original_id": "TR_001",
+    "sector": "traffic",
+    "language": "hi",
+    "question": "महाराष्ट्र में हेलमेट न पहनने पर कितना चालान (फाइन) कटता है?",
+    "question_en": "What is the fine for not wearing a helmet in Maharashtra?",
+    "ground_truth": "Under Section 194D of the Motor Vehicles Act 1988, the penalty for not wearing a helmet is Rs. 1,000 for the first offence and disqualification from holding a driving licence for three months for subsequent offences. In Maharashtra, this is strictly enforced and applies to both the rider and pillion passenger.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988"
+    ],
+    "expected_section": "194D"
+  },
+  {
+    "id": "TR_001_mr",
+    "original_id": "TR_001",
+    "sector": "traffic",
+    "language": "mr",
+    "question": "महाराष्ट्रात हेल्मेट न घातल्यास किती दंड (फाइन) आकारला जातो?",
+    "question_en": "What is the fine for not wearing a helmet in Maharashtra?",
+    "ground_truth": "Under Section 194D of the Motor Vehicles Act 1988, the penalty for not wearing a helmet is Rs. 1,000 for the first offence and disqualification from holding a driving licence for three months for subsequent offences. In Maharashtra, this is strictly enforced and applies to both the rider and pillion passenger.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988"
+    ],
+    "expected_section": "194D"
+  },
+  {
+    "id": "TR_002_hi",
+    "original_id": "TR_002",
+    "sector": "traffic",
+    "language": "hi",
+    "question": "Motor Vehicles Act के तहत शराब पीकर गाड़ी चलाने (drunk driving) पर क्या सज़ा है?",
+    "question_en": "What is the penalty for drunk driving under the Motor Vehicles Act?",
+    "ground_truth": "Under Section 185 of the Motor Vehicles Act 1988, driving under the influence of alcohol or drugs carries a penalty of imprisonment up to six months and/or fine up to Rs. 10,000 for the first offence. For a second offence within three years, imprisonment may extend to two years and/or fine up to Rs. 15,000.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988"
+    ],
+    "expected_section": "185"
+  },
+  {
+    "id": "TR_002_mr",
+    "original_id": "TR_002",
+    "sector": "traffic",
+    "language": "mr",
+    "question": "Motor Vehicles Act अंतर्गत दारू पिऊन गाडी चालवल्यास (drunk driving) काय शिक्षा आहे?",
+    "question_en": "What is the penalty for drunk driving under the Motor Vehicles Act?",
+    "ground_truth": "Under Section 185 of the Motor Vehicles Act 1988, driving under the influence of alcohol or drugs carries a penalty of imprisonment up to six months and/or fine up to Rs. 10,000 for the first offence. For a second offence within three years, imprisonment may extend to two years and/or fine up to Rs. 15,000.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988"
+    ],
+    "expected_section": "185"
+  },
+  {
+    "id": "TR_003_hi",
+    "original_id": "TR_003",
+    "sector": "traffic",
+    "language": "hi",
+    "question": "लाल सिग्नल जंप करने पर कितना फाइन लगता है?",
+    "question_en": "What is the fine for jumping a red signal?",
+    "ground_truth": "Under the Motor Vehicles Act 1988 and Maharashtra traffic rules, jumping a red signal attracts a fine of Rs. 1,000 for the first offence and Rs. 2,000 for subsequent offences. In Maharashtra, e-challans are issued based on CCTV surveillance and must be paid online at the Parivahan portal or at the nearest RTO/traffic police office.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988",
+      "traffic violation fines.pdf"
+    ],
+    "expected_section": "194"
+  },
+  {
+    "id": "TR_003_mr",
+    "original_id": "TR_003",
+    "sector": "traffic",
+    "language": "mr",
+    "question": "लाल सिग्नल तोडल्यास किती फाइन आकारला जातो?",
+    "question_en": "What is the fine for jumping a red signal?",
+    "ground_truth": "Under the Motor Vehicles Act 1988 and Maharashtra traffic rules, jumping a red signal attracts a fine of Rs. 1,000 for the first offence and Rs. 2,000 for subsequent offences. In Maharashtra, e-challans are issued based on CCTV surveillance and must be paid online at the Parivahan portal or at the nearest RTO/traffic police office.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988",
+      "traffic violation fines.pdf"
+    ],
+    "expected_section": "194"
+  },
+  {
+    "id": "TR_004_hi",
+    "original_id": "TR_004",
+    "sector": "traffic",
+    "language": "hi",
+    "question": "बिना वैध ड्राइविंग लाइसेंस के गाड़ी चलाने पर क्या पेनल्टी है?",
+    "question_en": "What is the penalty for driving without a valid licence?",
+    "ground_truth": "Under Section 181 of the Motor Vehicles Act 1988, driving without a valid driving licence attracts imprisonment up to three months and/or fine up to Rs. 5,000 for the first offence. Allowing an unlicensed person to drive your vehicle carries similar penalties under Section 180. The licence must be carried while driving and produced on demand by a police officer.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988"
+    ],
+    "expected_section": "181"
+  },
+  {
+    "id": "TR_004_mr",
+    "original_id": "TR_004",
+    "sector": "traffic",
+    "language": "mr",
+    "question": "वैध ड्रायव्हिंग लायसन्सशिवाय गाडी चालवल्यास काय दंड आहे?",
+    "question_en": "What is the penalty for driving without a valid licence?",
+    "ground_truth": "Under Section 181 of the Motor Vehicles Act 1988, driving without a valid driving licence attracts imprisonment up to three months and/or fine up to Rs. 5,000 for the first offence. Allowing an unlicensed person to drive your vehicle carries similar penalties under Section 180. The licence must be carried while driving and produced on demand by a police officer.",
+    "expected_sources": [
+      "Central_Motor_Vehicles_Act_1988"
+    ],
+    "expected_section": "181"
+  },
+  {
+    "id": "RL_001_hi",
+    "original_id": "RL_001",
+    "sector": "rental_law",
+    "language": "hi",
+    "question": "महाराष्ट्र रेंट कंट्रोल एक्ट 1999 के तहत किराएदार (tenant) के क्या अधिकार हैं?",
+    "question_en": "What are the rights of a tenant under the Maharashtra Rent Control Act 1999?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999, tenants have the following key rights: (1) Protection against arbitrary eviction — eviction only on valid legal grounds via court order, (2) Right to essential services like water and electricity which the landlord cannot cut off (Section 16), (3) Right to get a rent receipt, (4) Maximum rent increase of 4% per year (Section 11), (5) Right to sub-let with landlord's consent. Self-help eviction by the landlord is a criminal offence under Section 41.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "16"
+  },
+  {
+    "id": "RL_001_mr",
+    "original_id": "RL_001",
+    "sector": "rental_law",
+    "language": "mr",
+    "question": "महाराष्ट्र भाडे नियंत्रण कायदा 1999 अंतर्गत भाडेकरूचे (tenant) कोणते अधिकार आहेत?",
+    "question_en": "What are the rights of a tenant under the Maharashtra Rent Control Act 1999?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999, tenants have the following key rights: (1) Protection against arbitrary eviction — eviction only on valid legal grounds via court order, (2) Right to essential services like water and electricity which the landlord cannot cut off (Section 16), (3) Right to get a rent receipt, (4) Maximum rent increase of 4% per year (Section 11), (5) Right to sub-let with landlord's consent. Self-help eviction by the landlord is a criminal offence under Section 41.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "16"
+  },
+  {
+    "id": "RL_002_hi",
+    "original_id": "RL_002",
+    "sector": "rental_law",
+    "language": "hi",
+    "question": "क्या महाराष्ट्र में मकान मालिक हर साल 4% से ज़्यादा किराया बढ़ा सकता है?",
+    "question_en": "Can a landlord increase rent by more than 4% per year in Maharashtra?",
+    "ground_truth": "No. Under Section 11 of the Maharashtra Rent Control Act 1999, the maximum permissible annual rent increase is 4% of the standard rent or the current rent. Any rent increase beyond this is illegal and the tenant can challenge it before the Rent Authority. The tenant should file a complaint with the Rent Controller at the local District Court. The landlord cannot unilaterally increase rent beyond this statutory limit.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "11"
+  },
+  {
+    "id": "RL_002_mr",
+    "original_id": "RL_002",
+    "sector": "rental_law",
+    "language": "mr",
+    "question": "महाराष्ट्रात घरमालक दरवर्षी 4% पेक्षा जास्त भाडेवाढ करू शकतो का?",
+    "question_en": "Can a landlord increase rent by more than 4% per year in Maharashtra?",
+    "ground_truth": "No. Under Section 11 of the Maharashtra Rent Control Act 1999, the maximum permissible annual rent increase is 4% of the standard rent or the current rent. Any rent increase beyond this is illegal and the tenant can challenge it before the Rent Authority. The tenant should file a complaint with the Rent Controller at the local District Court. The landlord cannot unilaterally increase rent beyond this statutory limit.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "11"
+  },
+  {
+    "id": "RL_003_hi",
+    "original_id": "RL_003",
+    "sector": "rental_law",
+    "language": "hi",
+    "question": "किराएदार को बेदखल (eviction) करने के वैध कानूनी आधार क्या हैं?",
+    "question_en": "What are the valid legal grounds for eviction of a tenant?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999, a landlord can evict a tenant only on the following grounds: (1) Non-payment of rent, (2) Subletting without consent, (3) Causing nuisance or damage to the property, (4) Landlord's bona fide personal need, (5) Reconstruction or repairs requiring vacant possession. A court order from the Rent Authority is mandatory. The process must go through Rent Court — self-help eviction is a criminal offence under Section 41.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "15"
+  },
+  {
+    "id": "RL_003_mr",
+    "original_id": "RL_003",
+    "sector": "rental_law",
+    "language": "mr",
+    "question": "भाडेकरूला बेदखल (eviction) करण्यासाठी कायदेशीर कारणे कोणती आहेत?",
+    "question_en": "What are the valid legal grounds for eviction of a tenant?",
+    "ground_truth": "Under the Maharashtra Rent Control Act 1999, a landlord can evict a tenant only on the following grounds: (1) Non-payment of rent, (2) Subletting without consent, (3) Causing nuisance or damage to the property, (4) Landlord's bona fide personal need, (5) Reconstruction or repairs requiring vacant possession. A court order from the Rent Authority is mandatory. The process must go through Rent Court — self-help eviction is a criminal offence under Section 41.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "15"
+  },
+  {
+    "id": "RL_004_hi",
+    "original_id": "RL_004",
+    "sector": "rental_law",
+    "language": "hi",
+    "question": "अगर मकान मालिक ने मुझे घर खाली कराने के लिए पानी की सप्लाई बंद कर दी है तो मैं क्या कर सकता हूँ?",
+    "question_en": "What can I do if my landlord has cut off water supply to force me to vacate?",
+    "ground_truth": "Cutting off essential services like water, electricity, or gas to force a tenant to vacate is illegal under Section 16 of the Maharashtra Rent Control Act 1999. The penalty is imprisonment up to three months or fine up to Rs. 5,000 or both. Steps: (1) File a complaint with the Rent Authority/Rent Controller, (2) File a police complaint for criminal intimidation, (3) File a complaint on Aaple Sarkar portal (grievances.maharashtra.gov.in), (4) Approach the District Consumer Forum if services are disconnected by the provider at landlord's request.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "16"
+  },
+  {
+    "id": "RL_004_mr",
+    "original_id": "RL_004",
+    "sector": "rental_law",
+    "language": "mr",
+    "question": "घरमालकाने घर रिकामे करण्यासाठी पाणीपुरवठा बंद केला असेल तर मी काय करू शकतो?",
+    "question_en": "What can I do if my landlord has cut off water supply to force me to vacate?",
+    "ground_truth": "Cutting off essential services like water, electricity, or gas to force a tenant to vacate is illegal under Section 16 of the Maharashtra Rent Control Act 1999. The penalty is imprisonment up to three months or fine up to Rs. 5,000 or both. Steps: (1) File a complaint with the Rent Authority/Rent Controller, (2) File a police complaint for criminal intimidation, (3) File a complaint on Aaple Sarkar portal (grievances.maharashtra.gov.in), (4) Approach the District Consumer Forum if services are disconnected by the provider at landlord's request.",
+    "expected_sources": [
+      "Maharashtra_Rent_Control_Act_1999"
+    ],
+    "expected_section": "16"
+  },
+  {
+    "id": "HM_001_hi",
+    "original_id": "HM_001",
+    "sector": "matrimonial",
+    "language": "hi",
+    "question": "हिंदू मैरिज एक्ट 1955 के तहत तलाक (divorce) के आधार क्या हैं?",
+    "question_en": "What are the grounds for divorce under the Hindu Marriage Act 1955?",
+    "ground_truth": "Under Section 13 of the Hindu Marriage Act 1955, the grounds for divorce include: (1) Adultery, (2) Cruelty — physical or mental, (3) Desertion for a continuous period of two years, (4) Conversion to another religion, (5) Unsoundness of mind, (6) Leprosy or venereal disease, (7) Renunciation of the world, (8) Not heard of as alive for seven years. Additionally, the wife has additional grounds including husband's bigamy before the Act, rape, sodomy, or bestiality, and non-resumption of cohabitation after maintenance decree.",
+    "expected_sources": [
+      "Hindu_Marriage_Act_1955"
+    ],
+    "expected_section": "13"
+  },
+  {
+    "id": "HM_001_mr",
+    "original_id": "HM_001",
+    "sector": "matrimonial",
+    "language": "mr",
+    "question": "हिंदू विवाह कायदा 1955 अंतर्गत घटस्फोटाची (divorce) कारणे कोणती आहेत?",
+    "question_en": "What are the grounds for divorce under the Hindu Marriage Act 1955?",
+    "ground_truth": "Under Section 13 of the Hindu Marriage Act 1955, the grounds for divorce include: (1) Adultery, (2) Cruelty — physical or mental, (3) Desertion for a continuous period of two years, (4) Conversion to another religion, (5) Unsoundness of mind, (6) Leprosy or venereal disease, (7) Renunciation of the world, (8) Not heard of as alive for seven years. Additionally, the wife has additional grounds including husband's bigamy before the Act, rape, sodomy, or bestiality, and non-resumption of cohabitation after maintenance decree.",
+    "expected_sources": [
+      "Hindu_Marriage_Act_1955"
+    ],
+    "expected_section": "13"
+  },
+  {
+    "id": "HM_003_hi",
+    "original_id": "HM_003",
+    "sector": "matrimonial",
+    "language": "hi",
+    "question": "BNS के तहत दहेज उत्पीड़न (dowry harassment) की सज़ा क्या है?",
+    "question_en": "What is the punishment for dowry harassment under BNS?",
+    "ground_truth": "Under Section 85 of the Bharatiya Nyaya Sanhita (BNS) 2023 (formerly IPC 498A), a husband or his relative who subjects a wife to cruelty — including harassment for dowry — shall be punished with imprisonment up to three years and a fine. The Dowry Prohibition Act 1961 additionally makes demanding, giving, or taking dowry punishable with imprisonment up to five years and fine up to Rs. 15,000. The Supreme Court in Arnesh Kumar v State of Bihar held that automatic arrest under 498A/BNS 85 is illegal.",
+    "expected_sources": [
+      "BNS 2023, Supreme Court judgments"
+    ],
+    "expected_section": "85"
+  },
+  {
+    "id": "HM_003_mr",
+    "original_id": "HM_003",
+    "sector": "matrimonial",
+    "language": "mr",
+    "question": "BNS अंतर्गत हुंडाबळी छळाची (dowry harassment) शिक्षा काय आहे?",
+    "question_en": "What is the punishment for dowry harassment under BNS?",
+    "ground_truth": "Under Section 85 of the Bharatiya Nyaya Sanhita (BNS) 2023 (formerly IPC 498A), a husband or his relative who subjects a wife to cruelty — including harassment for dowry — shall be punished with imprisonment up to three years and a fine. The Dowry Prohibition Act 1961 additionally makes demanding, giving, or taking dowry punishable with imprisonment up to five years and fine up to Rs. 15,000. The Supreme Court in Arnesh Kumar v State of Bihar held that automatic arrest under 498A/BNS 85 is illegal.",
+    "expected_sources": [
+      "BNS 2023, Supreme Court judgments"
+    ],
+    "expected_section": "85"
+  },
+  {
+    "id": "HM_004_hi",
+    "original_id": "HM_004",
+    "sector": "matrimonial",
+    "language": "hi",
+    "question": "एक वैध हिंदू विवाह (Hindu marriage) की शर्तें क्या हैं?",
+    "question_en": "What are the conditions for a valid Hindu marriage?",
+    "ground_truth": "Under Section 5 of the Hindu Marriage Act 1955, the conditions for a valid Hindu marriage are: (1) Neither party has a living spouse, (2) Neither party is incapable of giving valid consent due to unsoundness of mind, (3) The bridegroom has completed 21 years of age and the bride 18 years, (4) The parties are not within the degrees of prohibited relationship unless custom permits, (5) The parties are not sapindas of each other unless custom permits. Violation of conditions (1) and (2) render the marriage void.",
+    "expected_sources": [
+      "Hindu_Marriage_Act_1955"
+    ],
+    "expected_section": "5"
+  },
+  {
+    "id": "HM_004_mr",
+    "original_id": "HM_004",
+    "sector": "matrimonial",
+    "language": "mr",
+    "question": "वैध हिंदू विवाहासाठी (Hindu marriage) अटी काय आहेत?",
+    "question_en": "What are the conditions for a valid Hindu marriage?",
+    "ground_truth": "Under Section 5 of the Hindu Marriage Act 1955, the conditions for a valid Hindu marriage are: (1) Neither party has a living spouse, (2) Neither party is incapable of giving valid consent due to unsoundness of mind, (3) The bridegroom has completed 21 years of age and the bride 18 years, (4) The parties are not within the degrees of prohibited relationship unless custom permits, (5) The parties are not sapindas of each other unless custom permits. Violation of conditions (1) and (2) render the marriage void.",
+    "expected_sources": [
+      "Hindu_Marriage_Act_1955"
+    ],
+    "expected_section": "5"
+  },
+  {
+    "id": "HM_006_hi",
+    "original_id": "HM_006",
+    "sector": "matrimonial",
+    "language": "hi",
+    "question": "घरेलू हिंसा से महिलाओं के संरक्षण अधिनियम (Domestic Violence Act) क्या है और शिकायत कौन कर सकता है?",
+    "question_en": "What is the Protection of Women from Domestic Violence Act and who can file a complaint?",
+    "ground_truth": "The Protection of Women from Domestic Violence Act 2005 (PWDVA) protects women from domestic violence including physical, emotional, sexual, verbal, and economic abuse. Any woman who is or has been in a domestic relationship can file a complaint. This includes wives, live-in partners, mothers, sisters, and daughters. A Domestic Incident Report (DIR) is filed with a Protection Officer. The aggrieved woman can seek Protection Orders, Residence Orders, Monetary Relief, and Custody Orders from a Magistrate.",
+    "expected_sources": [
+      "DV Act 2005, Supreme Court judgments"
+    ],
+    "expected_section": ""
+  },
+  {
+    "id": "HM_006_mr",
+    "original_id": "HM_006",
+    "sector": "matrimonial",
+    "language": "mr",
+    "question": "घरगुती हिंसाचारापासून महिलांचे संरक्षण कायदा (Domestic Violence Act) म्हणजे काय आणि तक्रार कोण करू शकते?",
+    "question_en": "What is the Protection of Women from Domestic Violence Act and who can file a complaint?",
+    "ground_truth": "The Protection of Women from Domestic Violence Act 2005 (PWDVA) protects women from domestic violence including physical, emotional, sexual, verbal, and economic abuse. Any woman who is or has been in a domestic relationship can file a complaint. This includes wives, live-in partners, mothers, sisters, and daughters. A Domestic Incident Report (DIR) is filed with a Protection Officer. The aggrieved woman can seek Protection Orders, Residence Orders, Monetary Relief, and Custody Orders from a Magistrate.",
+    "expected_sources": [
+      "DV Act 2005, Supreme Court judgments"
+    ],
+    "expected_section": ""
+  }
+]
