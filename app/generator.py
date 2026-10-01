@@ -6,6 +6,8 @@ Kept separate from main.py so prompts can be tuned per sector independently.
 import os
 from openai import OpenAI
 
+from app.retry_utils import call_with_retry
+
 
 GENERIC_SYSTEM_PROMPT = """You are an expert legal assistant specialising in Indian law.
 Answer the user's question based ONLY on the legal text provided as context.
@@ -236,12 +238,12 @@ class Generator:
             messages.append({"role": "assistant", "content": turn["answer"]})
         messages.append({"role": "user", "content": user_prompt})
 
-        response = self.client.chat.completions.create(
+        response = call_with_retry(lambda: self.client.chat.completions.create(
             model=self.model,
             messages=messages,
             temperature=temperature,
             max_tokens=max_tokens,
-        )
+        ))
 
         return {
             "answer": response.choices[0].message.content.strip(),

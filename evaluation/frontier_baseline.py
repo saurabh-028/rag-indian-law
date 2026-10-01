@@ -37,6 +37,9 @@ load_dotenv()
 
 from openai import OpenAI
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from app.retry_utils import call_with_retry
+
 GENERIC_SYSTEM_PROMPT = (
     "You are a helpful, knowledgeable general-purpose AI assistant. A user has asked you "
     "a legal question about Indian law. Answer it as accurately and specifically as you "
@@ -48,7 +51,7 @@ GENERIC_SYSTEM_PROMPT = (
 
 
 def generate_one(client: OpenAI, model: str, question: str) -> tuple[str, dict]:
-    response = client.chat.completions.create(
+    response = call_with_retry(lambda: client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": GENERIC_SYSTEM_PROMPT},
@@ -56,7 +59,7 @@ def generate_one(client: OpenAI, model: str, question: str) -> tuple[str, dict]:
         ],
         temperature=0.1,
         max_tokens=1500,
-    )
+    ))
     usage = {
         "prompt_tokens": response.usage.prompt_tokens,
         "completion_tokens": response.usage.completion_tokens,
