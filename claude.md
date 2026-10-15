@@ -36,11 +36,17 @@ Retrieval: BM25 weight 2x, dense 1x, top_k=10. FAISS IndexFlatIP (cosine). 2223 
 2. Upload index: set S3_INDEX_BUCKET and call upload_index_to_s3('./index')
 3. Run ./deploy.sh
 
-SSH key: .key1.pem gitignored. Copy to ~/.ssh/rag-key.pem, fix with icacls.
-EC2: ubuntu@54.209.6.232, region eu-north-1
+SSH key: .key2.pem gitignored. Copy to ~/.ssh/rag-key-new.pem, fix with icacls.
+EC2: ubuntu@16.171.12.10, region eu-north-1, instance type t3.small (CpuCredits=unlimited)
+AWS account: 550842783429 (migrated from the original free-tier account 2026-10-15; use `aws --profile rag-new`)
+S3 bucket: rag-indian-law-index-550842783429 (renamed — bucket names are globally unique, old name was taken)
+
+Note: t3.micro (1GB RAM, default burstable credits) could NOT run this app — torch+transformers+InLegalBERT+FAISS+BM25
+exhausted CPU credits during model load and then got so throttled that even SSH stopped responding; a reboot didn't
+recover it. Resized to t3.small (2GB RAM) with CpuCredits=unlimited, which fixed it. Don't downsize below t3.small.
 
 View logs:
-  ssh -i ~/.ssh/rag-key.pem ubuntu@54.209.6.232 'docker logs rag-indian-law -f'
+  ssh -i ~/.ssh/rag-key-new.pem ubuntu@16.171.12.10 'docker logs rag-indian-law -f'
 CloudWatch: /rag-indian-law log group, ec2-container stream (needs CloudWatchLogsFullAccess on IAM role)
 Verify: GET /health — check index_built_at and index_source
 

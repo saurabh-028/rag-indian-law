@@ -6,18 +6,19 @@
 set -e  # exit on any error
 
 # ── Config ────────────────────────────────────────────────────────────────────
+export AWS_PROFILE="rag-new"
 AWS_REGION="eu-north-1"
-AWS_ACCOUNT_ID="557170680973"
+AWS_ACCOUNT_ID="550842783429"
 ECR_REPO="rag-indian-law"
 IMAGE_TAG="latest"
 ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}:${IMAGE_TAG}"
 
 EC2_USER="ubuntu"
-EC2_HOST="54.209.6.232"
-EC2_SSH_KEY=".key1.pem"   
+EC2_HOST="16.171.12.10"
+EC2_SSH_KEY=".key2.pem"
 
 CONTAINER_NAME="rag-indian-law"
-S3_BUCKET="rag-indian-law-index"
+S3_BUCKET="rag-indian-law-index-550842783429"
 EMBED_MODEL="law-ai/InLegalBERT"
 
 # Load OPENAI_API_KEY from local .env if not already set

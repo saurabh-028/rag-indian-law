@@ -12,6 +12,7 @@ python-dotenv
 # --- session memory ---
 sqlmodel
 aiosqlite
+greenlet
 # --- multilingual support ---
 langdetect
 sentencepiece
