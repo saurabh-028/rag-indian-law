@@ -65,6 +65,11 @@ async def lifespan(app: FastAPI):
     yield
 
 
+# Swagger/ReDoc/OpenAPI schema are public attack-surface recon for a
+# production API with no auth in front of it — off by default, opt in
+# locally with ENABLE_API_DOCS=1 when you actually need to browse them.
+_docs_enabled = os.getenv("ENABLE_API_DOCS", "").lower() in ("1", "true", "yes")
+
 app = FastAPI(
     title="Indian Law RAG API",
     description=(
@@ -73,6 +78,9 @@ app = FastAPI(
     ),
     version="1.0.0",
     lifespan=lifespan,
+    docs_url="/docs" if _docs_enabled else None,
+    redoc_url="/redoc" if _docs_enabled else None,
+    openapi_url="/openapi.json" if _docs_enabled else None,
 )
 
 app.mount("/static", StaticFiles(directory=str(_STATIC)), name="static")
