@@ -48,6 +48,13 @@ reboot didn't recover it. Resized to t3.small (2GB RAM) with CpuCredits=unlimite
 Don't downsize below t3.small. Elastic IP is attached so the public IP no longer changes across stop/start/resize —
 previously it did (bit the migration once already), so if DNS ever needs updating again, something detached the EIP.
 
+HTTPS/domain: nginx + certbot installed directly on the EC2 box (NOT in this repo, not in Docker — reinstall manually
+on any future box: `apt install nginx certbot python3-certbot-nginx`, reverse-proxy 80 -> 127.0.0.1:8000, then
+`certbot --nginx -d shastrashaw.online -d www.shastrashaw.online --redirect`). DNS (at the registrar, not AWS/Route53):
+A records for both `@`/root and `www` -> the Elastic IP above. Cert auto-renews via certbot's systemd timer.
+We don't actually know how the OLD box did HTTPS — this setup was done fresh during the AWS account migration,
+2026-10-15, with no way to inspect the old instance's config.
+
 View logs:
   ssh -i ~/.ssh/rag-key-new.pem ubuntu@13.49.33.25 'docker logs rag-indian-law -f'
 CloudWatch: /rag-indian-law log group, ec2-container stream (needs CloudWatchLogsFullAccess on IAM role)
