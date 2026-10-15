@@ -14,7 +14,7 @@ IMAGE_TAG="latest"
 ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}:${IMAGE_TAG}"
 
 EC2_USER="ubuntu"
-EC2_HOST="16.171.12.10"
+EC2_HOST="13.49.33.25"   # Elastic IP — stable across stop/start/resize
 EC2_SSH_KEY=".key2.pem"
 
 CONTAINER_NAME="rag-indian-law"
