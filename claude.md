@@ -60,6 +60,25 @@ View logs:
 CloudWatch: /rag-indian-law log group, ec2-container stream (needs CloudWatchLogsFullAccess on IAM role)
 Verify: GET /health — check index_built_at and index_source
 
+## Security
+Full-codebase audit done 2026-10-15 (code review + live checks against the deployed site). No injection/XSS/CORS/
+SSRF/auth-bypass findings: app/memory.py uses parameterized SQLModel queries (no string-interpolated SQL), the
+frontend (app/static/js/chat.js) renders model output through marked.parse() -> DOMPurify.sanitize() with a strict
+allowlist plus an `esc()` helper for everything else, no CORSMiddleware is configured at all, no subprocess/eval/
+pickle/yaml.load anywhere under app/, session_id is a non-guessable server-generated uuid4 used only as a memory key
+(no access-control semantics to bypass).
+
+Two real gaps found via live testing (not code review) and fixed:
+- `/docs`, `/redoc`, `/openapi.json` were publicly browsable (free API recon for an unauthenticated public app) —
+  now off by default in app/main.py; set `ENABLE_API_DOCS=1` to re-enable locally for dev.
+- No security headers and nginx leaked its exact version — added HSTS, X-Content-Type-Options, X-Frame-Options,
+  Referrer-Policy via `add_header` in /etc/nginx/sites-available/shastrashaw.online (NOT in this repo, box-level —
+  redo on any future box), and uncommented `server_tokens off;` in /etc/nginx/nginx.conf.
+
+Re-verify after any redeploy: `curl -s -o /dev/null -w "%{http_code}\n" https://www.shastrashaw.online/docs` should
+be 404, not 200 (docker build/push/deploy can be slow enough that a session interruption mid-deploy leaves the OLD
+image still running — check `docker ps` uptime on the box against the last deploy time if unsure).
+
 ## Known issues
 - InLegalBERT vocabulary gaps (red light vs Jumping signal) — mitigated by BM25 2x, 4x title boost, _NORM, _TITLE_SYNONYMS
 - langdetect misidentifies short English queries (e.g. as Danish) — non-critical
