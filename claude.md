@@ -79,6 +79,32 @@ Re-verify after any redeploy: `curl -s -o /dev/null -w "%{http_code}\n" https://
 be 404, not 200 (docker build/push/deploy can be slow enough that a session interruption mid-deploy leaves the OLD
 image still running — check `docker ps` uptime on the box against the last deploy time if unsure).
 
+## Reliability / ops (added 2026-10-17, box-level, NOT in this repo — redo on any future box)
+Goal: match a funded-startup baseline on a single server, no horizontal scaling. All AWS pieces live in account
+550842783429, region eu-north-1 (profile `rag-new`).
+
+- **nginx rate limiting**: `limit_req_zone` in /etc/nginx/nginx.conf (10 req/min/IP, zone `api_limit`), applied in
+  the site's `location /` block with `burst=15 nodelay`. Protects the OpenAI bill from being run up by abuse/bots —
+  this is the single highest-value protection given every `/query` call is a metered GPT-4o call. Returns 429 when
+  exceeded. Verify: fire >15 rapid requests at /health, should see 200s then 429s.
+- **fail2ban**: installed, sshd jail enabled, default config (bans after repeated failed SSH logins). Check:
+  `sudo fail2ban-client status sshd`.
+- **Daily EBS snapshots**: AWS DLM lifecycle policy `policy-06e179eec8769091b`, targets the volume tagged
+  `Backup=daily`, runs 03:00 UTC, 7-day retention. This is the disaster-recovery answer for everything that's
+  box-level and NOT in git (nginx config, certbot certs, fail2ban, this whole Reliability section's setup) —
+  if the instance is lost, restore from the latest snapshot rather than rebuilding by hand from CLAUDE.md notes.
+- **Chat-memory DB backup**: /usr/local/bin/backup-chat-db.sh (cron, daily 03:17 UTC) does a sqlite3 `.backup` of
+  /home/ubuntu/data/chat_history.db and uploads to s3://rag-indian-law-index-550842783429/backups/ (14-day S3
+  lifecycle expiry). EC2 role has a scoped `s3-backup-write` inline policy for PutObject under `backups/*` only.
+- **Monitoring**: CloudWatch agent installed (`CWAgent` namespace, dimension is `host=ip-172-31-45-191`, NOT
+  `InstanceId` — that tripped up alarm setup once already), reporting `mem_used_percent` and `disk_used_percent`.
+  Four CloudWatch alarms (`rag-indian-law-status-check-failed`, `-high-cpu`, `-high-memory`, `-low-disk`) all notify
+  SNS topic `rag-indian-law-alerts` -> email. **The email subscription must be manually confirmed** (AWS sends a
+  confirmation link) or alarms fire silently with no notification — check `aws sns list-subscriptions-by-topic`
+  isn't stuck on `PendingConfirmation`.
+- **Still not done**: Cloudflare (WAF + DDoS protection + CDN) — needs the domain's nameservers pointed at
+  Cloudflare, which is a registrar-side change the user has to make; not done as of 2026-10-17.
+
 ## Known issues
 - InLegalBERT vocabulary gaps (red light vs Jumping signal) — mitigated by BM25 2x, 4x title boost, _NORM, _TITLE_SYNONYMS
 - langdetect misidentifies short English queries (e.g. as Danish) — non-critical
