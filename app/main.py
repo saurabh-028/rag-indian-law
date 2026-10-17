@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Optional
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -39,6 +39,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 from app import memory, retriever, router, verifier  # noqa: E402
+from app.firebase_auth import FirebaseUser, get_current_user, require_current_user  # noqa: E402
 from app.generator import Generator  # noqa: E402
 from app.index_loader import download_index_from_s3  # noqa: E402
 from app.language import detect_language, translator, SUPPORTED_LANGS  # noqa: E402
@@ -128,6 +129,10 @@ class RetrieveResponse(BaseModel):
     chunks: list[dict]
 
 
+class UserProfile(BaseModel):
+    email: Optional[str]
+
+
 class HealthResponse(BaseModel):
     status: str
     vector_count: int
@@ -148,14 +153,33 @@ async def serve_chat():
     return FileResponse(_STATIC / "chat.html")
 
 
+@app.post("/auth/sync", response_model=UserProfile, summary="Register/update the signed-in user")
+async def auth_sync_endpoint(current_user: FirebaseUser = Depends(require_current_user)) -> UserProfile:
+    """Call right after a successful Firebase sign-in. Creates the user's
+    row on first sign-in (or just confirms it exists on later ones) so
+    /query has something to attach their chat history to."""
+    user = await memory.upsert_user(current_user.uid, current_user.email)
+    return UserProfile(email=user.email)
+
+
 @app.post("/query", response_model=QueryResponse, summary="Ask a legal question (RAG)")
-async def query_endpoint(req: QueryRequest) -> QueryResponse:
+async def query_endpoint(
+    req: QueryRequest, current_user: FirebaseUser | None = Depends(get_current_user)
+) -> QueryResponse:
     """Retrieve relevant legal chunks and generate an answer via GPT-4."""
     if not retriever.is_loaded():
         raise HTTPException(
             status_code=503,
             detail="Index not loaded. Run pipeline/build_index.py and restart the server.",
         )
+
+    # Signing in is optional — anonymous requests work exactly as before.
+    # When signed in, look up (or lazily create, e.g. if /auth/sync was
+    # missed) the user row so this turn can be attached to their account.
+    user_id = None
+    if current_user is not None:
+        user = await memory.upsert_user(current_user.uid, current_user.email)
+        user_id = user.id
 
     session_id = req.session_id or str(uuid.uuid4())
     detected_lang = req.lang or detect_language(req.question)
@@ -252,6 +276,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
                 answer=clarification,
                 sector=None,
                 detected_lang=detected_lang,
+                user_id=user_id,
             )
             return QueryResponse(
                 answer=clarification,
@@ -340,6 +365,7 @@ async def query_endpoint(req: QueryRequest) -> QueryResponse:
         answer=answer,
         sector=sector,
         detected_lang=detected_lang,
+        user_id=user_id,
     )
 
     return QueryResponse(

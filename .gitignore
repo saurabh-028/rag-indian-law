@@ -18,6 +18,9 @@ env/
 .env
 .env.*
 
+# Firebase service account key — backend-only secret, never commit
+firebase-service-account*.json
+
 # FAISS index (large binary files — rebuild with build_index.py)
 index/
 

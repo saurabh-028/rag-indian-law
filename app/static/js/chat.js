@@ -370,9 +370,15 @@ async function sendMessage() {
     if (selectedLang !== 'auto') body.lang = selectedLang;
     if (currentSessionId) body.session_id = currentSessionId;
 
+    const headers = { 'Content-Type': 'application/json' };
+    // Attach the Firebase ID token when signed in, so this turn gets tied
+    // to the user's account server-side. Anonymous requests simply omit it.
+    const token = await getAuthToken();
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
     const res = await fetch('/query', {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body:    JSON.stringify(body),
     });
 

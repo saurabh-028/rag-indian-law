@@ -74,6 +74,7 @@ ssh -i ${EC2_SSH_KEY} -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << EOF
         --name ${CONTAINER_NAME} \
         --restart unless-stopped \
         -v /home/ubuntu/data:/app/data \
+        -v /home/ubuntu/firebase-service-account.json:/app/firebase-service-account.json:ro \
         -e OPENAI_API_KEY=${OPENAI_API_KEY} \
         -e S3_INDEX_BUCKET=${S3_BUCKET} \
         -e S3_INDEX_PREFIX=index \

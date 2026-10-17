@@ -13,6 +13,9 @@ python-dotenv
 sqlmodel
 aiosqlite
 greenlet
+
+# --- auth ---
+firebase-admin
 # --- multilingual support ---
 langdetect
 sentencepiece
